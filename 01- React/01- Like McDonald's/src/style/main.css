@@ -1,0 +1,53 @@
+:root {
+  --primary: #ffbc0d;
+  --secondary: #292929;
+  --red: #d90007;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  padding: 0.5rem;
+}
+
+i.fa {
+  color: var(--secondary, #292929);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 425px) {
+  .container {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 1rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 1rem 4rem;
+  }
+}
