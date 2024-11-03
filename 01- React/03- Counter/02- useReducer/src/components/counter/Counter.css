@@ -1,0 +1,48 @@
+.wrapper {
+  width: 18rem;
+  background-color: var(--primary, #ffbc0d);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.counter {
+  color: var(--secondary, #292929);
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  width: 6rem;
+  height: 2rem;
+  background-color: white;
+  color: var(--secondary, #292929);
+  font-weight: bold;
+  opacity: 0.75;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  -o-transition: all 1s linear;
+}
+
+button:hover {
+  opacity: 1;
+}
