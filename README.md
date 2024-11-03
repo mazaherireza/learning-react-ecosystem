@@ -1,1 +1,4 @@
-"# Learning React Ecosystem" 
+### Learning React Ecosystem
+
+- React
+- Redux
