@@ -1,0 +1,14 @@
+:root {
+  --primary: #ffbc0d;
+  --secondary: #292929;
+  --red: #d90007;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
