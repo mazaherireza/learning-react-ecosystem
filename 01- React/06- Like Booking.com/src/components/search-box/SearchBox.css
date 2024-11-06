@@ -1,0 +1,46 @@
+.search-box-container {
+  background-color: var(--secondary);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  row-gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.search-box-container select,
+.search-box-btn {
+  padding: 0.5rem;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+
+select option {
+  font-weight: bold;
+}
+
+.search-box-btn {
+  background-color: var(--blue, #006ce4);
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .search-box-container {
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 0.25rem;
+  }
+
+  .search-box-container select:first-child {
+    grid-column: 1 / span 2;
+  }
+
+  .search-box-container select:nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+}

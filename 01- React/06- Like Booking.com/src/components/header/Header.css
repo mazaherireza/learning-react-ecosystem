@@ -1,0 +1,85 @@
+header {
+  background-color: var(--primary, #003b95);
+}
+
+.container {
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+nav i {
+  color: white;
+  cursor: pointer;
+}
+
+.header-content {
+  margin-top: 2rem;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.header-content h4 {
+  font-size: x-large;
+}
+
+.header-content p {
+  font-size: large;
+}
+
+.btns {
+  display: none;
+}
+
+.btns button {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  color: var(--blue, #006ce4);
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 425px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav a {
+    font-size: xx-large;
+  }
+
+  nav i.fa {
+    display: none;
+  }
+
+  .btns {
+    display: block;
+  }
+
+  .btns button {
+    font-size: medium;
+  }
+}
