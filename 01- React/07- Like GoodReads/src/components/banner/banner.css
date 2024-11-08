@@ -1,0 +1,14 @@
+.banner-container img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.banner-caption {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner-caption {
+    font-size: large;
+  }
+}
