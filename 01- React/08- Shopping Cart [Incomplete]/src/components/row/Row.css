@@ -1,0 +1,28 @@
+.row-container {
+  font-size: small;
+  text-align: center;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fa {
+  cursor: pointer;
+}
+
+.fa-trash {
+  color: var(--red-400);
+}
+
+@media screen and (min-width: 425px) {
+  .row-container {
+    font-size: medium;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}

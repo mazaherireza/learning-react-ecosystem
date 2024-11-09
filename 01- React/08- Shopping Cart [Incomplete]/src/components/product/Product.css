@@ -1,0 +1,72 @@
+.project-title {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: border 1s;
+}
+
+.product-wrapper:hover {
+  border: 2px solid var(--primary);
+}
+
+.product-wrapper img {
+  width: 10rem;
+  height: auto;
+}
+
+.product-wrapper .product-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-price,
+.max {
+  font-weight: bold;
+}
+
+.max {
+  font-size: x-small;
+  color: var(--red-400);
+}
+
+.product-wrapper div:last-child {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.product-wrapper button {
+  background-color: var(--primary);
+  color: white;
+}
+
+.product-wrapper button:disabled {
+  cursor: not-allowed;
+  background-color: #e5e4e2; /* Platinum */
+  color: black;
+}
