@@ -1,0 +1,65 @@
+.todo-wrapper {
+  font-size: small;
+  font-weight: bold;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  -o-transition: all 1s linear;
+}
+
+.todo-wrapper:hover {
+  border: 1px solid black;
+  box-shadow: 0.125rem 0.125rem 0.25rem silver;
+}
+
+.todo-wrapper .actions {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.actions button {
+  border: none;
+  background-color: whit;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.todo-wrapper .status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.todo-wrapper .green {
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.todo-wrapper .red {
+  color: var(--red-400);
+  border: 1px solid var(--red-400);
+}
+
+.lineThrough {
+  text-decoration: line-through;
+}

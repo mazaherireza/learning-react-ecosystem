@@ -1,0 +1,87 @@
+.main-wrapper .main-title {
+  margin-bottom: 1rem;
+}
+
+.main-wrapper .main-information {
+  font-size: small;
+  margin-bottom: 0.5rem;
+}
+
+.done,
+.total {
+  font-weight: bold;
+}
+
+input[type="text"],
+select,
+button {
+  padding: 0.25rem 0.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+select,
+button {
+  font-weight: bold;
+}
+
+.action-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.buttons button {
+  font-size: small;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.todo-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+select option {
+  font-size: small;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 425px) {
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-wrapper .main-title {
+    font-size: large;
+  }
+
+  .main-wrapper .main-information {
+    font-size: medium;
+  }
+
+  input[type="text"],
+  select,
+  button {
+    padding: 0.5rem 0.75rem;
+  }
+}
