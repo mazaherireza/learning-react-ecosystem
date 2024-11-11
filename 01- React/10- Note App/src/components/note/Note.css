@@ -1,0 +1,10 @@
+.note-wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  font-size: small;
+}

@@ -1,0 +1,79 @@
+.main-wrapper .title {
+  margin-bottom: 0.75rem;
+}
+
+.main-wrapper input[type="text"] {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  color: black;
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+
+.main-wrapper input[type="text"]::placeholder {
+  color: black;
+}
+
+.main-wrapper .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.selected-color {
+  box-shadow: 0.2rem 0.2rem 0.5rem silver;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+.circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.notes-wrapper {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media screen and (min-width: 425px) {
+  .notes-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .notes-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .main-wrapper input[type="text"] {
+    padding: 0.5rem 0.75rem;
+  }
+}
