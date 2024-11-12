@@ -1,0 +1,33 @@
+.card-wrapper {
+  cursor: pointer;
+  border: 1px solid var(--gray);
+  width: 5rem;
+  height: 5rem;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+
+.card-wrapper:hover {
+  border: 1px solid var(--primary);
+}
+
+.card-wrapper i.fa {
+  color: black;
+  font-size: x-large;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+
+.card-wrapper:hover i.fa {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
