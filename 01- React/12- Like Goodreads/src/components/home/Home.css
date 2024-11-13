@@ -1,0 +1,49 @@
+.home-wrapper {
+  margin-top: 1rem;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid var(--gray-2);
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+}
+
+.home-wrapper .img-wrapper img {
+  width: 100%;
+}
+
+.home-wrapper .content {
+  padding: 1rem;
+}
+
+.home-wrapper .content h4 {
+  margin-bottom: 0.5rem;
+  font-size: small;
+}
+
+.home-wrapper .content p {
+  font-size: x-small;
+}
+
+@media screen and (min-width: 425px) {
+  .home-wrapper {
+    width: 80%;
+  }
+
+  .home-wrapper .content h4 {
+    font-size: initial;
+  }
+
+  .home-wrapper .content p {
+    font-size: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-wrapper {
+    width: 70%;
+  }
+}

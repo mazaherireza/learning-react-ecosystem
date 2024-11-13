@@ -1,0 +1,22 @@
+.books-wrapper-books {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.books-wrapper h4 {
+  font-size: small;
+}
+
+@media screen and (min-width: 768px) {
+  .books-wrapper-books {
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+
+  .books-wrapper h4 {
+    font-size: initial;
+  }
+}

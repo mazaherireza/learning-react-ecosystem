@@ -1,0 +1,21 @@
+.recommendations-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.recommendations-wrapper h4,
+.recommendations-wrapper p {
+  font-size: small;
+}
+
+.recommendations-wrapper .information {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 425px) {
+  .recommendations-wrapper h4,
+  .recommendations-wrapper p {
+    font-size: initial;
+  }
+}

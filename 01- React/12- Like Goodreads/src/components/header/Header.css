@@ -1,0 +1,96 @@
+header .container {
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+header .container img {
+  width: 6rem;
+}
+
+header nav {
+  font-size: small;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header nav a {
+  color: var(--black-400);
+  padding: 0.5rem;
+}
+
+header nav a:hover {
+  background-color: var(--brown);
+  color: white;
+  transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  -o-transition: all 1s linear;
+}
+
+header .container .item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+
+header .container .parent-item {
+  position: relative;
+}
+
+header .container .parent-item:hover {
+  border: none;
+}
+
+header .container .parent-item:hover .content {
+  display: flex;
+}
+
+header .container .content {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+}
+
+nav a.active {
+  border: 1px solid var(--brown);
+}
+
+@media screen and (min-width: 425px) {
+  header .container {
+    column-gap: 2rem;
+  }
+
+  header .container img {
+    width: 8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header .container {
+    column-gap: 3rem;
+    flex-direction: row;
+  }
+
+  header .container img {
+    width: 10rem;
+  }
+
+  header nav {
+    font-size: medium;
+  }
+
+  header .container .content {
+    top: 36px;
+  }
+}
