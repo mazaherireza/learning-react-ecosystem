@@ -1,10 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./style/main.css";
-import "./style/index.css";
+import "./App.css";
 import Book from "./components/book/Book";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const data = {
   title: "Blindness",
@@ -12,13 +7,15 @@ const data = {
   img: "./Blindness.png",
 };
 
-root.render(
-  <React.StrictMode>
+function App() {
+  return (
     <Book {...data}>
       <div className="label">
         <h6>Winner of the</h6>
         <p>Nobel Prize for Literature</p>
       </div>
     </Book>
-  </React.StrictMode>
-);
+  );
+}
+
+export default App;
