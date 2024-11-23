@@ -1,5 +1,5 @@
 import "./App.css";
-import Book from "./components/book/Book";
+import Book from "./components/book/Book.jsx";
 
 const data = {
   title: "Blindness",
