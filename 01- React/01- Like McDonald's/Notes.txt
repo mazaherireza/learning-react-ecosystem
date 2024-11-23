@@ -1,0 +1,7 @@
+Build Tools
+Vite
+Transpilation, Module Bundling, Minification and Compression, Live Reloading
+
+npm create vite@latest
+
+TypeScript + SWC (Speedy Web Compiler)
