@@ -1,6 +1,6 @@
 import "./Header.css";
-import RadioGroup from "../radio-group/RadioGroup";
-import SearchBox from "../search-box/SearchBox";
+import RadioGroup from "../radio-group/RadioGroup.jsx";
+import SearchBox from "../search-box/SearchBox.jsx";
 import types from "./types";
 
 export default function Header() {
