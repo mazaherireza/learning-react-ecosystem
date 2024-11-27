@@ -1,5 +1,4 @@
 import "./Row.css";
-import { useState } from "react";
 
 export default function Table(props) {
   const { id, title, price, max, quantity, dec, del, inc } = props;

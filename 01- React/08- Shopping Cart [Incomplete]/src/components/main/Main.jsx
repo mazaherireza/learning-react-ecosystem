@@ -1,7 +1,7 @@
 import "./Main.css";
 import { useState } from "react";
-import Product from "../product/Product";
-import Row from "../row/Row";
+import Product from "../product/Product.jsx";
+import Row from "../row/Row.jsx";
 import Creme from "./images/Creme_75ml.webp";
 import BodyLotion from "./images/Body_Lotion.webp";
 
