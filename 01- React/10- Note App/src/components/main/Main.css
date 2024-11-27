@@ -10,6 +10,10 @@
   margin-bottom: 0.5rem;
 }
 
+.main-wrapper input[type="text"]:focus {
+  border-color: transparent;
+}
+
 .main-wrapper input[type="text"]::placeholder {
   color: black;
 }

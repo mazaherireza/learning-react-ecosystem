@@ -1,6 +1,6 @@
 import "./Main.css";
 import { useState } from "react";
-import Note from "../note/Note";
+import Note from "../note/Note.jsx";
 import colors from "./colors";
 
 export default function Main() {
@@ -15,7 +15,8 @@ export default function Main() {
 
   const handleKey = (event) => {
     const { key } = event;
-    if (key === "Enter") { // Trim text (There is a bug here)
+    if (key === "Enter") {
+      // Trim text (There is a bug here)
       setText(text);
       setNotes([...notes, { text, color }]);
       setText("");
