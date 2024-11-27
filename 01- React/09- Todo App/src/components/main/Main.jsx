@@ -1,6 +1,6 @@
 import "./Main.css";
 import { useState } from "react";
-import Todo from "../todo/Todo";
+import Todo from "../todo/Todo.jsx";
 
 export default function Main() {
   const [todos, setTodos] = useState([]);
