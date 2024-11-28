@@ -1,0 +1,11 @@
+/* Divider */
+
+.MuiDivider-root::before,
+.MuiDivider-root::after {
+  border-top: thin solid var(--gray-2) !important;
+}
+
+.MuiFormControl-root {
+  width: 100%;
+}
+

@@ -1,6 +1,7 @@
 header {
   background-color: var(--primary);
-  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 header span {
@@ -10,10 +11,6 @@ header span {
 }
 
 @media screen and (min-width: 425px) {
-  header {
-    padding: 1rem 2rem;
-  }
-
   header span {
     font-size: x-large;
   }

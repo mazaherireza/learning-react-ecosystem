@@ -1,0 +1,30 @@
+:root {
+  --primary: #003b95;
+  --blue: #006ce4;
+  --gray: #d9d9d9;
+  --gray-2: #242424;
+  --gray-8: #868686;
+  --red: #d90007;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.fa-times {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}

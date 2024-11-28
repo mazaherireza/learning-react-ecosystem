@@ -1,8 +1,11 @@
 .card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   border: 1px solid var(--gray);
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
