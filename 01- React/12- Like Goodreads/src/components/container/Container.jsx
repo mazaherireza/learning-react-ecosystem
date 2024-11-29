@@ -1,4 +1,4 @@
-import router from "../../router";
+import router from "../../router.jsx";
 import { useRoutes } from "react-router-dom";
 
 export default function Container() {

@@ -1,6 +1,6 @@
-import Book from "../book/Book";
+import Book from "../book/Book.jsx";
 import "./Books.css";
-import { bookList } from "../../bookList";
+import { bookList } from "../../bookList.js";
 
 export default function MyBooks() {
   return (

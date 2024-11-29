@@ -1,0 +1,51 @@
+:root {
+  --primary-100: #f4f8fb;
+  --green: #097969;
+  --red-400: #dc143c;
+  --primary: #f4f1ea;
+  --black-500: #1a1a1a;
+  --secondary: #ffb700;
+  --blue: #006ce4;
+  --gray-1: #e5e4e2;
+  --gray-2: #cccccc;
+  --red: #d90007;
+  --brown: #382110;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.fa-times {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 425px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+}

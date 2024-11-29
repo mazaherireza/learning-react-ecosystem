@@ -1,12 +1,12 @@
-import Login from "./components/login/Login";
-import Home from "./components/home/Home";
-import Books from "./components/books/Books";
-import ShowBook from "./components/show-book/ShowBook";
-import Recommendations from "./components/recommendations/Recommendations";
-import Groups from "./components/recommendations/groups/Groups";
-import Discussions from "./components/recommendations/discussions/Discussions";
-import NotFound from "./components/not-found/NotFound";
-import PrivateRoute from "./PrivateRoute";
+import Login from "./components/login/Login.jsx";
+import Home from "./components/home/Home.jsx";
+import Books from "./components/books/Books.jsx";
+import ShowBook from "./components/show-book/ShowBook.jsx";
+import Recommendations from "./components/recommendations/Recommendations.jsx";
+import Groups from "./components/recommendations/groups/Groups.jsx";
+import Discussions from "./components/recommendations/discussions/Discussions.jsx";
+import NotFound from "./components/not-found/NotFound.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
 
 const router = [
   {
