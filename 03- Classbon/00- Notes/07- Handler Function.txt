@@ -1,0 +1,18 @@
+In JavaScript
+-------------
+button.addEventListener("click", () => {})
+
+Search.jsx
+----------
+const Search = () => {
+  const handleChange = ({ target }) => {
+    console.log(target.value)
+  }
+
+  return(
+    <div>
+      <label htmlFor="search">Search</label>
+      <input onChange={handleChange} type="text" id="search" />
+    </div>
+  )
+}
