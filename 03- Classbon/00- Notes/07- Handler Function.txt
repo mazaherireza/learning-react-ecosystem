@@ -2,8 +2,6 @@ In JavaScript
 -------------
 button.addEventListener("click", () => {})
 
-Search.jsx
-----------
 const Search = () => {
   const handleChange = ({ target }) => {
     console.log(target.value)
