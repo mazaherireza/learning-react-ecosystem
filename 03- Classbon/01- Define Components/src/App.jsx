@@ -11,8 +11,8 @@ function App() {
     setKeySearch(val);
   };
 
-  const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(keySearch.toLowerCase())
+  const filteredMovies = movies.filter(({ title }) =>
+    title.toLowerCase().includes(keySearch.toLowerCase())
   );
 
   return (
