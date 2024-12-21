@@ -1,0 +1,30 @@
+import axios from "../../../axios";
+import { useEffect, useState } from "react";
+
+const Comp = () => {
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios("END_POINT");
+      setList(data);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div className="comp-container">
+      <ul>
+        <li>
+          <a href="#">All</a>
+        </li>
+
+        {list.map((item) => {
+          const { id, title } = item;
+          return <li key={id}>{title}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default Comp;
