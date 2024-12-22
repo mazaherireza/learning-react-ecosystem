@@ -10,14 +10,6 @@
   padding: 0;
 }
 
-.item-wrapper:hover {
-  transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
-}
-
 .item-wrapper .item-img {
   height: 10rem;
   animation: change-color 1s linear infinite alternate;
