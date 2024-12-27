@@ -6,17 +6,15 @@ import { ACTIONS } from "./constants";
 const CartContext = createContext();
 
 const initialState = {
-  loading: false,
   cart: cartItems,
   total: 0,
-  amount: 0,
 };
 
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const clearCart = () => dispatch({ type: ACTIONS.CLEAR });
-  const remove = (id) => dispatch({ type: ACTIONS.REMOVE, payload: id });
+  const remove = (id) => dispatch({ type: ACTIONS.REMOVE, payload: { id } });
   const changeQuantity = (id, quantity) =>
     dispatch({ type: ACTIONS.CHANGE_QUANTITY, payload: { id, quantity } });
 

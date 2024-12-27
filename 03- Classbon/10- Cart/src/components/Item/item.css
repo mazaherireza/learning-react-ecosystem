@@ -47,6 +47,7 @@
 }
 
 .item-wrapper input[type="number"] {
+  font-family: IranYekan;
   direction: rtl;
   width: 5rem;
   padding: 0.125rem 0.25rem;

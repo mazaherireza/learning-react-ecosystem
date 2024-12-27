@@ -1,5 +1,6 @@
 import "./header.css";
 import { useCartContext } from "../../context";
+import { convertEnNumToFa } from "../../helpers/convertEnNumToFa";
 
 const Header = () => {
   const { cart } = useCartContext();
@@ -9,7 +10,7 @@ const Header = () => {
       <div className="container">
         <div>
           <h3>سبد خرید</h3>
-          <p>{cart.length}</p>
+          <p>{convertEnNumToFa(cart.length)}</p>
         </div>
       </div>
     </div>

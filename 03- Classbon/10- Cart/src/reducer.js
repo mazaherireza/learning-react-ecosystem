@@ -8,7 +8,7 @@ const reducer = (state, action) => {
     case ACTIONS.REMOVE:
       return {
         ...state,
-        cart: state.cart.map((cartItem) => cartItem !== payload.id),
+        cart: state.cart.filter((cartItem) => cartItem.id !== payload.id),
       };
     case ACTIONS.CHANGE_QUANTITY:
       return {

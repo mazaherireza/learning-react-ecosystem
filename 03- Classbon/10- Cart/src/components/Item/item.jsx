@@ -1,15 +1,19 @@
 import "./item.css";
 import { useCartContext } from "../../context";
+import { convertEnNumToFa } from "../../helpers/convertEnNumToFa";
 
 const Item = ({ id, title, price, img, quantity }) => {
   const { remove, changeQuantity } = useCartContext();
+
   return (
     <div className="item-wrapper">
       <div className="item-info">
         <img src={img} alt={title} />
         <div>
           <h5 className="title">{title}</h5>
-          <span className="price">{price.toLocaleString()}</span>
+          <span className="price">
+           {convertEnNumToFa(price.toLocaleString())} تومان
+          </span>
         </div>
       </div>
 
