@@ -12,7 +12,7 @@ const List = () => {
       ));
     } else {
       return (
-        <p style={{ marginRight: "auto", marginLeft: "auto" }}>
+        <p style={{ textAlign: "center", marginBottom: "1rem" }}>
           سبد خرید خالی است!
         </p>
       );

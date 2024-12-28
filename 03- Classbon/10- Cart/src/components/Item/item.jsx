@@ -12,7 +12,7 @@ const Item = ({ id, title, price, img, quantity }) => {
         <div>
           <h5 className="title">{title}</h5>
           <span className="price">
-           {convertEnNumToFa(price.toLocaleString())} تومان
+            {convertEnNumToFa(price.toLocaleString())} تومان
           </span>
         </div>
       </div>
@@ -23,7 +23,7 @@ const Item = ({ id, title, price, img, quantity }) => {
           id={`quantity-${id}`}
           type="number"
           value={quantity}
-          onChange={(event) => changeQuantity(id, +event.target.value)}
+          onChange={({ target }) => changeQuantity(id, +target.value)}
         />
         <button onClick={() => remove(id)}>حذف</button>
       </div>

@@ -24,4 +24,14 @@
   .cart-wrapper {
     flex-direction: column;
   }
+
+  .cart-wrapper .sum {
+    background-color: #e5e4e2;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+  }
 }
