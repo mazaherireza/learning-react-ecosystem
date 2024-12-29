@@ -1,0 +1,17 @@
+label {
+  margin-top: 1rem;
+  font-size: small;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: IranYekan;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
