@@ -1,0 +1,18 @@
+.identity-layout-wrapper {
+  padding: 0.75rem 1rem;
+  border: 1px solid #c0c0c0;
+  box-shadow: 0.25rem 0.2rem 0.01rem #c0c0c0;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.identity-layout-wrapper .logo {
+  width: 5rem;
+  height: 4rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

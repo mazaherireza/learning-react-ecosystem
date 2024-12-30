@@ -1,6 +1,6 @@
-import Logo from "@assets/images/Logo.svg";
 import InputWithLabel from "@components/inputWithLabel/index";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
@@ -9,10 +9,11 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
-      <img src={Logo} alt="Logo" className="logo" />
-      <h3>پلتفرم آموزش آنلاین</h3>
       <p>جهت ورود لازم است از طریق موبایل و رمزعبور خود اقدام کنید.</p>
-      <p>قبلا ثبت نام نکرده‌اید؟، ثبت‌نام کنید.</p>
+      <p>
+        قبلا ثبت نام نکرده‌اید؟،
+        <Link to="/register">ثبت نام کنید</Link>.
+      </p>
 
       <form action="">
         <InputWithLabel

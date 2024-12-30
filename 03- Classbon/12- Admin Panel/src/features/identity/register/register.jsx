@@ -1,6 +1,6 @@
-import Logo from "@assets/images/Logo.svg";
 import InputWithLabel from "@components/inputWithLabel/index";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./register.css";
 
 const Register = () => {
@@ -10,10 +10,11 @@ const Register = () => {
 
   return (
     <div className="register-wrapper">
-      <img src={Logo} alt="Logo" className="logo" />
-      <h3>پلتفرم آموزش آنلاین</h3>
       <p>جهت استفاده از پلتفرم آموزش آنلاین کلاسبن ثبت‌نام کنید.</p>
-      <p>قبلا ثبت‌نام کرده‌اید؟، وارد شوید.</p>
+      <p>
+        قبلا ثبت‌نام کرده‌اید؟،
+        <Link to="/login">وارد شوید</Link>.
+      </p>
 
       <form action="">
         <InputWithLabel

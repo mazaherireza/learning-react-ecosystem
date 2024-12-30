@@ -1,14 +1,9 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import Login from "./features/identity/login/login";
-import Register from "./features/identity/register/register";
+import router from "./router";
 
 function App() {
-  return (
-    <div className="container">
-      {/* <Login></Login> */}
-      <Register></Register>
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;
