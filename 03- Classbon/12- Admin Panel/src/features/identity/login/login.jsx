@@ -1,11 +1,18 @@
-import InputWithLabel from "@components/inputWithLabel/index";
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
-  const [mobile, setMobile] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("onSubmit is called");
+    console.log(data);
+  };
 
   return (
     <div className="login-wrapper">
@@ -15,28 +22,37 @@ const Login = () => {
         <Link to="/register">ثبت نام کنید</Link>.
       </p>
 
-      <form action="">
-        <InputWithLabel
-          lable="موبایل"
-          id="login-mobile"
-          valeu={mobile}
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <label>موبایل</label>
+        <input
           placeholder="موبایل"
-          onChange={setMobile}
-          isFocused
-        ></InputWithLabel>
+          type="text"
+          autoFocus
+          {...register("mobile", {
+            required: "موبایل الزامی است.",
+            minLength: 11,
+            maxLength: 11,
+          })}
+          className={`${errors.mobile && "invalid"}`}
+        />
 
-        <InputWithLabel
-          lable="رمزعبور"
-          id="login-password"
-          valeu={password}
+        <label>رمزعبور</label>
+        <input
           placeholder="رمزعبور"
           type="password"
-          onChange={setPassword}
-        ></InputWithLabel>
-
-        <button className="btn">وارد شوید</button>
+          {...register("password", {
+            required: "رمزعبور الزامی است.",
+            minLength: 11,
+            maxLength: 11,
+          })}
+          className={`${errors.password && "invalid"}`}
+        />
+        <button className="btn" type="submit">
+          وارد شوید
+        </button>
       </form>
     </div>
   );
 };
+
 export default Login;

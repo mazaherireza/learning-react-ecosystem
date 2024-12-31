@@ -1,12 +1,18 @@
-import InputWithLabel from "@components/inputWithLabel/index";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./register.css";
 
 const Register = () => {
-  const [mobile, setMobile] = useState("");
-  const [password, setPassword] = useState("");
-  const [repeatedPassword, setRepeatedPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="register-wrapper">
@@ -16,35 +22,70 @@ const Register = () => {
         <Link to="/login">وارد شوید</Link>.
       </p>
 
-      <form action="">
-        <InputWithLabel
-          lable="موبایل"
-          id="login-mobile"
-          valeu={mobile}
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <label>موبایل</label>
+        <input
           placeholder="موبایل"
-          onChange={setMobile}
-          isFocused
-        ></InputWithLabel>
+          type="text"
+          autoFocus
+          {...register("mobile", {
+            required: "موبایل الزامی است.",
+            minLength: 11,
+            maxLength: 11,
+          })}
+          className={`${errors.mobile && "invalid"}`}
+        ></input>
+        {errors.mobile && errors.mobile.type == "required" && (
+          <p className="error-message">{errors.mobile?.message}</p>
+        )}
 
-        <InputWithLabel
-          lable="رمزعبور"
-          id="login-password"
-          valeu={password}
+        {errors.mobile &&
+          (errors.mobile.type == "minLength" ||
+            errors.mobile.type == "maxLength") && (
+            <p className="error-message">موبایل باید یازده رقم باشد.</p>
+          )}
+
+        <label>رمز عبور</label>
+        <input
           placeholder="رمزعبور"
           type="password"
-          onChange={setPassword}
-        ></InputWithLabel>
+          {...register("password", {
+            required: "رمزعبور الزامی است.",
+          })}
+          className={`${errors.password && "invalid"}`}
+        />
+        {errors.password && errors.password.type == "required" && (
+          <p className="error-message">{errors.password?.message}</p>
+        )}
 
-        <InputWithLabel
-          lable="رمزعبور"
-          id="login-repeated-password"
-          valeu={repeatedPassword}
+        <label>تکرار رمزعبور</label>
+        <input
           placeholder="تکرار رمزعبور"
           type="password"
-          onChange={setRepeatedPassword}
-        ></InputWithLabel>
+          {...register("confirmPassword", {
+            required: "تکرار رمزعبور الزامی است.",
+            validate: (value) => {
+              if (watch("password") !== value) {
+                return "عدم تطابق با رمزعبور";
+              }
+            },
+          })}
+          className={`${errors.confirmPassword && "invalid"}`}
+        ></input>
 
-        <button className="btn">ثبت‌نام</button>
+        {errors.confirmPassword &&
+          errors.confirmPassword.type == "required" && (
+            <p className="error-message">{errors.confirmPassword?.message}</p>
+          )}
+
+        {errors.confirmPassword &&
+          errors.confirmPassword.type == "validate" && (
+            <p className="error-message">{errors.confirmPassword?.message}</p>
+          )}
+
+        <button className="btn" type="submit">
+          ثبت‌نام
+        </button>
       </form>
     </div>
   );

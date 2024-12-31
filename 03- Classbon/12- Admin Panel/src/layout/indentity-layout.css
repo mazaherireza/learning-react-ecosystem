@@ -16,3 +16,29 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.identity-layout-wrapper label {
+  margin-bottom: 0.25rem;
+  font-size: small;
+}
+
+.identity-layout-wrapper input {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: IranYekan;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.error-message {
+  font-size: x-small;
+  color: red;
+}
