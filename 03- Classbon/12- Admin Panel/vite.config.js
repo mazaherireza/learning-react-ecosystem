@@ -7,6 +7,7 @@ export default defineConfig({
     alias: {
       "@assets": resolve(__dirname, "./src/assets"),
       "@components": resolve(__dirname, "./src/components"),
+      "@core": resolve(__dirname, "./src/core"),
     },
   },
   plugins: [react()],

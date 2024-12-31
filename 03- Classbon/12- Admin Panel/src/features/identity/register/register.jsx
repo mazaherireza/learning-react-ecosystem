@@ -1,5 +1,14 @@
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useSubmit,
+  useNavigation,
+  useActionData,
+  useNavigate,
+  useRouteError,
+} from "react-router-dom";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { httpService } from "@core/http-service";
 import "./register.css";
 
 const Register = () => {
@@ -10,9 +19,27 @@ const Register = () => {
     watch,
   } = useForm();
 
+  const submitForm = useSubmit();
+
   const onSubmit = (data) => {
-    console.log(data);
+    const { confirmPassword, ...rest } = data;
+    submitForm(rest, {
+      method: "post",
+    });
   };
+
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state !== "idle";
+  const isSubmitionSuccessful = useActionData();
+  const navigate = useNavigate();
+  const routeError = useRouteError();
+
+  useEffect(() => {
+    if (isSubmitionSuccessful)
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+  }, [isSubmitionSuccessful]);
 
   return (
     <div className="register-wrapper">
@@ -83,11 +110,25 @@ const Register = () => {
             <p className="error-message">{errors.confirmPassword?.message}</p>
           )}
 
-        <button className="btn" type="submit">
-          ثبت‌نام
+        <button className="btn" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "در حال انجام عملیات" : "ثبت‌نام"}
         </button>
+
+        {isSubmitionSuccessful && (
+          <p className="alert alert-success">عملیات با موفقیت انجام شد</p>
+        )}
+        {routeError && (
+          <p className="alert alert-error"> {routeError?.message}</p>
+        )}
       </form>
     </div>
   );
 };
 export default Register;
+
+export const registerAction = async ({ request }) => {
+  const formDate = await request.formData();
+  const data = Object.fromEntries(formDate);
+  const response = await httpService.post("/Users", data);
+  return response.status == 200;
+};
