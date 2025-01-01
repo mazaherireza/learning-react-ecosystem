@@ -1,6 +1,6 @@
 @font-face {
   font-family: "IranYekan";
-  src: local("IranYekan"), url("../public/fonts/IranYekan.woff2");
+  src: local("IranYekan"), url("/fonts/IranYekan.woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,4 +16,14 @@
   margin: 0;
   box-sizing: border-box;
   font-family: IranYekan;
+}
+
+.container {
+  padding: 1rem 2rem;
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 0.5rem 1rem;
+  }
 }

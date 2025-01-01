@@ -1,9 +1,15 @@
-import "./App.css";
+import Header from "./components/Header/header";
+import Main from "./components/Main/main";
+import { AppProvider } from "./contexts/app/app-context";
+import "./core/i18n";
 
 function App() {
   return (
-    <div className="wrapper">
-      <h2>سلام دنیا!</h2>
+    <div>
+      <AppProvider>
+        <Header></Header>
+        <Main></Main>
+      </AppProvider>
     </div>
   );
 }
