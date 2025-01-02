@@ -31,12 +31,14 @@ const TheHeader = () => {
             <div className="dropdown-content" ref={ref}>
               <div
                 className="dropdown-item"
+                style={{ fontFamily: "IranYekan" }}
                 onClick={() => changeLanguage("fa")}
               >
                 فا
               </div>
               <div
                 className="dropdown-item"
+                style={{ fontFamily: "Inter" }}
                 onClick={() => changeLanguage("en")}
               >
                 en
