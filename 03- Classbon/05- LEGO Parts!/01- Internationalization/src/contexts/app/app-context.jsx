@@ -14,9 +14,11 @@ export const AppProvider = ({ children }) => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    i18n.changeLanguage(state.language);
-    localStorage.setItem("language", state.language);
-    document.dir = state.language == "fa" ? "rtl" : "ltr";
+    const { language } = state;
+    i18n.changeLanguage(language);
+    localStorage.setItem("language", language);
+    const $ = document;
+    $.dir = language == "fa" ? "rtl" : "ltr";
   }, [state.language]);
 
   const changeLanguage = (language) => {

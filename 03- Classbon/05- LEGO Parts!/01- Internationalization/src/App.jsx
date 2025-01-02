@@ -1,16 +1,28 @@
-import Header from "./components/Header/header";
-import Main from "./components/Main/main";
-import { AppProvider } from "./contexts/app/app-context";
+import TheHeader from "./components/TheHeader/the-header";
+import TheMain from "./components/TheMain/the-main";
+import { useEffect } from "react";
+import { useAppContext } from "@contexts/app/app-context";
 import "./core/i18n";
 
 function App() {
+  const { language } = useAppContext();
+  useEffect(() => {
+    const $ = document;
+    const head = $.head;
+    const link = $.createElement("link");
+    link.rel = "stylesheet";
+    link.href = `/css/${language}.css`;
+    head.appendChild(link);
+
+    return () => {
+      head.removeChild(link);
+    };
+  }, [language]);
   return (
-    <div>
-      <AppProvider>
-        <Header></Header>
-        <Main></Main>
-      </AppProvider>
-    </div>
+    <>
+      <TheHeader></TheHeader>
+      <TheMain></TheMain>
+    </>
   );
 }
 

@@ -1,11 +1,11 @@
 import { TbLanguageHiragana } from "react-icons/tb";
 import { useState, useRef, useEffect } from "react";
-import { useAppContext } from "../../contexts/app/app-context";
-import "./header.css";
+import { useAppContext } from "@contexts/app/app-context";
+import "./the-header.css";
 
 const $ = document;
 
-const Header = () => {
+const TheHeader = () => {
   const [show, setShow] = useState(false);
   const ref = useRef();
   const { language, changeLanguage } = useAppContext();
@@ -25,7 +25,7 @@ const Header = () => {
       <div className="container">
         <div className="icon-wrapper" onClick={() => setShow(true)}>
           <TbLanguageHiragana style={{ fontSize: "2rem", cursor: "pointer" }} />
-          <p>{language}</p>
+          <p>{language == "fa" ? "فا" : "En"}</p>
 
           {show && (
             <div className="dropdown-content" ref={ref}>
@@ -49,4 +49,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default TheHeader;

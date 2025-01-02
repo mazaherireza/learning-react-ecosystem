@@ -1,7 +1,6 @@
-import "./main.css";
 import { useTranslation } from "react-i18next";
 
-const Main = () => {
+const TheMain = () => {
   const { t } = useTranslation();
   return (
     <div className="container">
@@ -10,4 +9,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default TheMain;
