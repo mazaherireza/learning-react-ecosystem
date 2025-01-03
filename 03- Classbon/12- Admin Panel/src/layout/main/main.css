@@ -1,0 +1,11 @@
+.main-wrapper .container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  gap: 1rem;
+}
+
+.main-wrapper .main {
+  display: grid;
+  grid-template-rows: 12fr 1fr;
+}

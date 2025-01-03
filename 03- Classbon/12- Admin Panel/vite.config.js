@@ -8,6 +8,7 @@ export default defineConfig({
       "@assets": resolve(__dirname, "./src/assets"),
       "@components": resolve(__dirname, "./src/components"),
       "@core": resolve(__dirname, "./src/core"),
+      "@helpers": resolve(__dirname, "./src/helpers"),
     },
   },
   plugins: [react()],
