@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layout/main/main";
-import Courses from "./pages/courses/courses";
+import Courses, { coursesLoader } from "./pages/courses/courses";
 import IdentityLayout from "./layout/identity/identity/";
 import Login, { loginAction } from "./features/identity/login/login";
 import Register, {
@@ -15,6 +15,7 @@ const router = createBrowserRouter([
       {
         element: <Courses />,
         index: true,
+        loader: coursesLoader,
       },
     ],
   },

@@ -16,7 +16,7 @@ httpInterceptedService.interceptors.request.use(
     const token = localStorage.getItem("token");
     if (token)
       config.headers = {
-        Authorization: `Beares ${token}`,
+        Authorization: `Bearer ${token}`,
       };
     return config;
   },

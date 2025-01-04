@@ -9,6 +9,7 @@ export default defineConfig({
       "@components": resolve(__dirname, "./src/components"),
       "@core": resolve(__dirname, "./src/core"),
       "@helpers": resolve(__dirname, "./src/helpers"),
+      "@features": resolve(__dirname, "./src/features"),
     },
   },
   plugins: [react()],
