@@ -10,11 +10,11 @@ const Sidebar = () => {
       <ul>
         <h5>مدیریت دوره‌ها</h5>
         <li>
-          <Link>همه دوره‌ها</Link>
+          <Link to={"/"}>همه دوره‌ها</Link>
         </li>
 
         <li>
-          <Link>دسته‌بندی دوره‌ها</Link>
+          <Link to={"/course-categories"}>دسته‌بندی دوره‌ها</Link>
         </li>
 
         <li>
