@@ -1,6 +1,6 @@
 import { httpInterceptedService } from "@core/http-service";
 import { useLoaderData } from "react-router-dom";
-import { convertEnNumToFa } from "../../../../helpers/convertEnNumToFa";
+import { convertEnNumToFa } from "@helpers/convertEnNumToFa";
 import "./course-details.css";
 
 const CourseDetails = () => {

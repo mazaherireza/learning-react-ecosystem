@@ -1,3 +1,7 @@
+.course-categories-wrapper {
+  position: relative;
+}
+
 .course-categories-wrapper button {
   background-color: var(--primary);
   color: white;
