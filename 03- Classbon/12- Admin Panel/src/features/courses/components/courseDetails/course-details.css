@@ -41,6 +41,7 @@
 
 .course-details-wrapper .description {
   margin-top: 2rem;
+  text-align: justify;
 }
 
 .course-details-wrapper .price {
