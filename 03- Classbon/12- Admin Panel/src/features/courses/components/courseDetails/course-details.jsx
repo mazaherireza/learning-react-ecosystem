@@ -6,7 +6,7 @@ const CourseDetails = () => {
   return <div className="course-details-wrapper">{data.id}</div>;
 };
 
-export const CourseDetailsLoader = async ({ params }) => {
+export const courseDetailsLoader = async ({ params }) => {
   const { data } = httpInterceptedService.get(`/Course/by-id/${params.id}`);
   return data;
 };

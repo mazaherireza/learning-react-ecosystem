@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layout/main/main";
 import Courses, { coursesLoader } from "./pages/courses/courses";
+import CourseDetails, {
+  courseDetailsLoader,
+} from "./features/courses/components/courseDetails/course-details";
 import CourseCategories from "./pages/courseCategories/course-categories";
 import IdentityLayout from "./layout/identity/identity/";
 import Login, { loginAction } from "./features/identity/login/login";
@@ -21,6 +24,11 @@ const router = createBrowserRouter([
       {
         path: "course-categories",
         element: <CourseCategories />,
+      },
+      {
+        path: "courses/:id",
+        element: <CourseDetails />,
+        loader: courseDetailsLoader,
       },
     ],
   },
