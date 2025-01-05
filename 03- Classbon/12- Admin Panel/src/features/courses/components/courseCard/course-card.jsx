@@ -1,9 +1,10 @@
-import "./course-card.css";
 import { convertEnNumToFa } from "@helpers/convertEnNumToFa";
+import { Link } from "react-router-dom";
+import "./course-card.css";
 
-const CourseCard = ({ coverImageUrl, title, duration }) => {
+const CourseCard = ({ id, coverImageUrl, title, duration }) => {
   return (
-    <div className="course-card-wrapper">
+    <Link className="course-card-wrapper" to={`courses/${id}`}>
       <div className="img-wrapper">
         <img src={coverImageUrl} alt={title} />
       </div>
@@ -13,7 +14,7 @@ const CourseCard = ({ coverImageUrl, title, duration }) => {
           <h6>{convertEnNumToFa(duration)} ساعت</h6>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
