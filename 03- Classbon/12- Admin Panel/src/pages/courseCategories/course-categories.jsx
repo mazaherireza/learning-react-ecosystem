@@ -21,8 +21,12 @@ const CourseCategories = () => {
   );
 };
 
-export const courseCategoriesLoader = async () => {
-  const courseCategories = httpInterceptedService.get("/CourseCategory/sieve");
+export const courseCategoriesLoader = async ({ request }) => {
+  const page = new URL(request.url).searchParams.get("page") || 1;
+  const PAGE_SIZE = 5;
+  const courseCategories = httpInterceptedService.get(
+    `/CourseCategory/sieve?page=${page}&pageSize=${PAGE_SIZE}`
+  );
   return {
     courseCategories,
   };
