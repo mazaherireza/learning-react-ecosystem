@@ -1,7 +1,9 @@
 import "./category-card.css";
 
-const CategoryCard = ({ id, name }) => {
-  const handleDelete = () => {};
+const CategoryCard = ({ id, name, setShowDeleteModal }) => {
+  const handleDelete = () => {
+    setShowDeleteModal(true);
+  };
 
   const handleEdit = () => {};
 
