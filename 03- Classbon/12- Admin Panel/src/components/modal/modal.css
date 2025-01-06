@@ -73,3 +73,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .modal-wrapper .modal-content {
+    width: 50%;
+  }
+}
