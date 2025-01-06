@@ -4,14 +4,14 @@ import "./modal.css";
 
 const Modal = ({ isOpen, open, title, body, children }) => {
   return (
-    <div className="modal" onClick={() => open(false)}>
+    <div className="modal">
       {isOpen &&
         createPortal(
-          <div
-            className="modal-wrapper"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="modal-content">
+          <div className="modal-wrapper" onClick={() => open(false)}>
+            <div
+              className="modal-content"
+              onClick={(event) => event.stopPropagation()}
+            >
               <div className="modal-header">
                 <div className="title">{title}</div>
                 <BiX
