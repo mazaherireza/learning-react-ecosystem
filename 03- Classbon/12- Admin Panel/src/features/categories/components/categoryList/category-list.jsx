@@ -4,6 +4,7 @@ import Modal from "@components/modal/modal";
 import { useState } from "react";
 import { httpInterceptedService } from "@core/http-service";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./category-list.css";
 
 const CategoryList = ({ data, totalRecords }) => {
@@ -13,13 +14,31 @@ const CategoryList = ({ data, totalRecords }) => {
 
   const handleOk = async () => {
     setShowDeleteModal(false);
-    const { status } = await httpInterceptedService.delete(
+    const response = httpInterceptedService.delete(
       `/CourseCategory/${categoryId}`
     );
-    if (status == 200) {
-      const { pathname, search } = new URL(location.href);
-      navigate(pathname + search);
-    }
+
+    toast.promise(
+      response,
+      {
+        pending: "در حال انجام عملیات ...",
+        success: {
+          render() {
+            const { pathname, search } = new URL(location.href);
+            navigate(pathname + search);
+            return "عملیات با موفقیت انجام شد.";
+          },
+        },
+        error: {
+          render({ data }) {
+            return data.response.data.code;
+          },
+        },
+      },
+      {
+        position: toast.POSITION.BOTTOM_LEFT,
+      }
+    );
   };
 
   return (
