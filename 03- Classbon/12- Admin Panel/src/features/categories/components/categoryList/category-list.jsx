@@ -36,7 +36,7 @@ const CategoryList = ({ data, totalRecords }) => {
         },
       },
       {
-        position: toast.POSITION.BOTTOM_LEFT,
+        position: "bottom_left",
       }
     );
   };

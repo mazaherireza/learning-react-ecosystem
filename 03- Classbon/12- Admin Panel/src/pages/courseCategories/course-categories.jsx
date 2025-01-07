@@ -1,14 +1,24 @@
 import { httpInterceptedService } from "@core/http-service";
 import { useLoaderData, Await } from "react-router-dom";
-import { Suspense } from "react";
+import { useState, Suspense } from "react";
 import CategoryList from "@features/categories/components/categoryList/category-list";
+import AddOrUpdateCategory from "@features/categories/components/add-or-update-category/add-or-update-category";
 import "./course-categories.css";
 
 const CourseCategories = () => {
   const { courseCategories } = useLoaderData();
+  const [showAddCategory, setShowAddCategory] = useState(false);
+
   return (
     <div className="course-categories-wrapper">
-      <button>افزودن دسته‌بندی جدید</button>
+      <button onClick={() => setShowAddCategory(true)}>
+        افزودن دسته‌بندی جدید
+      </button>
+      {showAddCategory && (
+        <AddOrUpdateCategory
+          setShowAddCategory={setShowAddCategory}
+        ></AddOrUpdateCategory>
+      )}
       <Suspense fallback={<p>در حال دریافت اطلاعات</p>}>
         <Await
           resolve={courseCategories}
