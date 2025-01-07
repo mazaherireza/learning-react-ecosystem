@@ -7,6 +7,7 @@ import CourseDetails, {
 import CourseCategories, {
   courseCategoriesLoader,
 } from "./pages/courseCategories/course-categories";
+import { CategoryProvider } from "./features/categories/components/categoryList/category-context";
 import IdentityLayout from "./layout/identity/identity/";
 import Login, { loginAction } from "./features/identity/login/login";
 import Register, {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "course-categories",
-        element: <CourseCategories />,
+        element: (
+          <CategoryProvider>
+            <CourseCategories />
+          </CategoryProvider>
+        ),
         loader: courseCategoriesLoader,
       },
       {
