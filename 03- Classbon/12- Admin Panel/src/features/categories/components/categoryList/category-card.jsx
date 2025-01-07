@@ -1,12 +1,16 @@
+import { useCategoryContext } from "./category-context";
 import "./category-card.css";
 
 const CategoryCard = ({ id, name, setShowDeleteModal, setCategoryId }) => {
+  const { setCategory } = useCategoryContext();
   const handleDelete = () => {
     setShowDeleteModal(true);
     setCategoryId(id);
   };
 
-  const handleEdit = () => {};
+  const handleEdit = () => {
+    setCategory({ id, name });
+  };
 
   return (
     <div className="category-card-wrapper">

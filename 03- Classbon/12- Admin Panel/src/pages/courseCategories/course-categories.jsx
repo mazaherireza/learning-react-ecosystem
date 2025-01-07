@@ -2,19 +2,20 @@ import { httpInterceptedService } from "@core/http-service";
 import { useLoaderData, Await } from "react-router-dom";
 import { useState, Suspense } from "react";
 import CategoryList from "@features/categories/components/categoryList/category-list";
+import { useCategoryContext } from "@features/categories/components/categoryList/category-context";
 import AddOrUpdateCategory from "@features/categories/components/add-or-update-category/add-or-update-category";
 import "./course-categories.css";
 
 const CourseCategories = () => {
   const { courseCategories } = useLoaderData();
   const [showAddCategory, setShowAddCategory] = useState(false);
-
+  const { category } = useCategoryContext();
   return (
     <div className="course-categories-wrapper">
       <button onClick={() => setShowAddCategory(true)}>
         افزودن دسته‌بندی جدید
       </button>
-      {showAddCategory && (
+      {(showAddCategory || category) && (
         <AddOrUpdateCategory
           setShowAddCategory={setShowAddCategory}
         ></AddOrUpdateCategory>
