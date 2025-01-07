@@ -14,7 +14,7 @@
 }
 
 .add-or-update-category-wrapper input {
-  width: 50%;
+  width: 80%;
   padding: 0.25rem 0.5rem;
 }
 
@@ -28,6 +28,6 @@
 
 @media screen and (max-width: 425px) {
   .add-or-update-category-wrapper input {
-    width: 80%;
+    width: 90%;
   }
 }
