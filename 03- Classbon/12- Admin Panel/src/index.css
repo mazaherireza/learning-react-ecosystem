@@ -53,7 +53,7 @@ a {
   text-decoration: none;
 }
 
-.active_link {
+.active-link {
   color: var(--primary);
 }
 

@@ -3,7 +3,7 @@ import "./sidebar.css";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-  const classNameFunc = ({ isActive }) => (isActive ? "active_link" : "");
+  const classNameFunc = ({ isActive }) => (isActive ? "active-link" : "");
   
   return (
     <nav className="sidebar-wrapper">

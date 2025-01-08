@@ -13,6 +13,7 @@ import Login, { loginAction } from "./features/identity/login/login";
 import Register, {
   registerAction,
 } from "./features/identity/register/register";
+import NotFound from "./pages/notFound/not-found";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             <CourseCategories />
           </CategoryProvider>
         ),
-        loader: courseCategoriesLoader, 
+        loader: courseCategoriesLoader,
       },
       {
         path: "courses/:id",
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         errorElement: <Register />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
