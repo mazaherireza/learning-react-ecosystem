@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             <CourseCategories />
           </CategoryProvider>
         ),
-        loader: courseCategoriesLoader,
+        loader: courseCategoriesLoader, 
       },
       {
         path: "courses/:id",

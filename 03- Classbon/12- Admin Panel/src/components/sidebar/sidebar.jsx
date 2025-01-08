@@ -1,8 +1,10 @@
 import logo from "@assets/images/Logo.svg";
 import "./sidebar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
+  const classNameFunc = ({ isActive }) => (isActive ? "active_link" : "");
+  
   return (
     <nav className="sidebar-wrapper">
       <img src={logo} alt="Logo" />
@@ -10,24 +12,28 @@ const Sidebar = () => {
       <ul>
         <h4>مدیریت دوره‌ها</h4>
         <li>
-          <Link>همه دوره‌ها</Link>
+          <NavLink to="/" className={classNameFunc}>
+            همه دوره‌ها
+          </NavLink>
         </li>
 
         <li>
-          <Link>دسته‌بندی دوره‌ها</Link>
+          <NavLink to="/course-categories" className={classNameFunc}>
+            دسته‌بندی دوره‌ها
+          </NavLink>
         </li>
 
         <li>
-          <Link>تخفیف دوره‌ها</Link>
+          <NavLink>تخفیف دوره‌ها</NavLink>
         </li>
 
         <h4>مدیریت کاربران</h4>
         <li>
-          <Link>مدیریت مدرس‌ها</Link>
+          <NavLink>مدیریت مدرس‌ها</NavLink>
         </li>
 
         <li>
-          <Link>مدیریت دانشجوها</Link>
+          <NavLink>مدیریت دانشجوها</NavLink>
         </li>
       </ul>
     </nav>

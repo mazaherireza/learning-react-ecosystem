@@ -56,6 +56,7 @@ const AddOrUpdateCategory = ({ setShowAddCategory }) => {
     setShowAddCategory(false);
     if (category) setCategory(null);
   };
+
   return (
     <div className="add-or-update-category-wrapper">
       <form onSubmit={handleSubmit(onSubmit)}>
