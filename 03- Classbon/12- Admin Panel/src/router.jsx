@@ -14,11 +14,13 @@ import Register, {
   registerAction,
 } from "./features/identity/register/register";
 import NotFound from "./pages/notFound/not-found";
+import UnhandledException from "./pages/unhandledException/unhandled-exception";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <UnhandledException />,
     children: [
       {
         element: <Courses />,
