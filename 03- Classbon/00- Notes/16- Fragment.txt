@@ -1,9 +1,0 @@
-Fragment
----------
-import { Fragment } from "react";
-...
-return(
-  <Fragment>
-    ...
-  </Fragment>
-)
