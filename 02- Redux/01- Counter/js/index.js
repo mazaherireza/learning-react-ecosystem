@@ -9,12 +9,12 @@ const decBtn = $.querySelector("#dec");
 const resetBtn = $.querySelector("#reset");
 const incBtn = $.querySelector("#inc");
 
-const reducer = (state = 13, { type }) => {
+const reducer = (state = 0, { type }) => {
   switch (type) {
     case dec:
       return state - 1;
     case reset:
-      return 13;
+      return 0;
     case inc:
       return state + 1;
     default:
