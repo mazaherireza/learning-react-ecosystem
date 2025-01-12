@@ -1,0 +1,42 @@
+.container {
+  height: 25dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--primary);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.counter,
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  font-size: xx-large;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.btns {
+  column-gap: 0.5rem;
+}
+
+.btns button {
+  padding: 0.5rem 0.75rem;
+  color: var(--primary);
+  background-color: lightgray;
+  font-size: small;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
