@@ -7,4 +7,6 @@ const root = createRoot(document.getElementById("root"));
 
 const render = () => root.render(<App />);
 render();
-store.subscribe(render);
+const unsubscribe = store.subscribe(render);
+
+setTimeout(() => unsubscribe(), 25_000);
