@@ -1,0 +1,24 @@
+body {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+main {
+  background: #bf40bf linear-gradient(to left, #fff, #bf40bf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#playground {
+  padding: 1rem;
+}
+
+#playground #playground-title {
+  margin-bottom: 1rem;
+}
+
+#playground h4 {
+  margin-bottom: 1rem;
+}
