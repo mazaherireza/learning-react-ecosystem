@@ -1,0 +1,42 @@
+Redux CDN
+--------------------
+reudx/types.js
+
+types.js
+--------
+const DEC = "COUNTER/DEC"
+...
+export { DEC, ...}
+
+redux/creators.js
+
+creators.js
+-----------
+import { DEC, ... } from "./types"
+
+const decAction = () => ({ type: DEC })
+...
+export { decAction, ... }
+
+index.js
+--------
+import { DEC, ... } from "./redux/types";
+import { decAction, ... } from "./redux/creators";
+...
+const reduce = (state = 0, { type }) => {
+  switch(type) {
+    case DEC:
+      return state - 1;
+    case INC 
+      ...
+    default:
+      return state
+  }
+}
+
+const store = Redux.createStore(reducer);
+...
+store.getState();
+
+store.dispatch(decAction())
+...
