@@ -1,0 +1,19 @@
+npm i redux
+
+redux/stores.js
+
+store.js
+--------
+import { legacy_createStore } from "redux";
+import reducer from "./reducer";
+
+const store = legacy_createStore(reducer);
+
+index.js
+--------
+...
+const render = () => {
+  root.render(<App />)
+}
+render();
+store.subscribe(render);
