@@ -1,0 +1,46 @@
+redux/types.js
+
+types.js
+--------
+const ADD = "TODO/ADD"
+
+export { ADD, ...}
+
+redux/creators.js
+
+creators.js
+-----------
+import { ADD, ... } from "./types"
+
+const removeAction = (_id) => ({ type: REMOVE, payload: _id});
+
+export { ..., removeAction }
+
+js/redux.js
+
+redux.js
+--------
+import { ADD } from "./types"
+
+const reducer = (state=[], action) => {
+  const { type, payload } = action;
+  switch(type) {
+    case ADD: 
+      return [...state, payload]
+    ...
+  }
+}
+
+const createStore = (reducer) => {
+  let state;
+  const dispatch = action => { state = reducer(state, action) };
+  const getState = () => state;
+  return { dispatch, getState }
+};
+
+index.js
+--------
+...
+store.dispatch(addAction(...));
+...
+const store = createStore(reducer);
