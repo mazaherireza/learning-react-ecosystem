@@ -1,0 +1,9 @@
+app.js
+------
+...
+const store = createStore(combineReducer({
+  orders: orderReducer,
+  users: userReducer,
+}))
+
+store.dispatch(addUserAction({ username: "rezamazaheri", email: "rezamazaheri@gmail.com" }));
