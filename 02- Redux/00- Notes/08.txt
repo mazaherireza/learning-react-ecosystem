@@ -1,0 +1,15 @@
+Currying in JavaScript transforms a function with multiple arguments into a 
+nested series of functions, each taking a single argument. <---------- **
+
+1. ... avoid passing the same variable again and again.
+2. ... create a higher order function.
+
+const sum = (a) => {
+  return (b) => {
+    return a + b
+  }
+}
+
+const sum = a => b => a + b
+
+console.log(sum(1001)(2002));
