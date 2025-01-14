@@ -1,0 +1,15 @@
+Deriving Data
+-------------
+We Specifically recommend that Redux apps should keep the Redux state minimal,
+and derive additional values from that state whenever possible.
+
+...
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  // Derive the data while rendering
+  const allTodosCompleted = todos.every(todo => todo.completed)
+}
+
+...
+Calculating Derived Data with Selectors
+...
