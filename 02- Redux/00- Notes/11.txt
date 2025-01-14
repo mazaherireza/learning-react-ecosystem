@@ -1,0 +1,42 @@
+Redux-Thunk
+-----------
+"thunk" <------ a piece of code that does some delayed work
+
+A thunk function is a function that accepts 2 arguments: 
+the Redux store "dispatch" method 
+and the Redux store "getState" method.
+
+Thunk middleware for Redux. 
+It allows writing functions with logic inside that 
+can interact with a Redux store's "dispatch" and "getState" methods.
+
+npm i redux-thunk
+....
+
+app.js
+------
+...
+import thunk from "redux-thunk";
+...
+const store = createStore(combinerReducers({}), applyMiddleware(thunk))
+...
+store.dispatch(() => {}); 
+
+store.dispatch(async() => {}) <---------------- (Pass function to dispatch) Thanks to thunk!
+
+users.js
+--------
+...
+export const callFetchUsersAction = (URL) => {
+  return (dispatch) => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) => dispatch(successfulFetchUsersAction(data))) <---------- **
+      .catch((error) => dispatch(failedFetchUsersAction(error))); <---------- **
+  };
+};
+
+index.js
+---------
+...
+store.dispatch(callFetchUsersAction("https://fakestoreapi.com/users"));
