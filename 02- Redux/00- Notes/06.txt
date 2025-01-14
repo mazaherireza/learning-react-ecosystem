@@ -16,4 +16,7 @@ const render = () => {
   root.render(<App />)
 }
 render();
-store.subscribe(render);
+const unsubscribe = store.subscribe(render);
+
+setTimeout(() => { unsubscribe(); }, 2000)
+
