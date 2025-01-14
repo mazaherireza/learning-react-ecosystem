@@ -50,15 +50,15 @@ newTodo.addEventListener("keydown", (event) => {
   }
 });
 
-const reducer = (state = [], { type, title }) => {
+const reducer = (state = [], { type, payload }) => {
   switch (type) {
     case add: {
       const copy = [...state];
-      copy.push(title);
+      copy.push(payload);
       return copy;
     }
     case remove: {
-      return [...state].filter((todoTitle) => todoTitle != title);
+      return [...state].filter((todoTitle) => todoTitle != payload);
     }
     default:
       return state;
