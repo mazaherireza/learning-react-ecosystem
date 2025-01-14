@@ -1,0 +1,22 @@
+Middleware is a powerful tool that allows you to extend the functionality 
+of your Redux app and handle tasks such as making API calls, 
+logging actions, persisting the state of the store, and simplifying async logic.
+
+                       API, ...
+Action -----------> Middleware ----------> Reducer
+
+const logger = ({ getState, dispatch }, next, action) => {}
+
+const logger = store => next => action => { next(action) }
+
+app.js
+------
+import { applyMiddleware } from "redux";
+...
+const store = createStore(combileReducers({}), applyMiddleware(logger));
+-----------------
+... applyMiddleware(logger({ mode: "Development" })) ...
+
+logger.js
+---------
+const logger = (params) => ({ getState, dispatch }) => ...
