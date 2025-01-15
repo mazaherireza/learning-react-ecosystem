@@ -1,0 +1,70 @@
+TERMINAL
+--------
+npm i redux react-redux
+
+redux/store.js
+
+store.js
+--------
+import { legacy_createStore } from "redux";
+...
+const store = legacy_createStore(reducer);
+
+export default store;
+
+main.jsx
+--------
+...
+import { Provider } from "react-redux";
+import store from "./redux/store"
+...
+ <Provider store={store}>
+   <App />
+ </Provider>
+
+components/Books
+
+Books.jsx
+----------
+...
+import { connect } from "react-redux";
+...
+const Books = (props) => {
+  ...
+}
+
+const mapStateToProps = (state) => {
+  return({ books: state.books })
+}
+
+export default connect(mapStateToProps)(Books)
+-------------------------------------
+Books.jsx
+------------
+import { addBookAction } from "../redux/store/books";
+...
+const Books = (props) => {
+  ...
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return({
+    addBook: () => dispatch(addBookAction({ title: "1984"}))    
+  })
+}
+
+...
+export default connect(mapStateToProps, mapDispatchToProps)(Books);
+
+--------------------
+...
+export default connect(null, mapDispatchToProps)(Books)
+
+--------------------
+Books.jsx
+...
+import { useSelector, useDispatch } from "react-redux";
+...
+const books = useSelector(state => state.books);
+const dispatch = useDispatch();
+...
