@@ -1,0 +1,74 @@
+TERMINAL
+--------
+npm install @reduxjs/toolkit
+
+store.js
+--------
+import { configureStore } from "@reduxjs/toolkit"; <-------------- **
+// import { composeWithDevTools } from "@redux-devtools/extension";
+
+// const store = configureStore(todosReducer, composeWithDevTools())
+...
+const store = configureStore({
+  reducer: todosReducer <---------------- **
+});
+
+export default store;
+-------------------------------------
+import { createAction } from "@reduxjs/toolkit";
+
+const createTodoAction = createAction("TODO/CREATE")
+console.log(createTodoAction.type)
+
+const reducer = (state = [], action) => {
+ const { type, payload } = action;
+  switch(type) {
+    case createTodoAction.type: 
+     return [...state, payload]
+  }
+}
+
+--------------------------------------
+import { createAction, createReducer } from "@reduxjs/toolkit";
+
+export const createTodo = createAction("CREATE_TODO");
+export const removeTodo = createAction("REMOVE_TODO");
+
+export default createReducer([], {
+  [createTodo.type]: (state, { payload }) => {
+    state.push(payload)
+  }
+})
+------------------------------------------------
+import { createSlice } from "@reduxjs/toolkit";
+
+const slice = createSlice({
+  name: "Todos",
+  initialState: [],
+  reducers: {
+    addTodo: (todos, action) => {
+      todos.push(action.payload)
+    },
+    ...
+  }
+})
+
+export const { addTodo, removeTodo } = slice.actions;
+export default slice.reducer
+---------------------------------------------
+createAsyncThunk <--------------- **
+...
+const fetchUsers = createAsyncThunk(
+  "Users/fetchUsers",
+  async (URL) => { <------------------ ?!
+    return fetch(URL).then(response => response.json()).then(data => data).catch(error => console.error(error))
+  }
+)
+
+const slice = createSlice({
+  name: "Todos",
+  ..
+  extraReducers: (builder) => {
+    builder.addCase(getTodosFromServer.fulfilled)
+  }
+})
