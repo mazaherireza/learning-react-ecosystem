@@ -1,5 +1,10 @@
 {
   "header": {
-    "courses": "Courses"
+    "courses": "Courses",
+    "leaderboard": "leaderboard",
+    "code bits": "Code Bits",
+    "discuss": "Discuss",
+    "blog": "Blog",
+    "go pro": "Go PRO"
   }
 }

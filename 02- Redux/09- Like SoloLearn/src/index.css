@@ -6,7 +6,11 @@
 }
 
 :root {
-  --primary: #d90007;
+  --yellow: #ffa310;
+  --red: #d90007;
+  --gray-100: #f9f9fa;
+  --white: #fff;
+  --primary: #2d3846;
 }
 
 *,
@@ -32,12 +36,22 @@ button {
   outline: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   padding: 1.5rem 3rem;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .container {
     padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 1rem;
   }
 }
