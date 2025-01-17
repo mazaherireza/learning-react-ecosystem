@@ -9,8 +9,10 @@
   --yellow: #ffa310;
   --red: #d90007;
   --gray-100: #f9f9fa;
+  --gray-600: #bac5d5;
   --white: #fff;
   --primary: #2d3846;
+  --secondary: #222222;
 }
 
 *,
@@ -22,7 +24,7 @@
 }
 
 body {
-  min-height: 100dvh;
+  min-height: 100vh;
   font-family: Inter;
 }
 

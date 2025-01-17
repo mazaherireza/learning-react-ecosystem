@@ -6,10 +6,10 @@ import { types } from "./constants";
 const LanguageContext = createContext();
 
 const initialState = {
-  language: localStorage.getItem("language") || "en",
+  language: localStorage.getItem("language") || "de",
 };
 
-export const languageProvider = ({ children }) => {
+export const LanguageProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { i18n } = useTranslation();
 
