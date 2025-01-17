@@ -1,9 +1,15 @@
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 import TheHeader from "./components/the-header/TheHeader";
-import "./i18n";
+import "./core/i18n";
 import "./App.css";
 
 function App() {
-  return <TheHeader></TheHeader>;
+  return (
+    <RouterProvider router={router}>
+      <TheHeader></TheHeader>
+    </RouterProvider>
+  );
 }
 
 export default App;
