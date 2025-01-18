@@ -19,7 +19,7 @@ const TheHeader = () => {
         <nav className="large-device">
           <ul>
             <li>
-              <Link>{t("header.courses")}</Link>
+              <Link to="/courses">{t("header.courses")}</Link>
             </li>
             <li>
               <Link>{t("header.leaderboard")}</Link>
