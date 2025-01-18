@@ -5,7 +5,7 @@
     "code bits": "Code Bits",
     "discuss": "Diskutieren",
     "blog": "Blog",
-    "go pro": "Go PRO"
+    "go pro": "Gehen PRO"
   },
   "footer": {
     "learning paths": "Lernpfade",
@@ -36,5 +36,8 @@
     "contact": "Kontakt",
     "careers": "Karriere",
     "terms of use": "Nutzungsbedingungen"
+  },
+  "profile": {
+    "start today": "Heute Starten"
   }
 }

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import LargeLogo from "@/assets/LargeLogo.svg";
-import SmallLogo from "@/assets/SmallLogo.svg";
-import Profile from "@/assets/Profile.png";
+import LargeLogo from "@/assets/header/LargeLogo.svg";
+import SmallLogo from "@/assets/header/SmallLogo.svg";
+import Profile from "@/assets/header/Profile.png";
 import { FiMenu, FiX, FiChevronRight } from "react-icons/fi";
 import { useState } from "react";
 import { Link } from "react-router-dom";

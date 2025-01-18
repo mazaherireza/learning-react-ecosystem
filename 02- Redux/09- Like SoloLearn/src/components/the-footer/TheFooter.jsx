@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { languages } from "../constants";
+import { languages } from "@/constants/languages";
 import { useLanguageContext } from "@/core/contexts/language/context";
 import { Link } from "react-router-dom";
 import "./Thefooter.css";
@@ -132,7 +132,7 @@ const TheFooter = () => {
 
             <section className="copyright">
               <span id="sololearn">Sololearn</span>
-              <p>&copy; 2026</p>
+              <p>&copy; 2025</p>
             </section>
           </div>
         </section>

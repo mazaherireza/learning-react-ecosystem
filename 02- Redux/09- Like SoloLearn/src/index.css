@@ -13,7 +13,12 @@
   --white: #fff;
   --primary: #2d3846;
   --secondary: #222222;
+  --secondary-500: #6b7f99;
   --secondary-600: #1f1e28;
+  --secondary-900: #000a23;
+  --blue: #2493df;
+  --blue-800: #eaf0f3;
+  --blue-900: #f2f5f7;
 }
 
 *,
