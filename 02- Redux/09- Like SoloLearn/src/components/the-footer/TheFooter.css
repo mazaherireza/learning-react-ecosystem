@@ -11,8 +11,12 @@ footer .catalogue .container {
 }
 
 footer .footer-title {
-  color: white;
+  color: var(--white);
   margin-bottom: 0.75rem;
+}
+
+footer section ul li {
+  margin-bottom: 0.25rem;
 }
 
 footer li a {
@@ -39,7 +43,7 @@ footer .links .container ul {
 footer .copyright {
   display: flex;
   gap: 0.5rem;
-  color: white;
+  color: var(--white);
 }
 
 @media screen and (max-width: 425px) {
