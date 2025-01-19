@@ -5,7 +5,7 @@ import Certificate from "@/assets/course/CertificateDisabled.png";
 import "./CourseDetails.css";
 import { courses } from "@/constants/courses";
 
-const CourseDetails = ({ img, title, description }) => {
+const CourseDetails = () => {
   const { id } = useParams();
   const { t } = useTranslation();
 
@@ -14,7 +14,7 @@ const CourseDetails = ({ img, title, description }) => {
       <div className="container">
         <div className="inner-wrapper">
           <Collapsible {...courses[0]}></Collapsible>
-          <div className="certificate">
+          <div className="certificate-section">
             <div className="certificate-img-wrapper">
               <img src={Certificate} alt="Certificate" />
             </div>

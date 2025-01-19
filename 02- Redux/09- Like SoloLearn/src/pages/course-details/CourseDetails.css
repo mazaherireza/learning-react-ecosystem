@@ -24,3 +24,19 @@
   width: 100%;
   background-color: var(--blue);
 }
+
+.course-details-wrapper .certificate-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.certificate-section .certificate-title {
+  color: var(--secondary);
+}
+
+.certificate-section .certificate-description {
+  color: var(--secondary-500);
+  font-size: small;
+}
