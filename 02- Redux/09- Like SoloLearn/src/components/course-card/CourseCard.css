@@ -7,12 +7,24 @@
   justify-content: space-between;
   gap: 2rem;
   box-shadow: 0.1rem 0.2rem 0.1rem var(--secondary-500);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
+  transition: transform 0.5s linear;
+  -webkit-transition: transform 0.5s linear;
+  -moz-transition: transform 0.5s linear;
+  -ms-transition: transform 0.5s linear;
+  -o-transition: transform 0.5s linear;
+}
+
+.course-card-wrapper:hover {
+  transform: translateY(-0.5rem);
+  -webkit-transform: translateY(-0.5rem);
+  -moz-transform: translateY(-0.5rem);
+  -ms-transform: translateY(-0.5rem);
+  -o-transform: translateY(-0.5rem);
 }
 
 .course-card-wrapper .course-title {
