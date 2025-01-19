@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layout/main/Main";
-import Profile from "./components/profile/Profile";
+import Profile from "./pages/profile/Profile";
 import Courses from "./pages/courses/Courses";
-import CourseDetails from "./components/course-details/CourseDetails";
+import CourseDetails from "./pages/course-details/CourseDetails";
 
 const router = createBrowserRouter([
   {
