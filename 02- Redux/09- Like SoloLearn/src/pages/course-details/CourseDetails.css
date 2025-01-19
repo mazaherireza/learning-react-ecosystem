@@ -33,10 +33,9 @@
 }
 
 .certificate-section .certificate-title {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .certificate-section .certificate-description {
   color: var(--secondary-500);
-  font-size: small;
 }
