@@ -42,5 +42,10 @@
   },
   "profile": {
     "start today": "Heute Starten"
+  },
+  "course details": {
+    "learn": "Lernen",
+    "certificate title": "Dein Zertifikate ist nah",
+    "certificate description": "Du machst das großartig! Lerner weiter, um dein Zertifikate freizuschalten."
   }
 }

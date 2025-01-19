@@ -42,5 +42,10 @@
   },
   "profile": {
     "start today": "Start Today"
+  },
+  "course details": {
+    "learn": "Learn",
+    "certificate title": "Your Certificate is close",
+    "certificate description": "You are doing great! keep learning to unlock your certificate."
   }
 }
