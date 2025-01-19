@@ -30,6 +30,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .certificate-section .certificate-title {
@@ -38,4 +39,10 @@
 
 .certificate-section .certificate-description {
   color: var(--secondary-500);
+}
+
+@media screen and (max-width: 425px) {
+  .course-details-wrapper .container .inner-wrapper {
+    width: 90%;
+  }
 }

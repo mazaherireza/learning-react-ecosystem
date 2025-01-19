@@ -3,6 +3,9 @@
 }
 
 .courses-wrapper .container .inner-wrapper {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--blue-800);
   display: flex;
   flex-direction: column;
@@ -24,5 +27,11 @@
 }
 
 .courses-wrapper .course-description {
-    color: var(--secondary-500);
+  color: var(--secondary-500);
+}
+
+@media screen and (max-width: 425px) {
+  .courses-wrapper .container .inner-wrapper {
+    width: 90%;
+  }
 }
