@@ -1,6 +1,6 @@
 Redux CDN
 --------------------
-reudx/types.js
+redux/types.js
 
 types.js
 --------

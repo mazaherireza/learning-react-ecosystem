@@ -19,4 +19,3 @@ render();
 const unsubscribe = store.subscribe(render);
 
 setTimeout(() => { unsubscribe(); }, 2000)
-

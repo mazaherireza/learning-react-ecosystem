@@ -1,7 +1,7 @@
 index.js
 --------
 ...
-import apiCall from "../redux/middlewares/apiCall.js"
+import apiCall from "../redux/middlewares/apiCall"
 
 const store = createStore(combineReducers({}), applyMiddleware(apiCall));
 
@@ -15,6 +15,7 @@ apiCall.js
 ...
 const apiCall = ({ dispatch }) => next => action => {
   const { type, payload } = action;
+
   if(type != callFetch) next(action);
   else fetch(payload)
     .then(...)
@@ -23,4 +24,3 @@ const apiCall = ({ dispatch }) => next => action => {
 }
 
 export default apiCall;
-
