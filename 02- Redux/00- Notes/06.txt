@@ -1,6 +1,6 @@
 npm i redux
 
-redux/stores.js
+redux/store.js
 
 store.js
 --------

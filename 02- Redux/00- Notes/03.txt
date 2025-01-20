@@ -23,7 +23,7 @@ index.js
 import { DEC, ... } from "./redux/types";
 import { decAction, ... } from "./redux/creators";
 ...
-const reduce = (state = 0, { type }) => {
+const reducer = (state = 0, { type }) => {
   switch(type) {
     case DEC:
       return state - 1;
