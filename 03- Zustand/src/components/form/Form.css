@@ -1,0 +1,34 @@
+.form-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-wrapper label {
+  font-size: small;
+}
+
+.form-wrapper input[type="text"] {
+  padding: 0.25rem 0.5rem;
+  font-family: Inter;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.form-wrapper button[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  align-self: flex-start;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
