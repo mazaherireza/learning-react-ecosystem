@@ -4,6 +4,7 @@ import { useLanguageContext } from "@/core/contexts/language/context";
 import { Link } from "react-router-dom";
 import "./Thefooter.css";
 
+const date = new Date();
 const TheFooter = () => {
   const { t } = useTranslation();
   const { changeLanguage } = useLanguageContext();
@@ -132,7 +133,7 @@ const TheFooter = () => {
 
             <section className="copyright">
               <span id="sololearn">Sololearn</span>
-              <p>&copy; 2025</p>
+              <p>&copy; {date.getFullYear()}</p>
             </section>
           </div>
         </section>
