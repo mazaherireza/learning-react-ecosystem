@@ -1,0 +1,17 @@
+.list-wrapper .item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.list-wrapper button {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: x-small;
+}
+
+.list-wrapper .title {
+  font-size: small;
+}

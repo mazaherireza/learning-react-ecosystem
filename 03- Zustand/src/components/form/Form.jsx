@@ -7,13 +7,17 @@ const Form = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const courseStore = useCourseStore();
+  const { addCourse } = useCourseStore();
 
   const onSubmit = ({ courseTitle }) => {
-    courseStore.addCourse(courseTitle);
-    console.log(courseStore);
+    addCourse({
+      title: courseTitle,
+      _id: crypto.randomUUID(),
+    });
+    reset();
   };
 
   return (
