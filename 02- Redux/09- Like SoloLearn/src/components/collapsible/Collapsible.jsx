@@ -9,13 +9,7 @@ const Collapsible = ({ img, title, description }) => {
   const handleClick = () => {
     setVisibility((prev) => !prev);
     if (ref.current) {
-      if (ref.current.style.maxHeight == "") {
-        ref.current.style.maxHeight = "15rem";
-        ref.current.style.visibility = "visible";
-      } else {
-        ref.current.style.visibility = "hidden";
-        ref.current.style.maxHeight = "";
-      }
+      ref.current.classList.toggle("expanded");
     }
   };
   return (
@@ -39,8 +33,10 @@ const Collapsible = ({ img, title, description }) => {
           )}
         </button>
 
-        <div className="collapsible-description" ref={ref}>
-          {description}
+        <div className="collapsible-description-wrapper">
+          <div className="collapsible-description" ref={ref}>
+            {description}
+          </div>
         </div>
       </div>
     </div>

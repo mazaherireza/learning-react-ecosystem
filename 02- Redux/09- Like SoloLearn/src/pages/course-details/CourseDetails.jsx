@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Collapsible from "../../components/collapsible/Collapsible";
+import Collapsible from "@/components/collapsible/Collapsible";
 import Certificate from "@/assets/course/CertificateDisabled.png";
-import "./CourseDetails.css";
 import { courses } from "@/constants/courses";
+import "./CourseDetails.css";
 
 const CourseDetails = () => {
-  const { id } = useParams();
+  const { _id } = useParams();
   const { t } = useTranslation();
 
+  const course = courses.find((course) => course._id == _id);
   return (
     <div className="course-details-wrapper">
       <div className="container">
         <div className="inner-wrapper">
-          <Collapsible {...courses[0]}></Collapsible>
+          <Collapsible {...course}></Collapsible>
           <div className="certificate-section">
             <div className="certificate-img-wrapper">
               <img src={Certificate} alt="Certificate" />
