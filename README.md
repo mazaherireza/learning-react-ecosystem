@@ -3,3 +3,4 @@
 - React
 - Redux
 - Zustand
+- With Maximilian Schwatrzmüller
