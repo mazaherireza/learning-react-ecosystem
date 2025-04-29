@@ -1,0 +1,34 @@
+What Is React.js And Why Would You Use It
+-----------------------------------------
+What is React?
+Why exactly would you use it?
+
+... official webpage react.dev
+The library for web and native user interfaces <---------- **
+React is a library for building UIs. 
+
+... Netflix
+As you navigate around on such a website, you'll see that all these tranisitions
+are super smooth, pretty much instant and you never have this effect where you seem to load a new page.
+... wait for a new page to be sent back by the server.
+
+... React uses JS in the browser to update the page 
+and the UI we see on that page without reloading the page. <--------- **
+
+In the end, it's JS doing "the magic"
+React just uses JS features
+-----------------------------------------------------
+React builds up on JS (it's a library!)
+As a React developer, you'll write React-specific JS code
+
+Displays & manages website content & UI
+-----------------------------------------------------
+Why do we need React library for JS?
+Why not JS?
+
+Using "just JS" typically isn't a great option.
+
+Writing complex JS code quickly becomes cumbersome
+Complex JS code quickly becomes error-prone
+Complex JS code often is hard to maintain or edit
+React offers a simpler mental model <---------------- **
