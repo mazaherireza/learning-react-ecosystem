@@ -1,0 +1,5 @@
+Welcome To The Course!
+----------------------
+academind.com
+
+What exactly is React and why might you want to use it?
