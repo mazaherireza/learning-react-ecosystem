@@ -1,0 +1,58 @@
+ReactJS vs Vanilla JS, Why Use React
+------------------------------------
+... React offers a simpler mental model and provides an easier way of building complex web applications and web UIs.
+
+... CodeSandbox, ... in-browser cloud-based code editor and development environment <------------- **
+
+... if we take a look at the React app ...
+... index.html file in the public folder, ... is pretty empty ...
+Its body section only contains one div ... has no content ...
+React is responsile for rendering the entire UI <---------------- **
+... index.js ... where the React journey starts, <---------------- **
+
+index.js
+--------
+...
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement); <------------ ... React takes over this div and starts controlling 
+the div and its content ...
+
+App.js
+------
+... in this function (App) there is something strange, ... a bunch of HTML code in there.	
+... not a default JS feature ...
+It does work in the React project, becuase of how this overall project is set up behind the scenes. <---------- **
+
+... one of the key feature of React that you can blend HTML and JS code. <------------ **
+... some dynamic pieces of code blended into the HTML code. 
+... it defines different states of the different HTML elements ...
+
+...it's kind of like a varaible, it's created and controlled with a React feature called useState, 
+and this, in the end creates a dynamic React manageable variable that can be updated with help of ... funcion
+... influences how the current UI looks like, because React basically watches this variable 
+and whenever it does change, it takes a look at your HTML cdoe <------------------- **
+... if a different UI is needed React goes ahead and updates the UI. 
+It does all these things automatically for you, because when working with React, you in the end
+write declarative code, ...
+
+React = declarative UI programming 
+With React, you define the target UI state(s) not the steps to get there! <------------ ***
+Instead, React will figure out and perform the necessary steps.
+
+... when writing Vanilla JS code, you're writing imperative code,  
+... you're not defining the goal but instead the steps needed to get there.
+
+... React takes care of updating the UI, <----------------- **
+React uses JS under the hood to update the UI
+and we instead justifying our conditions, our target states and when these states should change
+and React will take care of the rest.
+
+React
+------
+Declarative
+Define the goal, not the steps
+
+JS
+--
+Imperative
+Define the steps, not the goal
