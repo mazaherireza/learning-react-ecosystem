@@ -1,0 +1,7 @@
+JS Refresher
+------------
+In case it's been some time ...
+
+Core syntax & rules
+Essential, modern JS features
+Key JS features used in React apps
