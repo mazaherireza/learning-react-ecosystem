@@ -1,0 +1,56 @@
+Adding JS To a Page & How React Projects Differ
+-----------------------------------------------
+JS can be executed in many different environments <------------ **
+
+In the browser ... where JS originated. <--------- **
+(i.e., as part of websites)
+JS code can be included in any website
+The code then executes inside the browser 
+(i.e., on the machine of the website visitor) <---------------- *
+
+On any computer
+(e.g., server-side code)
+Thanks to Node.js or Deno, JS code can be executed outside of the browser, too.
+The code the executes directly on the machine.
+
+... React, client-side, front-end browser-based library in its core ...
+... JS is not limited to the browser, you can even build mobile apps with JS
+
+On mobile devices
+(e.g., via embedded websites)
+With extra technologies like Capacitor or React Native, 
+you can build mobile apps based on JS
+The code then executes on the mobile device
+
+Adding JS code to a website
+... two main options. ... they both include the special script tag, ... 
+
+1) Between <script> tags
+...
+Can quickly lead to unmaintainable & complex HTML files
+Typically only used for very short scripts 
+
+2) Via <script> import
+Separates HTML & JS code
+Maintaining complex JS-powered apps becomes easier
+
+index.html
+----------
+...
+<script src="assets/scripts/app.js"></scripts> <-------- **
+... the src attribute to point at the file ... that should be imported.
+... this file (app.js) would be loaded as part of this webpage, when the webpage is loaded.
+
+... defer ... script will only be executed after the rest of the HTML document has been read and parsed.
+
+Alternatively, you could move the <script> tags to the end of the <body> section.
+
+... type attribute ...
+<script src... type="module">></script>
+... makes sure that this JS file is treated as a JS module. 
+... this unlocks one very important new syntax, the import syntax. <----------- **
+
+... importing script files in the context of building React apps.
+because when you're working on a React project, you will almost never add these script tags,
+... React projects almost always use a build process ...,
+injects these script tags into the HTML code for you.
