@@ -1,0 +1,27 @@
+React Projects Use a Build Process
+----------------------------------
+... in the index.html file, you won't find any script tag.
+... noscript tag that shows a fallback messgage if the use has disabled JS in their browser, ...
+... so why is this working?
+... React projects use a build process, ... the code you write is not the code that gets executed in the browser.
+Your code is transformed before it's handed off to the browser.
+... this is done with help of a tool that's running in the background.
+... see that tool in the package.json file, this file lists all the dependencies of this project,
+
+... why does the code need to be transformed?
+... two main reasons ...
+
+React projects use a build process 
+__________________________________
+1.Raw, unprocessed React code won't execute in the browser
+JSX is not a default JS feature.
+
+2. The code would not be optimized for production (e.g. not minified)
+React projects require a build process that transforms your code
+... Vite etc., give you such a build process (no custom setup or tweaking needed)
+
+... Node.js ... in order to work on React projects.
+Because Node.js is not just use to install packages with the npm command or to create projects with the npx command 
+... used behind the scenes by these tools that are used by that build process that's running behind the scenes.
+
+... to make sure your React code gets transformed.
