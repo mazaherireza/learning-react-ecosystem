@@ -1,0 +1,70 @@
+Revisiting Variables & Values
+-----------------------------
+It's all about data & values!
+
+... when you're building an app with JS or React, it's in the end all about data ... values you're working with in your code.
+... Twitter or Google Maps, ...
+The tweets you write and read are data, your location is data
+... that must be handled in your code. ... handle a broad variety of values
+
+There are different types of values
+___________________________________
+String
+Text values
+Wrapped with ' or "
+Can also be created with `
+
+Number
+Positive or negative
+With decimal point (float) or without it (integer)
+
+Boolean
+true or false
+A simple "Yes" or "No" value type
+Typically used in conditions
+
+Null & undefined 
+There is no value <---------------- **
+undefined: default if no value was assigned yet 
+null: explicitly assigned by developer (reset value) <------------------ **
+
+Additionally ----> Objects
+
+... a value can be created in the place where you need it.
+
+Variables store values
+... values should be stored and for that, you're using variables.
+
+Variables are simply data containers where you store a value in a variable
+which carries any name of your choice. ... use this variable name as an identifier ...
+to refer to that value that's stored in this variable ...
+
+"Hi Everyone!" <----------- Value (Type: String)
+A varible stores a value
+Variable 	
+userMessage <---------- Variable Identifier
+
+... variables because they allow you to reuse a value ... they can help with code readability.
+
+Why use variables?
+_________________
+1 Reusability
+Store a value in a variable once and use it as often and in as many places as needed
+
+2 Readability
+Organize your code over several lines rather than cramming everything into a single line
+
+Identifiers must follow certain rules & recommendations
+_______________________________________________________
+1 Must not contain whitespace or special characters (except $ and _)
+
+2 May contain numbers but must not start with a number
+
+3 Must not clash with reserved keywords
+
+4 Should use camelCasing
+
+5 Should describe what the "thing" it identifies contains or does
+
+... const ... read only ...
+... have a value that never should be reassigned ... use const.
