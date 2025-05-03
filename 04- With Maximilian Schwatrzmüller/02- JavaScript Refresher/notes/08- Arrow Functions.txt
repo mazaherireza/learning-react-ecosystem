@@ -1,0 +1,6 @@
+Arrow Functions
+---------------
+... exporting a so-called anonymous function which doesn't carry any name.
+
+export default function() {}
+export default () => {}
