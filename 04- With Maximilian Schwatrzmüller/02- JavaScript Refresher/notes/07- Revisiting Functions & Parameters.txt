@@ -1,0 +1,5 @@
+Revisiting Functions & Parameters
+---------------------------------
+...
+Functions must only have one return statement at most.
+Function without return implicitly return undefined <----------- **
