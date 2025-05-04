@@ -1,0 +1,40 @@
+Revisiting Objects & Classes
+----------------------------
+... objects ... can be used to group multiple values together.
+
+const user = {
+  name: "Reza",
+  age: 36
+};
+
+I can access individual fields ... dot notation ... this dot is a key to accessing values in an object.
+... to get access to a value in an object.
+
+... objects can also store functions, ... methods.
+
+{
+  ...
+  greet() <---------- Without the function keyword, just the name of the function ...
+...
+... in a function that belongs to an object, you can also access the properties of this object,
+so the other methods and fields that belong to this object, ... this keyword.
+...
+greet() {
+  this.age <--------- *
+  ...
+
+... create blueprints by using the special class keyword.
+
+class User {
+  constructor(name, age) {
+    this.name = name; <------ **
+    this.age = age
+  }
+  greet() {
+    console.log("Hi!")
+  }
+}
+
+... use constructor for accepting parameters ....
+... store them in properties of the object that will be created based on the class with help of the "this" keyword.
+const user = new User("Reza", 36); 
