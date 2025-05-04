@@ -1,0 +1,4 @@
+Arrays & Array Methods Like map
+-------------------------------
+... technically arrays are objects, ... special kinds of objects.
+
