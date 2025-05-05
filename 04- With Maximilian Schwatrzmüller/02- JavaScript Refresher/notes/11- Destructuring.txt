@@ -1,0 +1,11 @@
+Destructuring
+-------------
+...
+const [firstName, lastName] = ["Reza", "Mazaheri"]; <----- ... pulled out by position.
+
+... on the left side, they are used for destructuring.
+
+const { name: prenom, age } = { name: "Reza", age: 36 }; <--------- ... pulled out by property name.
+console.log(prenom);
+
+... when using {} on the left side of =, the : used for separating the property that's pulled out of this object ...
