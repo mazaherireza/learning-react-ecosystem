@@ -1,0 +1,11 @@
+The Spread Operator
+-------------------
+... three dots will pull out all the elments of the array, ... add them as comma seprated values ...
+
+const list = [...hobbies, "Traveling"]
+
+const augmentedUser ={
+  isAdmin: true,
+  ...user
+}
+... will pull out all the key value pairs from this object, and add them as key value pairs to ...
