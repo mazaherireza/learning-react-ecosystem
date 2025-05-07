@@ -1,0 +1,4 @@
+Manipulating The DOM, Not With React!
+-------------------------------------
+... being able to reach out to the loaded website and read and manipulate it at runtime 	
+is of course a strength of JS ... we won't do when using React, because React will do it for us, ...
