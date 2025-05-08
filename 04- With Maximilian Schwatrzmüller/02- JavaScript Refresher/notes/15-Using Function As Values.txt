@@ -1,0 +1,13 @@
+Using Function As Values
+------------------------
+... you can pass functions as values to other functions.
+
+... arrow functions never accept a name in front of them, 
+they always are created in an anonymous way, ... <--------------- **
+... but we can make them non-anonymous by storing them in a constant that has a certain name.
+
+... when you're passing a function to another function, 
+... you're not defining it here in place, ... you define it in advance, 
+you pass it by just using its name, ... omit ()
+
+... passing functions as values is not limited to built-in functions like setTimeout.
