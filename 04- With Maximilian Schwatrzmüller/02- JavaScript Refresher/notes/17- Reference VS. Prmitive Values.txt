@@ -1,0 +1,14 @@
+Reference VS. Prmitive Values
+-----------------------------
+... primitives ... we can't edit them ... overwrite ... 
+... you can't edit existing values.
+
+... objects ... reference values, 
+... in a variable you don't store the value, but instead the address of that value in memory.
+... array is stored somewhere in memory, ...
+
+Objects = Reference Values
+For objects (and arrays are objects!), the memory address is stored in the variables
+
+The underlying value can be edited without changing that address
+The value can therefore be edited without reassining the varaible
