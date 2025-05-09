@@ -1,0 +1,14 @@
+Setting Up The Starting Project
+-------------------------------
+...
+CMD
+---
+npm install
+... will download and install any third party packages needed by this project,
+... React libraries and the build process tools that watch and transform the React code to code that works in the browser.
+
+npm run dev 
+... to start the development server,
+This development server will allow you to visit a preview website where you can see your React app in action.
+
+... quit this running development server with ctrl + c ... 
