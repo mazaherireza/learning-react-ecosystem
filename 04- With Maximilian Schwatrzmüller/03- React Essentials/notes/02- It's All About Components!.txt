@@ -1,0 +1,55 @@
+It's All About Components! Core Concept
+---------------------------------------
+React and its ecosystem ... the concept of working with components ... potentially reusable building blocks ...  
+... combine to build the overall UI. 
+
+Components are UI building blocks 
+_________________________________
+React apps are built by combining components
+
+... key building blocks that make up the overall site or app.
+
+Components are the foundation
+_____________________________
+
+Build UIs with components
+_________________________
+Any website or app can be broken down into smaller building blocks: Components <------------- **
+It can therefore also be built by creating & combining such components
+
+Header, Core Concept Items, Interactive Tabs
+
+... components wrap HTML and possibly also CSS code, as well as any related JS logic that might be needed
+... together those languages and code pieces define and control a part of the UI.
+... split up complex UIs into smaller, more manageable parts ... may also be reused in different places of the UI.
+
+The same component is used multipe times with different input data.
+
+Why Components?
+______________
+
+Reusable building blocks
+------------------------
+Create small building blocks & compose the UI from them
+If needed: reuse a building block in different parts of the UI (e.g. a reusable button)
+
+Related code lives together
+---------------------------
+Related HTML & JS (and possibly CSS) code is stored together
+Since JS influences the output, storing JS + HTML together makes sense.
+
+Separation of Concerns
+----------------------
+Different components handle different data & logic
+Vastly simplifies the process of working on complex apps
+
+Different Components, Different Responsibilities
+________________________________________________
+Header
+Displaying main title, subtitle & image
+
+Core Concept Items
+Outputing core concept information
+
+Interactive Tabs
+Handling UI & switching between tabs
