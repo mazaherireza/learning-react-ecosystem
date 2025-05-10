@@ -1,0 +1,7 @@
+Creating & Using a First Custom Compononet
+------------------------------------------
+...
+Use the "Format Document" command / shortcut in VS Code to auto-format your code. <-------- **
+
+... you can use your component functions like regular HTML elements inside your JSX code.
+So if you want to output the content ... <Header></Header> or <Header />.
