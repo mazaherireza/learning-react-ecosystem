@@ -1,0 +1,19 @@
+Using & Outputting Dynamic Values, Core Concept
+-----------------------------------------------
+... how we can actually output dynamic content ... in our JSX code.
+... we need to output content dynamically.
+
+Outputting dynamic content in JSX
+---------------------------------
+Static content
+Content that's hardcoded into the JSX code
+Can't change at runtime
+
+Dynamic content
+Logic that produces the actual value is added to JSX
+Content/value is derived at runtime
+
+... {} ... between element tags, ... as a value for an attribute, ... output a dynamic value.
+
+... if-statements, for-loops, function definitions and other block statements are not allowed in {}
+Only expressions that directly produce a value. <------------------ **
