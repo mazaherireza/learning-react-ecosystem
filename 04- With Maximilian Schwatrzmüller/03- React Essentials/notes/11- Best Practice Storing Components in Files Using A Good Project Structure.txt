@@ -1,0 +1,5 @@
+Best Practice Storing Components in Files Using A Good Project Structure
+--------------------------------------------------------------------------
+... every component can at least in theory be used standalone ... create new files ...
+... to give those files the same name as the component name of the component that will be stored in that file.
+
