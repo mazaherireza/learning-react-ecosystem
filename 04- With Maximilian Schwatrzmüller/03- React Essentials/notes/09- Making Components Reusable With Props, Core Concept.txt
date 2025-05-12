@@ -1,0 +1,101 @@
+Making Components Reusable With Props, Core Concept
+---------------------------------------------------
+... one of the main advantages of components is that they are reusable, ... 
+
+You can reuse React components but you don't have to! <------------------ *
+
+You will also often build components which might be reusable in theory, 
+but indeed are only meant to be used once. 
+... quite common to have components that should be reused multiple times.
+
+Components can potentially be reused <------------------ **
+------------------------------------
+[] [] [] <------------------ Core Concept Items
+
+The same component is used multiple times with different input data.
+
+... that's why React offers another crucial concept ... called props.
+... being able to pass data into components, and to use that data in there.
+
+Configuring components with "props"
+----------------------------------
+React allows you to pass data to components via a concept called "props" <------------ **
+
+JSX code that uses a component ( ... <Header /> ... <img ... />)
+Set component input data via "custom HTML attributes" (props) <------ **
+
+     Set Props
+-------------------->
+
+Component
+---------
+Defines internal logic + JSX code that should be rendered
+
+    Receive Props
+----------------------->
+
+Component Function
+------------------
+Recieves props parameter with configuration data
+
+... you can simply add custom attributes to your custom components, ...
+
+You can pass all kinds of values as values for your props.
+
+Props accept all value types 
+----------------------------
+You're not limited to text values! <--------------- **
+
+<UserInfo
+  name="Reza" <----------- String Value
+  age={36} <-------- Number value 
+  {} are required to pass the value as a number.
+
+  If "" were used, it would be considered a string.
+
+  details={{ username: "mazaherireza" }} <--------- Object value
+  This is no special "double curly braces" syntax!
+  
+  It's simply a JS object passed as a value.
+
+  hobbies={[ "Reading", "Learning" ]} <-------- Array value
+  />
+
+... when working with React component functions, you only accept one parameter <----------- **
+which typically is called props ...
+... this props parameter will be set by React because it's React that will execute this function.
+... using them as HTML elements ... React will call the functions.
+... React will pass a value for this props parameter to this function when it calls it,
+... the value that will be passed for this parameter to this function by React will be an object, <------- **
+... that has all these key value pairs. <---------- **
+
+... name: "Reza",
+
+... custom attributes as keys and the values for these attributes as values grouped into it.
+So one object with these key value pairs ...
+
+Understanding Props
+-------------------
+App component
+
+<CoreConcept
+  title="Components"
+  ... />
+
+1) Set props
+Props are "custom HTML attributes" set on components
+
+2) Merge into object
+React merges all props into a single object
+
+{
+  title: "Components",
+  ...
+}
+
+3) Receive props
+Props are passed to the component function as the first argument by React <------------ **
+
+function CoreConcept(props) {
+  return <h3>{props.title}</h3>;
+}
