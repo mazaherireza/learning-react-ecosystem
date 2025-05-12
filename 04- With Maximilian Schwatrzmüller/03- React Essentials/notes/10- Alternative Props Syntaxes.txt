@@ -1,0 +1,19 @@
+Alternative Props Syntaxes
+--------------------------
+...
+App.jsx
+-------
+...
+import { CORE_CONCEPTS } for "./data.js";
+... with {} around CORE_CONCEPTS ... is a named export ... not default export 
+
+... thanks to props, this component is reusable.
+
+... where prop names are similar to the property names of the object that contains the data you wanna set, 
+... get rid of all these props and add {} directly on the component <-------------- **
+... not as an attribute value, put on the component tag ...
+... use the spread operator to pull out all the key value pairs of an object 
+... these key value pairs in this object will be added as key value pairs as props to this component.
+
+... in the parameter list ... object destructuring by adding {} 
+... are used to destructure the first parameter of this function, ...
