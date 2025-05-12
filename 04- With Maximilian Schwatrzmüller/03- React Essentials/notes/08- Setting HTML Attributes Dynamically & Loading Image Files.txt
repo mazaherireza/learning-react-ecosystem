@@ -1,0 +1,44 @@
+Setting HTML Attributes Dynamically & Loading Image Files
+---------------------------------------------------------
+... point at images in a different way ... 
+... the image might get lost once we prepare this React project for deployment, ... <--------- **
+
+React projects & the build process <--------------- **
+___________________________________
+React projects must be built (via a build process) before deployment
+
+React code
+The React code you write & test
+
+Build process
+Changes & optimizes your code
+Transforms it such that it runs in the browser
+Also (potentially) optimizes other assets like CSS & image files
+
+Deployable Files
+A collection of generated files that include your optimized code and any other extra assets 
+(e.g., CSS code files, optimized images, etc.)
+
+... image files, ... might be ignored by that bundling process 
+and therefore they might get lost during deployment.
+
+... if we include images differently we can even take advantage of extra optimization steps
+... you should use an import statement <-------------- **
+
+... this name here is totally up to you
+import reactImg from "relative/path"; ... point at this file ...
+
+... build process that will also make JSX code work
+... build process will not just transform the JSX code, but also import statements ... 
+but such imports do work in this project set up here because the build process will make sure 
+that the files we're importing here will be included in the final page and deployment package
+... this image in the end is a JS object or to be precise it's a JS variable that will point at that image 
+... include a path to that image, you could say.
+
+But it will include an automatically generated path that will also work, <------------------ ***
+once you deploy the React app to a server.
+
+... dynamic value expression for attribute values ... don't add ""
+This would create a simple string value instead of using the value stored in reactImg.
+
+... we're loading it in a more optimal way, thanks to this build process.
