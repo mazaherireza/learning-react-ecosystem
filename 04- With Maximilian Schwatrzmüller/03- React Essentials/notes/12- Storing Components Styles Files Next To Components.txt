@@ -1,0 +1,14 @@
+Storing Components Styles Files Next To Components
+--------------------------------------------------
+... split this CSS file into multiple smaller component-specific CSS files.
+
+... React and this project setup does not automatically include this CSS file in the loaded webpage.
+
+... thanks to that underlying build process, this import statement will be processed 
+and the CSS code will be included in the loaded webpage.
+
+... importing such a CSS file in a component file will not scope these styles to that component, 
+... are not scoped and limited to this component <--------------- **
+
+Splitting the CSS code into components-sepcific CSS files can still make sense ...
+... limitation ... that these styles will not automatically be restricted to this components.
