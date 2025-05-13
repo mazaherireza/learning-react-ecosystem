@@ -1,0 +1,16 @@
+Reacting to Events, Core Concept
+--------------------------------
+... we don't want to write imperative code ...
+
+... by adding special attribute, special prop to elements.
+... props because those built-in elements are also just components.
+... onClick prop. ... listen to a broad variety of events.
+... the value for any event prop, is a function ... that should be executed when the event occurs.
+...
+function handleClick() {}
+
+The advantage of defining these event handler functions inside the component function
+is that they then have access to the component's props and state. <------------ **
+
+<button onClick={handleClick} ...  <----------- must not executed ... you want to use the function as a value.
+... it should executed by React when a click on this button occurs ...
