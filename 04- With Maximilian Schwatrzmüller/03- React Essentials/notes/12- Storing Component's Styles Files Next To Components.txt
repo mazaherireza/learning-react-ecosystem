@@ -1,5 +1,5 @@
-Storing Components Styles Files Next To Components
---------------------------------------------------
+Storing Component's Styles Files Next To Components
+---------------------------------------------------
 ... split this CSS file into multiple smaller component-specific CSS files.
 
 ... React and this project setup does not automatically include this CSS file in the loaded webpage.
