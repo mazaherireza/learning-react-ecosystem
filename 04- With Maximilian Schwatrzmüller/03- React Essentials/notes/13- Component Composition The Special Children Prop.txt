@@ -1,0 +1,79 @@
+Component Composition The Special Children Prop, Core Concept
+-------------------------------------------------------------
+... interactive section at the bottom of the website.
+
+... things will get interesting becuase it would be great if ... we could use this TabButton like this:
+
+App.jsx
+-------
+...
+  <TabButton>Component</TabButton> <------- So how would React know what to do with this text here?
+... this text (Component) is basically ignored by React because if I pass something between 
+component opening and closing text, this content is by default not output on the page
+because React would not know where to output it. <------------- **
+
+... every custom component will receive props. 
+Event if you're not setting any attributes, React will still give you such a props object. <-------------- **
+... pretty empty, but actually not entirely empty.
+... there is one prop which you'll always get, the sepcial built-in children prop ... set by React.
+... not set with help of attributes ... this children prop simply refers to the content between your component text.
+... but also be some complex JSX structure instead if needed.
+
+The Special "children" Prop
+---------------------------
+App Component
+-------------
+<Modal>
+  <h2>Warning</h2>
+  <p> ...
+</Modal>
+
+Content for "children"
+The content between component opening and closing tags is used as a value for the special "children" prop
+
+Modal Component
+---------------
+function Modal(props) {
+  return <div id="modal">{props.children} ...
+}
+
+The "children" prop
+React automatically passes a special prop named "children" to every custom component
+
+... you can output that content with props.children 
+or by using object destructuring ... by pulling out the children propety ...
+
+This way of building components where your components can wrap other components or content
+is called component composition. <---------------- **
+
+... it depends on the exact use case you have.
+... both approaches work and there is not better or worse approach.
+
+"children" Prop vs "Attribute Props" <--------------- **
+------------------------------------
+Using "children"
+
+<TabButton>Components</TabButton>
+
+function TabButton({ children }) {
+  return <button>{children}</button>;
+}
+
+For components that take a single piece of renderable content, <------------- **
+this approach is closer to "normal HTML usage"
+
+This approach is especially convenient when passing JSX code as a value to another component <------------- **
+
+Using Attributes
+----------------
+<TabButton label="Components"></TabButton>
+
+function TabButton({ label }) {
+  return <button>{ label }</button>;
+}
+
+This approach makes sense if you got multiple smaller pieces of information that must be passed to a component
+
+Adding extra props instead of just wrpping the content with the component tags mean extra work
+
+Ultimately, it comes down to your use-case and personal preferences.
