@@ -1,0 +1,15 @@
+Passing Custom Arguments To Event Functions
+--------------------------------------------
+...
+we'll need to know which button is clicked.
+... handleClick, we might want to accept a parameter, ...
+
+... when just passing handleClick as a value to onClick ... we won't get that identifier 
+... control how handleClick will be executed by React.
+
+... 
+<TabButton onClick={() => handleClick()} ... this code will not run immediately when this line of code gets parsed.
+
+If you wanna define a function that should be executed upon an event, 
+but you also want to control how it's going to be called 
+and which arguments are going to be passed to it.
