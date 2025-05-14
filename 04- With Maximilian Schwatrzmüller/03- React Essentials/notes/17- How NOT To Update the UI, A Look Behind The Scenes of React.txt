@@ -1,4 +1,4 @@
-How NOT To Updae the UI, A Look Behind The Scenes of React Core Concept
+How NOT To Update the UI, A Look Behind The Scenes of React Core Concept
 -----------------------------------------------------------------------
 ... the UI is not updating because this App component function is not executed again, ...
 JSX code is not gettting re-evaluated.
