@@ -1,0 +1,25 @@
+How NOT To Updae the UI, A Look Behind The Scenes of React Core Concept
+-----------------------------------------------------------------------
+... the UI is not updating because this App component function is not executed again, ...
+JSX code is not gettting re-evaluated.
+
+By default, React components execute only once. <------------- **
+You have to "tell" React if a component should be executed again.
+
+React in the end takes a look at JSX code and it compares it to the currently rendered UI
+and if it detects any differences it will update the UI accordingly.
+
+How React Checks If UI Updates Are Needed
+-----------------------------------------
+React compares the old output (old JSX code) of your component function
+to the new output (new JSX code) and applies any differences to the acutal website UI
+
+App Component
+1. Execution <---- Because web app got loaded
+
+App Component
+2. Execution <---- Because of a state update
+
+... identified difference 
+Necessary updates will be applied to the real DOM,
+ensuring that the visible UI, matches the expected output
