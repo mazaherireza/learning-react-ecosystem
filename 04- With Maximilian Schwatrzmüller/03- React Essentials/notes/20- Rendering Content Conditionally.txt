@@ -1,0 +1,26 @@
+Rendering Content Conditionally
+-------------------------------
+... we need to output some content conditinally.
+... output some fallback text, ... <---------------- **
+... use a ternary expression.
+
+!selectedTopic <------------- if it's not truthy
+
+{ !selectedTopic ? <p>Please select a topic.</p> : null }
+... null is something you can output in JSX code, it'll simply lead to nothing being rendered here.
+
+Logical and operator
+
+{!selectedTopic && <p>Please select a topic.</p>}
+
+&& will actually output the value that comes after it if the condition in front of it yields true.
+
+... the last alternative ... use a variable.
+... JSX ... you can use it as a regular value anywhere in your component code.
+...
+let tebContent = <p>Please select a topic.</p>
+if(selectedTab) {
+  tabContent = ...
+}
+....
+{tabContent}
