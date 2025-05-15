@@ -1,0 +1,73 @@
+Managing States & Using Hooks, Core Concept
+-------------------------------------------
+... we need a way of telling React that we want to update the UI.
+... state ... is all about registering variables, that are handled by React
+and that are updated with help of a function that's provided by React
+that will also tell React that data changed ... cause React to update the UI.
+
+... these special variables, are created with help of a special function ...
+
+... they are technically regular functions ... must only be called 
+inside of React component functions or inside of other React hooks.
+
+Rules of Hooks <------------- **
+--------------
+1) Only call hooks inside of component functions 
+
+function App() {
+  const [val, setVal] = useState(0);
+}
+
+2) Only call hooks on the top level 
+... must not be called in nested code statements (e.g., inside of if-statements)
+
+... useState ... allows us to manage some component specific state 
+which is simply some data stored by React, which when changed, will trigger this component function 
+to which this hook belongs, to re-execute ...
+
+useState("Default Value") <---- ... use ... when this component is first rendered.
+
+useState() Yields An Array With Two Elements
+--------------------------------------------
+And it will always be exactly two elements <-------------- **
+
+const stateArray = useState("Please click a button");
+
+Array produced and returned by React's useState() function contains exactly two elements
+
+... this first element will be the actual data we're managing ... the second ... will always be a function
+... that can be executed to update this state, ...
+
+Manage State
+------------
+Manage data & tell React to re-execute a component function via React's useState() hook <----- **
+
+State updates lead to new state values
+(as the component function executes again)
+
+... useState(0); <---- Initial state value Stored by React
+
+..., setCounter] <-------- State updating function 
+Updates the stored value & "tells" React to re-execute the component function in which useState() was called
+
+const [counter, ... <-------------- Current state value
+Provided by React 
+May change if the component function is executed again
+
+... with this useState hook, we have a way of telling React 
+that this component function must be executed again.
+
+... this constant here will be recreated every time this component function executes, <---------- **
+so we don't need to use a variable here.
+
+... React will store and update the actual value which will then be passed on to this constant
+when this component function executes again.
+
+... state snapshot, ...
+
+... whilst the UI shows the correct value, we see the old value being printed in the console ... <----------- **
+... the state value we had before ... 
+
+When you call this state updating function, React in the end schedules this state update
+and it then re-executes this component function.
+So therefore the updated value will only be available after this app component function executed again.
