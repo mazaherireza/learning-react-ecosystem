@@ -1,0 +1,8 @@
+Module Introduction
+-------------------
+Beyond The Basics
+
+Behind the scenes of JSX
+Structuring components and state
+Advanced state usage
+Patterns & best practices
