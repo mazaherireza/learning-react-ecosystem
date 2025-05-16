@@ -1,0 +1,40 @@
+You Don't Have To Use JSX!
+--------------------------
+... JSX code, HTML in JavaScript code ...
+... a non-standard feature, it's not supported by the browser ... we got a build process, 
+... you could also build React apps without using JSX, 
+
+You Don't Need JSX (But It's Convenient)
+----------------------------------------
+... you could replace this JSX code,
+
+<div id="content">
+  <p>Hello World!</p>
+</div>
+
+which you might return in a component, with this code which does not use JSX at all, 
+
+React.createElement(
+  "div", <---------- Component Type, Identifies the to-be-rendered component
+  { id: "content" }, <------ Props Object, Sets component props
+  React.createElement( <------ Child Content, The content passed between the component tags
+    "p",
+    null,
+    "Hello World"
+  )
+);
+
+... only uses standard JS features.
+
+JSX
+Requires build process & code transformation
+Easy to read & understand
+
+Without JSX
+Works without special build process & transformation
+Pretty verbose & not necessarily intuitive
+
+index.jsx
+---------
+... 
+ReactDOM.createRoot(entryPoint).render(React.createElement(App)); <--- A valid alternative to JSX code 
