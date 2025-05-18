@@ -1,0 +1,5 @@
+When Should You Split Components
+--------------------------------
+... having a single component that deals with such different things 
+typically is a sign that you might want to split it up into multiple smaller sub components.
+
