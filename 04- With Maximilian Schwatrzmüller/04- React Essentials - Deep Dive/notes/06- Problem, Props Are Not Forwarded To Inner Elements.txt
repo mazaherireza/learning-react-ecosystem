@@ -1,0 +1,37 @@
+Problem, Props Are Not Forwarded To Inner Elements
+--------------------------------------------------
+... crucial React features ...
+
+Additional Key Component & Props Concepts
+_________________________________________
+Forwarded props
+Multiple component slots
+Element identifiers as props
+default prop values
+
+... we could therefore build a separate Section component that always enforces this structure ...
+
+... the styling doesn't look correct anymore, ...
+... when you're setting props, so attributes, on a custom component 
+those props are not automatically forwarded to the JSX code used inside of that component.
+... there is no magic connection like this.
+React is only setting the props on the elements where the developer are setting them. <------------ **
+
+... is basically just lost, it's ignored.
+
+Props Are Not Forwarded Automatically
+-------------------------------------
+Examples Component
+<Section id="examples" />
+
+Section Component
+<section> <------------ id is ignored 
+...
+</section>
+Props must be used & set explicitly <---------------- ***
+...
+<section id={id}> 
+...
+
+... this is not really scalable and not really convenient.
+... pattern that would be called forwarded props or proxy props.
