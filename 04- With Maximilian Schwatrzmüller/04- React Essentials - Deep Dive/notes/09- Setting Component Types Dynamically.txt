@@ -1,0 +1,36 @@
+Setting Component Types Dynamically
+-----------------------------------
+... maybe we wanna make this Tabs component a bit more flexible.
+... we might want to be able to use different wrapper elements around buttons in different places in the application. 
+
+One way ...
+...
+<Tabs buttons={
+        <menu>
+          {list.map ...
+
+Tabs.jsx
+--------
+...
+{buttons}
+{children}
+
+... elegant way ...
+... we might want to allow the developer to choose which wrapper element should be used,
+if the Tabs component is used in different places of the application.
+
+... accept an additional prop that could be named buttonsContainer ...
+
+<Tabs buttonsContainer="ul" ...> ... or even a custom component <--------------- **
+... to be able to use the identifier of a component as a value for this prop, 
+... buttonsContainer="Section" ... not the component itself just the identifer <------------ **
+
+... custom components must be passed as a dynamic value but for built-in elements like menu ... as a string ...
+
+But how can we now use this buttonsContainer that contains this component identifier inside of the Tabs component?
+
+... <buttonsContainer> ... look for a built-in element called buttonsContainer 
+... instead, we wanna use the value that's received on this buttonsContainer prop as an identifier.
+
+... we're creating a constant ... which can be used as a custom component 
+... remapping this prop to some constant, we could simply accept a prop that starts with an uppercase character ...
