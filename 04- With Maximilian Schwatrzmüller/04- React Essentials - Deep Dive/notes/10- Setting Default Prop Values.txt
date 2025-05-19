@@ -1,0 +1,6 @@
+Setting Default Prop Values
+---------------------------
+... chances are high that in most cases we wanna use a menu element as a wapper ...
+
+function Tabs({ Container=Section})
+... we have to import this Section component function ... 
