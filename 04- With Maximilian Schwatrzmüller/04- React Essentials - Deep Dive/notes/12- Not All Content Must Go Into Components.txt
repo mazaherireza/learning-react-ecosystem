@@ -1,0 +1,17 @@
+Not All Content Must Go Into Components
+---------------------------------------
+... this index.html file is in the end the file that's going to get served to the visitors of your website.
+
+... when working with React, you can still add more markup to this file if you need ... 
+If you got some markup that could be put into a component but that really doesn't have to be inside of a component 
+because it might not depend on props or any state that might change ... 
+
+... static data like this header ... put it right into the index.html file 
+
+... all the files that are stored in the public folder will always be available to website visitors. <------- ***
+... reference these files ... from inside your markup, 
+no matter if it's in a component or in the index.html file ... by simply specifying the name of the file ... <------- ***
+
+... all these files in the public folder will be served alongside the index.html file to website visitors.
+... reference by name and you don't have to build a path ... 
+... these files will automatically be surfaced to the root of web application when being served to your website visitors.
