@@ -1,0 +1,27 @@
+Working With Multiple JSX Slots
+-------------------------------
+... special Tabs component ...
+... in bigger apps, it would not be unreasonable to assume that we might have different places
+in the app where tabs like this might be used ...
+
+... wrapper component that just enforces a certian JSX ...
+... the idea behind this component is that we could use it for all kinds of tabs
+with all kinds of content in different places of the app.
+
+... this should be a relatively dump wrapper component which doesn't know anything about the content it's managing.
+
+... adding extra props does not just add some extra complexity ...
+makes Tabs less reusable ...
+
+... pass them as JSX code <--------------- **
+... just as we're passing dynamic content to Tabs.
+
+The problem here is that we only have one special children prop, and we're using that for the content.
+... need some additional prop to get buttons which should be inserted between menu tags.
+... we wanna have an additional slot for JSX code <------------- **
+
+<Tabs buttons={<--------- Some JSX code}> <--------------- **
+... JSX elements are in the end regular values ...
+
+... the main content slot, which is set with help of children and then this buttons slot,
+which is set with help of our custom buttons prop.
