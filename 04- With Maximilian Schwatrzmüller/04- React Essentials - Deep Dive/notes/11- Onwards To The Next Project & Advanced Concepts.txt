@@ -1,0 +1,33 @@
+Onwards To The Next Project & Advanced Concepts
+-----------------------------------------------
+Essential React Concepts
+------------------------
+Components
+Reusable building blocks which are used to build the overall app UI
+
+Props
+Component "attributes" (input data) used to configure components
+
+JSX
+JS Syntax eXtension to describe HTML in JS
+
+State
+React-managed data which, when changed, causes React to re-execute the related component function <---------- **
+
+New Project, New Concepts
+-------------------------
+Multiple State Values
+Lifting State Up
+Derived State
+Nested Lists
+Array & Object States
+Component Functions vs "Normal Functions"
+
+React Essentials - Deep Dive
+-----------------------------
+Beyond The Basics
+
+Behind The Scenes of JSX
+Structuring Components and State
+Advanced State Usage
+Patterns & Best Practices
