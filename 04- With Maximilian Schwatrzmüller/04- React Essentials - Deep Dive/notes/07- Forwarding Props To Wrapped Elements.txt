@@ -1,0 +1,16 @@
+Forwarding Props To Wrapped Elements
+------------------------------------
+... destructuring ... 
+({ title, children, ...rest }) 
+This JS feature is called "Rest property".
+This syntax, groups all remaining object properties into a new object (named "rest" in this case).
+
+"..." tells JS to collect all other props that might be received on this component and merge them into a rest object.
+
+<section {...rest} <------ Spread operator 
+... all extra props that might be set to our component will be forwarded to this built-in section element.
+
+... very useful pattern when building wrapper components ... <------------- **
+
+... the onClick prop which exists on built-in button to which we're forwarding those leftover props.
+... to use that same prop forwarding pattern.
