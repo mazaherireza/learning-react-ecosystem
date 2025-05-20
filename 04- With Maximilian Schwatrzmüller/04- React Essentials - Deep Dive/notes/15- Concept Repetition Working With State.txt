@@ -1,0 +1,10 @@
+Concept Repetition Working With State
+-------------------------------------
+... state ... we wanna manage some data that in the end, should cause the UI to update when changed.
+
+const [isEditing, setIsEditing] ...
+... I plan to store the information whether we currently are editing the player or not in this state.
+
+... if some child component changes, the parent component does not care about that. <------------ **
+
+... you can store JSX code as a value in variables.
