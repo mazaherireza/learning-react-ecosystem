@@ -1,0 +1,39 @@
+User Input & Two-Way Binding <---------------- **
+----------------------------
+... it does not work because we're setting that value property (on the input element)
+and the special thing about that value property is that it sets the value that's shown in the input
+and if we try to edit this value, we can't do that, because this value which is set here, 
+basically overwrites any changes we're trying to do. <-------------- **
+
+... one way around this problem would be to set the special defaultValue property, <--------- **
+which just sets an initial value instead of enforcing a value thereafter.
+... it's not actually being saved.
+
+... different approach ...
+... we don't just wanna set the value property here, 
+instead we also wanna get the changes the user tries to apply to that value
+so that we can save this updated player name somewhere in this component, 
+so that we can output the updated player name (here) whenever it changes.
+<span ...>{name}</span>
+... we'll need a second piece of state ... 
+... 
+const [playerName, setPlayerName] = useState(initialName);
+.. we wanna use this playerName state ... as a dynamic value ... <input ... value={playerName} />
+
+... update this state whenever we type into this input field.
+... event which is emitted by this input field ...
+
+... onChange will trigger for every key stroke and it will provide us with an event object
+that contains the value that was entered by the user.
+... the value of the key that was hit by the user.
+
+... event ... an object describing the event that was emitted
+... we'll get this value automatially ... React will give us such an event object 
+as an argument ... when it calls this function.
+... target property which will refer to the element that did emit the event ... input element ...
+
+... value the user tried to enter before it's again overwritten by the value set through that value property. 
+
+... get access to values entered by a user ... with help of onChange 
+and managing a separate piece of state ... this updated value is then reflected back into this input field 
+... listening to a change on the input and then feeding that updated value back into this input is called two-way binding.
