@@ -1,0 +1,42 @@
+Best Practice Updating State Based On Old State Correctly 
+---------------------------------------------------------
+In React, when updating your state based on the previous value of that state, 
+you should pass a function, to that state updating function. <--------------------- **
+
+Updating State Based On Old State
+---------------------------------
+...
+This function will automatically be called by React and will recieve the guaranteed latest state value. <-------- **
+
+... it will automatically get the current state value ... 
+... we could accept a parameter ...
+... this will dynamically be set and passed as a value by React when it calls this function ...
+... return the new state you wanna set.
+
+... problem with this code 
+setIsEditing(!isEditing);
+is that React behind the scenes, scheduling those state updates <------------- **
+... so this state update here is not performed instantly
+instead, it's scheduled by React to be performed in the future.
+
+React Is Scheduling State Updates <--------------- **                          
+_________________________________                         
+Somewhere in your code                                          React's State Updating Schedule
+Code snippets in different places in your app's code            Managed behind the scenes by React
+---------
+setIsEditing(true) -------------------------------------------> 1 ---> Update state to true
+
+setIsEditing(false) -------------------------------------------> 1 ---> Update state to false
+...
+
+State updates are not performed instantly but at some point in the future  
+(when React has time for it)
+
+In most cases, those state updates of course still are executed almost instantly.
+
+setIsEditing(!isEditing)
+setIsEditing(!isEditing)
+
+... React is scheduling these state updates and both are based on the current value of isEditing <------------ **
+... because we're still in the same component function execution cycle
+... updating your state based on a previous state value ... function form ... 
