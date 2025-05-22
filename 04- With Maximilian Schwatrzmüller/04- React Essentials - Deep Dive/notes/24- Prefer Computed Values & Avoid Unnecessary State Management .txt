@@ -1,0 +1,15 @@
+Prefer Computed Values & Avoid Unnecessary State Management 
+-----------------------------------------------------------
+... functional approach ... the new array will depend on the old array.
+... updating this in an immutable way ...
+
+... doing that, is not optimal because when using activePlayer here,
+we're technically merging two different states and <--------------- **
+we're using this function form for updating the gameTurns state 
+... to make sure that when the schedule state update is performed, 
+we're definitely working with the latest state but we don't have that guarantee for activePlayer 
+because that's from a different state.
+
+... a better way of deriving the symbol ... is to add a new variable ... 
+
+... we're not merging different states.
