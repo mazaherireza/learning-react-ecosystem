@@ -1,0 +1,26 @@
+Best Practice Updating "Object State" Immutably <------------- **
+-----------------------------------------------
+... manage some state ... so that it can change ... update the UI ...
+
+... is to update the GameBoard based on the previous state of the GameBoard ...
+... we don't want to lose previous state 
+
+... if your state is an object or array, you update that state in an immutable way <---------- **
+which simply means you create a copy of the old state, ...
+change that copy instead of that existing object or array <-------------- **
+because ... you're dealing with a reference value ...
+... you would be updating the old value in memory immediately, even before this scheduled state update was executed by React.
+
+Update Object-State Immutably
+-----------------------------
+Objects & arrays (which technically are objects) are reference values in JS
+You should therefore not mutate them directly, instead create a (deep) copy first! <----------- **
+
+Not creating a copy
+because user is an object = a reference value
+
+const updatedUser = user; <--------------- X
+user.name = "Reza";
+
+const updatedUser = {...user}; <----------------- ** Create a copy via JS's Spread operator
+updatedUser.name = "Reza"; <------- Editing the copy, not the original
