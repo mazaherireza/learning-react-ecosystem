@@ -1,0 +1,5 @@
+Deriving State From Props
+-------------------------
+... you should manage as little state as needed and try to derive as much information and 
+as many values as possible from that state.
+
