@@ -1,0 +1,18 @@
+Lifting State Up, Core Concept
+------------------------------
+
+Lifting State Up
+----------------
+Lift the state up to the closest ancestor component 
+that has access to all components that need to work with that state <----------- **
+
+Ancestor Component <---- State (State value that's needed by both Child1 & Child2
+
+Ancestor Component <----------- Manages
+Child Component <-------------- Needs
+
+Ancestor passes the state value via props to the child component
+Ancestor passes a function that eventually changes the state, via props to the child component
+This allows the child component to initiate the state change <--------------- **
+
+... the App component can then pass the information which player is currently active to both components via props.
