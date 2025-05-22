@@ -1,0 +1,6 @@
+Rendering Multi-Dimensional Lists
+---------------------------------
+... a dynamically-derived board ...
+
+... a key, so that it can be identified in a unique way.
+... index is not tied to the data but to the position of the data.
