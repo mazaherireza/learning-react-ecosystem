@@ -1,0 +1,4 @@
+Outsourcing Data Into A Separate File
+-------------------------------------
+... check for all winning combinations ... and see if any of those combinations is met.
+
