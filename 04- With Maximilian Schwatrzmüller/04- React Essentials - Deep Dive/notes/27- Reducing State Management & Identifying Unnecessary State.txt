@@ -1,0 +1,18 @@
+Reducing State Management & Identifying Unnecessary State
+---------------------------------------------------------
+... is there something else we could compute here?
+Maybe something we're currently managing as state?
+
+... if you just glance at this code, ...
+... we need state to trigger a UI update, but let's not forget 
+that we already have gameTurns state here which already changes whenever a box is selected 
+
+... don't need this activePlayer state just to trigger a UI update when that happens.
+
+Instead of having a dedicated activePlayer state, ..., we could add some derived state here, ... <---------- ***
+
+... helper function, outside of the component function because this helper function
+will not need any access to the state or any other data related to the component.
+... it also shouldn't be created when the component function re-executes. <------------ **
+
+You wanna manage as little state as possible, and derive and compute as many values as needed.
