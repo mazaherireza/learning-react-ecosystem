@@ -1,0 +1,7 @@
+Lifting Computed Values Up
+--------------------------
+... we can derive the information whether we have a winner or not form gameTurns, ...
+
+... we don't need to check for a winner in handleSelectSquare because this App component function
+will also execute after every turn.
+
