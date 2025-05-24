@@ -1,0 +1,6 @@
+Why Immutability Matters!
+-------------------------
+... our game is controlled by this gameTurns state.
+That's our single source of truth for this entire game.
+
+... all the rest will automatically adjust since we're deriving all the other data from this state.
