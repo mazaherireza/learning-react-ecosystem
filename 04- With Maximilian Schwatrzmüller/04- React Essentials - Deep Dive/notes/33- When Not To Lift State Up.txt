@@ -1,0 +1,7 @@
+When Not To Lift State Up
+-------------------------
+... playerName state is actually used to update this input field on every keystroke
+And if we would move it out of the Player component ... the entire App component is reevaluated 
+on every keystroke .... in addition, lifting this playerName state out of the Player component
+also of course would be tricky ... we're using this Player component twice 
+and every component should manage its own name.
