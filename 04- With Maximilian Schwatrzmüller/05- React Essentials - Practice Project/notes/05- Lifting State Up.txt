@@ -1,0 +1,9 @@
+Lifting State Up
+----------------
+...
+Do we need results (return value of calculateInvestmentResults) in this component?
+No.
+
+App.jsx
+-------
+... we're sharing this state with two different components ...
