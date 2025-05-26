@@ -1,0 +1,6 @@
+Getting Started With a User Input Component
+-------------------------------------------
+... the goal with React is to split your app into such components 
+where every component has its own responsibility.
+
+... UserInput ... will be responsible for fetching the different pieces of user input we need.
