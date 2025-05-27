@@ -1,0 +1,6 @@
+Computing Values & Properly Handling Number Values
+--------------------------------------------------
+... deriving values, computing values based on state is something you'll do a lot in React.
+
+.. in JS, when you're getting the value of an input field, ... when exteracted ... will always be a string.
+
