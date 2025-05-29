@@ -1,0 +1,14 @@
+Module Introduction & Starting Project
+--------------------------------------
+Styling React Apps
+------------------
+Static & dynamic styling for pretty apps
+
+... how to apply CSS to your React components
+... different options with different advantages and disadvantages when it comes to styling React components.
+
+Styling with Vanilla CSS
+Scoping styles with CSS modules 
+CSS-in-JS styling with "Styled Components"
+Styling with Tailwind CSS
+Static & dynamic (Conditional) styling
