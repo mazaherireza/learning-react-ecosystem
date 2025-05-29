@@ -1,0 +1,10 @@
+Vanilla CSS Styles Are Not Scoped To Components
+-----------------------------------------------
+... this bottom paragraph here gets targeted by this rule, 
+even though the bottom paragraph is defined in a different componnet in a different file.
+
+... even if you do split your CSS code in multiple files, 
+and you then do import some of these files into certain component files,
+the CSS rules in those files will not be scoped to the components to which they belong
+... all these styles are in the end just injected into the head section by Vite ... <---------------- **
+they are applied globally to this page.
