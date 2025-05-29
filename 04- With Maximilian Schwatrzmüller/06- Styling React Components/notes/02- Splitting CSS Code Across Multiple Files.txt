@@ -1,0 +1,8 @@
+Splitting CSS Code Across Multiple Files
+----------------------------------------
+... to styling React apps, you got many options.
+... simply add a CSS file ... index.css file ... define all your CSS rules in there, 
+... then import this CSS file ... (Vite as an uderlying development and build tool)
+you can import CSS files into JS files ... Vite will identify such imports ... this style is dynamically injected by Vite.
+
+... injected style tags ...  
