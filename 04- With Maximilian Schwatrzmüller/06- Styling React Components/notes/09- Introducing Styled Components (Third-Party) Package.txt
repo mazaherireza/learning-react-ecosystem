@@ -1,0 +1,49 @@
+Introducing Styled Components (Third-Party) Package
+---------------------------------------------------
+... totally different way of styling your React components.
+... styled components package, ... you do not define your CSS rules and styles in separate CSS files,
+but also not as inline styles but instead in special components that are built with help of that package. <------- **
+
+... we have to install it, ...
+CMD
+---
+npm install styled-components
+
+CodeSandbox
+Dependencies <---------- *
+
+AuthInput.jsx
+-------------
+...
+import { styled } from "styled-components"
+
+... we wanna style this div (<div className="controls">) with help of styled-components package.
+
+... in the same file, you can use styled which turns out to be a JS object ... 
+... these properties in the end, map to HTML elements, 
+... it will create a div as a separate component but a component that will have any styles you wanna apply to it.
+
+styled.div`` <----------- Tagged template
+(not React specific and not specific to styled-components package)
+... tagged template is like a function which receives this template literal as an input, 
+contain all the styles you wanna apply to this div.
+
+styled.div`
+  disply: flex;
+  flex-direction: column;
+`
+... you don't need to use a camelCase notation ... standard CSS code ...
+... what this overall code will give you, will be a React component, that automatically returns a div <------ **
+that has these styles applied to it.
+... a div that internally uses the special children prop, so that is can be wrapped around other content. <------ **
+
+const Container = styled.div`
+  display: flex;
+`
+
+<Control>
+  ...
+</Control>
+
+... if we inspect ... under the hood, this styled components package, creates unique CSS class names  
+and defines the rules for these classes in the head section ... <--------------- **
