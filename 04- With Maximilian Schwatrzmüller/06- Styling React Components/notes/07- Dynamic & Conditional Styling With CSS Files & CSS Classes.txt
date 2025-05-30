@@ -1,0 +1,10 @@
+Dynamic & Conditional Styling With CSS Files & CSS Classes
+----------------------------------------------------------
+... using classNames and using standalone CSS files.
+... use the ternary expression and add undefine as a className.
+
+... add specific class conditionally and merge it with another class which is always required, ... template literal 
+...
+<label className={`label ${emailNotValid ? "invalid" : ""}`}>Email</label> <--------------- **
+
+... add some classes conditionally and other classes permanently.
