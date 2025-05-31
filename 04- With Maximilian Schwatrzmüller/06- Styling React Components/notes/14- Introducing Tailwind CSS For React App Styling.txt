@@ -1,0 +1,10 @@
+Introducing Tailwind CSS For React App Styling
+----------------------------------------------
+... is a CSS framework ... tiny utility CSS classes to HTML elements.
+
+Installation
+... Framework Guides
+Vite
+
+VS Code
+Tailwind CSS IntelliSense extension
