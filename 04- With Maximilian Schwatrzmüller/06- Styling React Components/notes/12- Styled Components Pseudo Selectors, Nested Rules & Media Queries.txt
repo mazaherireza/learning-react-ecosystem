@@ -1,0 +1,3 @@
+Styled Components Pseudo Selectors, Nested Rules & Media Queries
+----------------------------------------------------------------
+... how you could handle media queries with styled components?
