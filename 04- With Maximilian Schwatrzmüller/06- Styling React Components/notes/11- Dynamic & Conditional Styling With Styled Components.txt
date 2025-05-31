@@ -1,0 +1,20 @@
+Dynamic & Conditional Styling With Styled Components
+----------------------------------------------------
+What about setting styles dynamically or conditionally? <--------------- **
+... we could add a special prop ... the name is up to you ...
+... you can add any value you want, to that prop.
+... you can use props set ... inside of your styles to dynamically alter those styles.
+
+... with styled components, you can and should pass a function as a value ...
+... values you inject into this string ... will in the end be picked up by that label function
+... and would be executed and handled by the styled components package.
+
+That's how these tagged templates work in the end.
+If you inject dynamic values, those tagged template functions will receive those injected values as arguments.
+
+... injecting props into styled components, ... don't accidentally clash with default built-in props 
+that might exist on certain elements.
+
+... invalid prop on the input element is a built-in prop.
+... it is a common convention to prefix those props which you only want to use in your style component styling code with $ 
+... this is still a valid prop name, ... won't clash with built-in props.
