@@ -1,0 +1,16 @@
+Creating Reusable Components & Component Composition
+----------------------------------------------------
+... UI elements that you may reuse in other parts of the application.
+... outsource reusable components that have a certain styling applied to them, ...
+
+Styled Components: Advantages & Disadvantages
+---------------------------------------------
+Advantages
+Quick & easy to add
+You continue "thinking in React" --> Configurabe style functions
+Styles are scoped to components --> No CSS rule clashes
+
+Disadvantages
+You need to know CSS
+No clear separation of React & CSS code
+You end up with many relatively small "wrapper" components
