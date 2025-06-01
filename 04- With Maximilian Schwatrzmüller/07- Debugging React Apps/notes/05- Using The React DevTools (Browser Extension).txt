@@ -1,0 +1,9 @@
+Using The React DevTools (Browser Extension)
+--------------------------------------------
+... React Developer Tools extension ...
+
+... two new pages you can visit in your browser devtools.
+
+... Profiler ... finding and fixing performance issues in your React application, 
+.. Components Tab ... you find your applications component tree.
+... which props a component accepts, and which type of prop values you're getting there.
