@@ -1,0 +1,11 @@
+Module Introduction
+-------------------
+Debugging React Apps
+Finding & Fixing Errors
+
+... how to efficiently debug you React apps, ... 
+
+Making sense of React error messages
+Finding logical errors via the browser DevTools & Debugger
+Enabling React's strict mode
+Using the React DevTools for application analysis & manipulation
