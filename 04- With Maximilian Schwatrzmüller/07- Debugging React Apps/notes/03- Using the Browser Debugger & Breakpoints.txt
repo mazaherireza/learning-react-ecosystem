@@ -1,0 +1,10 @@
+Using the Browser Debugger & Breakpoints
+----------------------------------------
+... not all errors lead to error messages. You sometimes also have logical erros ...
+When it comes to handling errors like this, as a first step, you should always try to think logically.
+Which part of your code could be responsible for this error?
+
+... under localhost:... ...
+... Sources tab ... in the Chrome DevTools 
+... place breakpoints here by clicking on a line number <------------- **
+code execution will stop at this line of code when it reaches it.
