@@ -1,0 +1,29 @@
+Understanding React's Strict Mode
+---------------------------------
+... another React feature, that can help you catch and fix some kinds of errors.
+
+... this is an error, React can't surface to us immediately, right when the app starts,
+it can do that if we use StrictMode.
+
+... using StrictMode typically begins in index.jsx.
+... you can also enable it just for parts of your application if you wanted to, ...
+
+... StrictMode is a component provided by React ... use it like a component.
+It is a component that's meant to be wrapped around other components.
+
+index.jsx
+---------
+import { StrictMode } from "react";
+...
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+
+... one of the most important things the StrictMode component does is that 
+it will execute every component function twice instead of just once. <-------------- **
+... it only does that during development ... prepare your application for production 
+and you would upload it to some server, StictMode would no longer execute every component twice ...
+it does that during development.
