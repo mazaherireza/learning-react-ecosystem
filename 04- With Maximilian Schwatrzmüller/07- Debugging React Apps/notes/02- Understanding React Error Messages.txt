@@ -1,0 +1,6 @@
+Understanding React Error Messages
+----------------------------------
+... after the actual message, we got the so-called stack trace <------------ **
+... a list of code executions that led to this error.
+... at Results (Results.jsx:8:16) <---------- the error is comming from the Results function,
+... from line 8 ... 16 then refers to the column, 
