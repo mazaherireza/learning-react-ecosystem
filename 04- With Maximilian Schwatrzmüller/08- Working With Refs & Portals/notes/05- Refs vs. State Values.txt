@@ -1,0 +1,37 @@
+Refs vs. State Values
+---------------------
+... where refs can be useful, even if you don't connect them to HTML elements. <------------- ** 
+
+Player.jsx
+----------
+...
+<h2>Welcome { playerName.current.value || "Unkonw" }...
+...
+Uncaught TypeError: Cannot read properties of undefined (reading "value")
+...
+
+I'm trying to output the value stored in playerName.current, when the component gets rendered for the first time.
+... this connection through ref prop won't be established yet. <------------- ***
+
+So in the first component render cycle, when that component function is executed for the first time,
+playerName.current will simply be undefined. <-------------- **
+It's only in the next render cycle, that it will have this connection to this input field and that we'll be able to read the value.
+
+Player.jsx
+----------
+...
+<h2>Welcome { playerName.current ? playerName.current.value : "Unkonw" }...
+... the error goes away.
+
+... whenever a ref changes, the component function does not re-execute. <-------------- ***
+
+State vs Refs
+--------------
+State
+Causes component re-evaluation (re-execution) when changed 
+Should be used for values that are directly reflected in the UI <--------------------- *
+Should not be used for "behind the scenes" values that have no direct UI impact
+
+Refs
+Do not cause component re-evaluation when changed
+Can be used to gain direct DOM element access --> great for reading values or accessing certain browser APIs
