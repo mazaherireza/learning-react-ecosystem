@@ -1,0 +1,10 @@
+Manipulating the DOM via Refs <----------------- **
+-----------------------------
+...
+What if you wanna reset it?
+... you must not forget that React is about writing declarative code <-------------- **
+and it's about not directly manipulating the DOM yourself, instead you wanna let React do that.
+
+playerName.current.value = "" <----------- imperative code 
+
+... don't start using refs to read and manipulate all kinds of values on your page, ...
