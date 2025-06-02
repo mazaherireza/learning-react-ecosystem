@@ -1,0 +1,24 @@
+Module Introduction & Starting Project
+--------------------------------------
+Refs & Portals <---------------- **
+--------------
+Advanced DOM Access & Value Management
+... two features which can simplify certain things and also help you solve certain problems 
+which otherwise are almost impossible to solve.
+
+Accessing DOM elements with refs 
+(... use ref ... to gain simplified direct access to DOM elements and what you can do with that access.)
+
+Managing values with refs
+(... manage values that shouldn't be state.)
+
+Exposing API functions from components
+(... how you can build components that expose an API for example callable functions to other components with help of ref concept.)
+
+Detaching DOM rendering from JSX structure with portals <--------------- **
+(... use portal feature to detach the place where an element gets rendered in the actual DOM 
+from the place where you use it in your JSX code.)
+
+... we're going to build ... with refs and portals.
+
+... if you start that development server locally, after installing the dependencies locally ...
