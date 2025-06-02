@@ -1,0 +1,24 @@
+Introducing Refs, Connecting & Accessing HTML Elements Via Refs
+---------------------------------------------------------------
+... a ref in React is a value, just as the state in the end is a value, 
+and just as a variable contains a value but it's a special kind of value ... it's managed by React in a special way ...
+
+... get the value that will be entered into this input field.
+... you can connect them to JSX elements ... a special prop that's supported by all React components ... the ref prop
+which just like the key prop is a special prop.
+
+We can use this ref value, to access the underlying connected element, ... you first have to access a "current" property. 
+
+This ref value you are getting back from useRef will always be a JS object <---------------- **
+that will always have a (and only) "current" property ... in this "current" property the actual ref value, 
+... the connected input, will be stored.
+
+I can now access all the methods and properties that are exposed by that input HTML element.
+... built-in native input element.
+
+... use that to update our entered playeName state ...
+
+{enteredName ? enteredName : "Unknown"}
+{enteredName ?? "Unknown"}
+
+... for use case like this where you just wanna "read" a value from an input field, ...
