@@ -1,0 +1,6 @@
+Repetition Managing User Input with State (Two-Way Binding)
+-----------------------------------------------------------
+... feed that state back into the input field ...
+... it's quite a lot of code we have to write here just to read the value that's entered into this input field ...
+
+... can be simplified by using refs. <--------- **
