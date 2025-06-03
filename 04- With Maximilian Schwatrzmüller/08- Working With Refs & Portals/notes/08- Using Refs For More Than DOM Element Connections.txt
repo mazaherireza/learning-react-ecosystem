@@ -1,0 +1,35 @@
+Using Refs For More Than DOM Element Connections <----------------- **
+------------------------------------------------
+...
+TimerChallenge.jsx
+------------------
+...
+const handleStop = () => {}
+
+So how can we stop this timer from inside this function? <---------------- **
+
+JS has a clearTimeout function which can be used to stop a timer but it needs a pointer at that timer, (the ID of that timer) ...
+
+... somehow the timer was not stopped as it seems, the problem is that we're using a variable.
+... whenever state changes, this component function re-executes.
+... this varaible (timer) is re-created. <--------------------- *
+So the timer used in handleStop will be a different timer than in handleStart, <------------------- **
+because in between, the component function re-executed, because we updated the state in handleStart.
+
+..., if we define it outside of the component function, because then it would not be re-created. <---------- **
+... we'll now face a different problem.
+... because this timer variable is now a variable defined ... outside of this component function.
+... it's actually a variable that will be shared across all component instances that are based on this component function.
+
+... a variable is not a solution. ... refs can be a solution. <---------------- **
+... you cannot just use refs to connect to HTML elements, ... use refs to manage any kind of value. <------------ **
+
+... since this is defined inside of the component function, it will be component instance specific. <--------- **
+Every component instance of this component, will get its own timer ref that works totally independent ...
+... unlike variables defined in component functions, this ref will not be reset or cleared <-------------- ***
+when this component re-executes, just as with state values, 
+React will store these timer values behind the scenes and make sure that they don't get lost as this component function re-executes.
+
+... if you have a value that must be managed but that isn't really a state ... has no direct impact on the UI.
+(... you still need to manage it such that it's not reset, when the component is re-executed), 
+... a great use case for a ref.
