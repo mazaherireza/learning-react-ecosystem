@@ -1,0 +1,26 @@
+Forwarding Refs to Custom Components
+------------------------------------
+How can we reach out to this dialog from TimerChallenge with help of a ref? <---------------- **
+
+..., we're in the end, forwarding a ref that's defiend in TimerChallenge ..., to the dialog element in ResultModal.
+
+... the built-in dialog element has such a showModal method, ... standard browser feature.
+... this is only the case because this project uses at least version React 19.
+... older React versions, you would have gotten an error.
+
+Warining: ResultModal: `ref` is not a prop.
+... can't accept a ref like a regular prop. <------------ **
+... how you would set up this component to receive a ref, if you couldn't use this approach.
+
+... wrap your component function with ... forwardRef, ... this component function then 
+receives an additional parameter. ... a second parameter beside receiving props parameter.
+
+ResultModal.jsx
+---------------
+import { forwardRef } from "react";
+
+const ResultModal = forwardRef({ result, targetTime }, reference) => {
+  return (
+    <dialog ref={reference} className="result-modal">
+    ...
+)
