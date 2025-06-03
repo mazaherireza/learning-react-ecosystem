@@ -1,0 +1,25 @@
+Adding a Modal Component
+------------------------
+... I wanna show a pop-up that lets us know about our result ... 
+
+... if you add a form like this, (with the method set to dialog) inside of a dialog,
+a button that submits the form, will close this dialog.
+
+Modal.jsx
+---------
+...
+<dialog>
+  <form method="dialog">
+    <button>Close</button>
+  </form>
+</dialog>
+
+... this built-in dialog element by default is invisible ... open prop to it. <----------- **
+
+... we could manually add another element, that is displayed behind that dialog ... used to dim that background behind the dialog ...
+... but this dialog comes with a built-in backdrop element that will be displayed behind the dialog
+... this built-in backdrop will not be shown if you force the dialog to be visible <--------------- **
+by setting open to true ...
+Instead we have to open this dialog programmatically by sending a command to the browser,
+... to get this built-in backdrop ... refs can help us. <--------------------- **
+... we can access this dialog from inside the TimerChallenge (parent) component.
