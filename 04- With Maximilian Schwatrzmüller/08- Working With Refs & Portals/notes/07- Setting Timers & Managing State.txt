@@ -1,0 +1,9 @@
+Setting Timers & Managing State
+-------------------------------
+...
+TimerChallenge.jsx
+------------------
+...
+const handleStop = () => {}
+... how do we get access to this timer, in this function (handleStop)? <----------- **
+... ref can help us.
