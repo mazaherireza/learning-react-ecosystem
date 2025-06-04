@@ -1,0 +1,33 @@
+Introducing & Understanding Portals
+-----------------------------------
+... inspect this modal ...
+
+Elements Tab
+...
+<dialog class="result-modal" open>...</dialog> [top-layer (1)]
+...
+
+... technically it would make more sense if this overlay element which visually sits on top of the entire page
+would be output directly inside of the body ... <----------------- **
+... it would make sense to have the dialogue on such a higher level 
+because that would map its visual appearance to its location in the HTML structure,
+which can be better for accessibility reasons ... help you avoid styling problems.
+... control ... output this modal component in the TimerChallenge component
+but we'd like its JSX code to go somewhere else in our page. <------------------- **
+... portal feature ...
+
+ResultModal.jsx
+---------------
+import { createProtal } from "react-dom"
+
+... React library only exposes functions and features that work in all kinds of environments. ... native app ... 
+... ReactDOM library includes a couple of features and functions ... allow React to interact with the DOM.
+
+... and the idea behind a portal is just to kind of teleport this HTML code ... into a different place in the DOM.
+
+... the first argument is ... JSX code, the second ... is an HTML element to which this code should be teleported.
+... where this code should be rendered in the end.
+... an element that exists in your index.html file.
+
+... modals or similar scenarios where you have some JSX code ... not be rendered in the place where you are using it in your app, 
+but somewhere else in your document.
