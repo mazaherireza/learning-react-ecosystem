@@ -1,0 +1,4 @@
+More Examples When To Use Refs & State
+--------------------------------------
+... setting the state like this ("directly" in a component function) can be dangerous,
+because you can create an infinite loop with that.
