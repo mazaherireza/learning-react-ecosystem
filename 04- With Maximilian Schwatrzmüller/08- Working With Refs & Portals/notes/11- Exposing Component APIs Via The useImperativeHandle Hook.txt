@@ -1,0 +1,47 @@
+Exposing Component APIs Via The useImperativeHandle Hook <----------------- **
+--------------------------------------------------------
+Now this approach here, where we forward ref to dialog (element), has one small potential flaw, ...
+... TimerChallenge component, ... in the end needs to know that ... dialog ref, will be attached to dialog element. <------- **
+
+... dive into those components to understand how they work internally, so that you use them correctly 
+... call the correct method on that ref, ... can be a problem.
+... if other developer, ... switches from a dialog to a div, you are lost, ... <------------- **
+
+... it might be preferable to build this ResultModal component ... 
+it exposes its own function that can be called with help of a ref, outside of that component, ... <------------- **
+which will work independent of how this JSX code (in child component) might change in the future, ...
+... keep this one function which is exposed to you, ... 
+
+... can be achieved ... special hook ... in the component that wants to expose such a callable function. <-------- **
+
+... useImperativeHandle ... to define properties and methods that should be accessible on parent component from outside child component.
+
+... wants two arguments ... the first argument should be a ref object, 
+... simply wants a ref, a ref that's passed to this component, 
+... second value, must be a function that returns an object which groups all the properties and methods 
+that should be exposed by this component to other components.
+
+... execute useRef in the child component <--------------- **
+... now we'll need a separate ref for reaching out to the dialog
+... the idea is to detach this dialog element from any other outer components. <-------------- **
+
+const ResultModal = ({ reference, ... }) => {
+  const dialog = useRef();
+  ...
+  useImperativeHandle(reference, () => {
+    return {
+      show() {
+        dialog.current.showModal()
+      }
+   }
+
+  return(
+    <dialog ref={dialog} ...>
+  ...
+
+TimerChallenge.jsx
+-------------------
+...
+dialog.current.show()
+...
+<ResultModal reference={dialog} ... />
