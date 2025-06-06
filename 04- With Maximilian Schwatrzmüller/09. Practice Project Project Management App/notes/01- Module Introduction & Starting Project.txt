@@ -1,0 +1,12 @@
+Module Introduction & Starting Project
+--------------------------------------
+
+Practice Project: Advanced Concepts
+-----------------------------------
+Working with Components, State, Styling, Refs & Portals
+
+Build a "Project Management" web app
+Build, style, configure & re-use components
+Manage state
+Access DOM elements & browser APIs with refs <-------------- **
+Manage JSX rendering positions with portals <-------------- **
