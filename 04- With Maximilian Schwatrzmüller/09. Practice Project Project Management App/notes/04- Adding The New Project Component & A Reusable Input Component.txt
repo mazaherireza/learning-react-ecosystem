@@ -1,0 +1,7 @@
+Adding The New Project Component & A Reusable Input Component
+-------------------------------------------------------------
+NewProject.jsx
+--------------
+...
+<Input label="Description" hasTextarea={true}> ...
+but that's redundant, if you just add it like this, <Input label="Description" hasTextarea> ... it will also be set to true.
