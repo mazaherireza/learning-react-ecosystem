@@ -1,0 +1,2 @@
+Adding a Project's Sidebar Component
+------------------------------------
