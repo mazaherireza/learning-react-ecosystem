@@ -1,0 +1,5 @@
+Styling Buttons & Inputs With Tailwind CSS
+------------------------------------------
+... className="w-[35rem]">
+... how you can use Tailwind to set a custom value.
+... if you wanna assign a certain value that's not built into Tailwind ... will generate this class for you.
