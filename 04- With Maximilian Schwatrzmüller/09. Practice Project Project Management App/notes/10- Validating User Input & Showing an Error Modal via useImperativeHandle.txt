@@ -1,0 +1,9 @@
+Validating User Input & Showing an Error Modal via useImperativeHandle
+----------------------------------------------------------------------
+... I wanna use the portal feature provided by React to render this dialog and the content that will be wrapped by that dialog 
+in a different place of the DOM.
+
+... I wanna make sure that we can open this dialog by calling a function that should be exposed by ...
+... that does not require the calling component, (... parent component) to know that a dialog is used internally. <---------- **
+
+... to expose a function that can be called from outside this component function, we must use useImperativeHandle ...
