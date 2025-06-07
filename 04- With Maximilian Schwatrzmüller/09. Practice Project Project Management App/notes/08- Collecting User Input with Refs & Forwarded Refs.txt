@@ -1,0 +1,16 @@
+Collecting User Input with Refs & Forwarded Refs
+------------------------------------------------
+... we need a way of collecting these values that were entered into the inputs.
+... one way ... listen to the change event and update some state with every keystroke and store the entered values ...
+
+... since I really only wanna read these values when I click Save button ... use refs ... <--------- **
+... you can use refs to connect them to HTML elements and then interact with those elements, ...
+
+... this <Input ...> is a custom component, it's not a built-in input,
+and therefore adding a ref prop might not work ... React version 19 or higher this will work
+and you can simply use and extract this prop named ref ... like any other prop,
+... wrap ... with forwardRef function ... forward any incoming refs <--------------- **
+
+... we need that state lifted up to the App component.
+
+... the connection should be established ...
