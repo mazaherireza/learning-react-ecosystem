@@ -1,0 +1,2 @@
+Splitting Components to Split JSX & Tailwind Styles (for Higher Reusability)
+----------------------------------------------------------------------------
