@@ -1,0 +1,6 @@
+Managing State To Switch Between Components
+-------------------------------------------
+... my idea behind adding this selectedProject property and setting it to undefined initially
+... will be used to either store the ID of the project ... or null if we want to add a new project <-------- **
+or undefined if we're not adding a new project and we also did not select any project.
+
