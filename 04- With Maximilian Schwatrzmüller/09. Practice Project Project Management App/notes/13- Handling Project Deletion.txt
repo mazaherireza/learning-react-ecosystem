@@ -1,0 +1,3 @@
+Handling Project Deletion
+-------------------------
+... filter method will return a brand new array ...
