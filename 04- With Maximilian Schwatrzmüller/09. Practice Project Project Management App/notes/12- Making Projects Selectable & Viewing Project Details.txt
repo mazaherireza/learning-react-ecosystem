@@ -1,0 +1,4 @@
+Making Projects Selectable & Viewing Project Details
+----------------------------------------------------
+<p className="whitespace-pre-wrap" ... line breaks are not removed ...
+
