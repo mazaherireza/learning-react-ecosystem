@@ -1,0 +1,9 @@
+Styling the Modal via Tailwind CSS
+----------------------------------
+... backdrop: ... use this prefix to add all kinds of classes we want to that automatically-rendered backdrop element 
+that is displayed behind the dialog. 
+
+Modal.jsx
+---------
+...
+<dialog className="backdrop:bg-stone-900/90 ..." ... has some transparency ...
