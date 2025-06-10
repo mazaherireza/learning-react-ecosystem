@@ -1,0 +1,11 @@
+Prop Drilling, Component Composition As A Solution
+--------------------------------------------------
+... I want to embrace component composition by refactoring Shop component, to a wrapper around a list of Products.
+
+... we no longer have to pass a pointer ... to the Shop component.
+... a special children prop, so we can use this custom component (Shop component) as a wrapper ...
+
+... got rid of one layer of component nesting, ...
+
+... downside ...
+... in the end, all your components just end up in the App component and all the other components are just wrapper components.
