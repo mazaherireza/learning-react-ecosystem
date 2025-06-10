@@ -1,0 +1,41 @@
+Creating & Providing The Context
+--------------------------------
+src 
+  store <---------- **
+
+... context values are stored in files that are stored in a folder called "store".
+
+cart-context.jsx
+----------------
+import { createContext } from "react";
+
+export const CartContext = createContext();
+...
+... this value that is produced by createContext will actually be an object that contains a React component ... <--------- **
+
+... initial value that can be provided to multiple components in your React App,
+to all the components that will be wrapped by this context <------------- **
+
+... App component is a greate place to wrap Header and Shop within our context 
+so that those components or their child components can use that context.
+
+... we're now going to use this context as a component.
+... wrap it around the content that should be able to access this context.
+
+App.jsx
+-------
+...
+return(
+  <CartContet>
+    <Header cart={shoppingCart} ...>
+      ...
+  </CartContext>
+... will work if you're using React 19 or higher, ...
+
+... when using older versions of React, ... access a nested Provider property on that CartContext object ...
+
+<CartContext.Provider> <-------------- **
+... we're simply accessing a nested property on the CartContext object and that property turns out to hold a React component ...
+
+... it's not just components like Header or Shop ... can be used like components as JSX elements ...
+... but it's also nested components ...
