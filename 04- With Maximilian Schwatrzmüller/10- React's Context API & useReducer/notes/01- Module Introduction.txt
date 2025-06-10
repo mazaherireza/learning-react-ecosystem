@@ -1,0 +1,13 @@
+Module Introduction
+-------------------
+
+Advanced State Management
+-------------------------
+Beyond Basic Apps & "Lifting Up State"
+...
+... managing state in such more complex applications ... can lead to problems like prop drilling, ...
+
+The problem of shared state: prop drilling
+Embracing component composition
+Sharing state with context <----------------- **
+Managing complex state with reducers
