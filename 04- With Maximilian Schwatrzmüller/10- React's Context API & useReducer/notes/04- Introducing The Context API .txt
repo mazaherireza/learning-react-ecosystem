@@ -1,0 +1,11 @@
+Introducing The Context API 
+---------------------------
+... a solution that can indeed get rid of this entire prop drilling problem altogether.
+
+... React's Context API ... it is a feature that's ... to make sharing data across components and across component layers ... 
+... create a context value ... you then provide that value ... wrap this context around multiple components, ...
+
+... this context value that you provide to multiple components, ... it can easily be connected to state. <--------- **
+So you can connect your React state to this context value which is provided to the entire application, ...
+
+... components that do need to change or read the state, can directly reach out to that context, ... also to that state.
