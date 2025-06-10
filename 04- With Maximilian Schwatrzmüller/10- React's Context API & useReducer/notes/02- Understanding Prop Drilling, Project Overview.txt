@@ -1,0 +1,11 @@
+Understanding Prop Drilling, Project Overview
+---------------------------------------------
+... you'll also need to manage some state.
+... shopping cart state.
+... that's state will need to be lifted up ... it might be used and displayed ... in one place of component tree,
+but it then might be updated in a totally different component ...
+... need to manage the state at some component that has access to all components that need that state.
+... share it through props ... update it with help of props.
+
+... pass that shared data through multiple layers of components. ... prop drilling.
+... extra boilerplate code ...
