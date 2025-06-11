@@ -1,0 +1,4 @@
+What Happens When Context Values Change
+---------------------------------------
+When you access a context value in a component and that value then changes,
+the component function that accesses the context value, will get re-executed by React, ...
