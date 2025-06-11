@@ -1,0 +1,29 @@
+A Different Way Of Consuming Context
+------------------------------------
+... another way of accessing and reading context ... useContext hook ...
+... this hook does kind of connect a component function to the context and make that context value available in that function.
+
+... there's a special component you can access on that context object, just as we could access the Provider component ...
+
+... any context object, also offers another component you could use, the Consumer component. <------------ ***
+
+The Consumer component can be used to wrap JSX code, that should have access to a context value with it.
+... needs a special kind of child ... because what you must pass as content here, is actually a function. 
+... you should pass a function as a child between the opening and closing Consumer component tags.
+
+Cart.jsx
+--------
+...
+return (
+  <CartContext.Consumer>
+    { (contextValue) => {
+        return <div id="cart" ...
+      } 
+    }
+
+... that function will be executed by React.
+... will automatically receive the context value which you're consuming ... as a parameter. <--------------- **
+... should return the actual JSX code that should be output by that component, ...	
+
+... this function is essentially an extra wrapper that's required by the consumer component 
+to make that consumed context available in that component's JSX code.
