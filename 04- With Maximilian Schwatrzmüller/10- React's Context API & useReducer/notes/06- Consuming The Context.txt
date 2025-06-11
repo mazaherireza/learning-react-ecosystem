@@ -1,0 +1,45 @@
+Consuming The Context
+---------------------
+... we're providing the context, let's consume it.
+
+Cart.jsx
+--------
+import { useContext } from "react"; <------------- ... to access some context from inside a component ... 
+import { CartContext } from "../store/...";
+...
+const cardContext = useContext(CartContext); <------------ **
+
+... there also is another hook you could use instead, ... use hook!
+
+const cardContext = use(CartContext);
+... it will also give you that context value(s) as a return value.
+
+Why do we have, two hooks for the same purpose? <--------------- **
+The use hook is a bit more flexible ... can be used inside of an if block. <------------ **
+... is only available if you're using React version 19 or higher.
+
+... for backwards compatibility reasons, I'll use the useContext hook instead.
+
+... The "value" prop is required for the "<Context.Provider>".
+Did you misspell it or forget to pass it?
+
+... you also must add a value property to your CardContext.Provider ... <------------ **
+Even though we're setting a default value ... must add a value prop to your CartContext.Provider component.
+
+The default value (set when creating the context) <---------------- *
+is only used if a component that was not wrapped by the Provider component, tries to access the context value. <------------- **
+
+Why is setting this default value here useful?
+
+cart-context.jsx
+----------------
+import { createContext } from "react";
+
+export const CartContext = createContext({
+  items: [],
+});
+
+... if you do set this, you get better auto-completion. <------------- **
+... destructure this context object.
+
+How can now link this context to state? <------------- **
