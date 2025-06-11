@@ -1,0 +1,6 @@
+Linking The Context To State
+----------------------------
+... we want to use context for everything, not just for reading values, but also for updating those values.
+... don't have to pass props if we just wanna update a value.
+
+... use context to share values and state updating functions with multiple components in your app without using prop drilling.
