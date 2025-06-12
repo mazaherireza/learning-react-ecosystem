@@ -1,0 +1,11 @@
+Dispatching Actions & Editing State With useReducer
+---------------------------------------------------
+... the previous shopping cart value is now that state parameter ...
+because this is guaranteed latest state we're getting from React, 
+
+... if we had a more complex state object with multiple properties, we might wanna spread and copy the old state first
+so that we don't lose any other values ... 
+
+... reducer function outside of the React component,
+and we don't have to keep in mind that we should use some special function forms (like updater function)
+because in this reducer function we'll always get the latest state snapshot automatically. <-------------- **
