@@ -1,0 +1,4 @@
+Outsourcing Context & Separate Provider Component
+-------------------------------------------------
+... get all context related data management out of the App component into a separate context component.
+
