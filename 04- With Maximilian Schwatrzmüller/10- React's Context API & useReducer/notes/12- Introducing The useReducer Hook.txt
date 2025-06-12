@@ -1,0 +1,34 @@
+Introducing The useReducer Hook
+-------------------------------
+When building more complex React apps, context can be a crucial feature ... sharing state across multiple components.
+But what about state management itself? <--------- **
+
+... state updating functions are rather complex.
+... CartContextProvider component function, ... function form ... passing a function to them 
+... if you're managing more complex state,  ... you will need to update your state based on the previous state snapshot
+so this is a pattern you'll use all the time ... it's also kind of annoying to repeat this pattern all the time.  
+
+... that's why in React instead of managing state with useState ... another state management hook ... useReducer.
+
+... reducer is typically a function that reduces one or more complex values to a simpler one. <------------ *
+... the idea behind useReducer hook is to use this same concept of reducing one or more values to a typically simpler value,
+for state management purposes. <------------ ***
+
+How do we use useReducer for state management? <---------- **
+... will give you an array with exactly two elements, the first element ... state that's managed by useReducer,
+... the second value ... a dispatch function which allows you to dispatch actions that will then be handled by a reducer function
+... will get triggered by dispatching values and that will then produce a new state. <------------ **
+
+reducer(state, action) <------------ ... state you'll get here,
+will be guaranteed the latest state snapshot of that state that is managed by useReducer. 
+
+... will be called by React after you dispatch an action ...
+
+... inside of reducer function, you should return the updated state.
+... connect reducer function to the useReducer hook ... pass a pointer at that reducer function as the first argument to useReducer.
+Now this reducer function is registered for React and will be executed whenever you dispatch. <------------ **
+
+... second value allows you to set an initial value for this state, (the first argument for reducer) <------------- ***
+which will be used if the state has never been updated yet.
+...
+... useReducer(reducer, {}) <----------- *
