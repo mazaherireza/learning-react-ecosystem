@@ -1,0 +1,12 @@
+A Potential Problem With Side Effects, An Infinite Loop
+-------------------------------------------------------
+... those sorted places, are not available right at the start, 
+because this operation of getting the user's location will take some time. 
+So the first App component render cycle, will be finished at the point of time where we have this location. <----------- **
+Therefore we need state here, ...
+... setAvailablePlaces(...) triggers a new render cycle, the state will be updated with those sorted places
+... it would cause an inifinite loop.
+
+..., calling such a state updating function tells React to re-execute the component function ... 
+... we fetch the user's location again ...
+... crash our application ... useEffect hook ... allows us to solve this problem. <----------- **
