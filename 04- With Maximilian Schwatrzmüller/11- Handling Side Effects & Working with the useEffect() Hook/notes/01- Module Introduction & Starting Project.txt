@@ -1,0 +1,10 @@
+Module Introduction & Starting Project
+--------------------------------------
+
+Dealing With Side Effects
+-------------------------
+Keeping the UI Synchronized
+
+Understanding Side Effects & useEffect()
+Effects & Dependencies
+When NOT to use useEffect()
