@@ -1,0 +1,31 @@
+What's a Side Effect, A Thorough Example
+----------------------------------------
+Side effects are tasks that don't (directly) impact the current component render cycle. <------------ ***
+...
+We need to get the location of the user ... built-in browser method ... 
+
+... App component, ... get this location as early as possible, when this application starts up ... get the user's location ...
+... navigator object, an object exposed by the browser ...
+
+... fetching that location can take some time and therefore, getCurrentPosition takes a callback function. <--------- **
+which will be executed by the browser once the location has been fetched, 
+... the code that depends on this location, should be executed inside of this callback function
+because this function will be called by the browser, once the location has been determined.
+
+... the browser exposes the fetched position to us through a position object, ... automatically passes to this function.
+
+App.jsx
+-------
+...
+navigator.geolocation.getCurrentPosition(...) <---------- **
+... it's side effect because this code is needed by this application ...
+but it's not directly related to the main goal of this component function,
+... the main goal of every component function is to return renderable JSX code. <-------------- **
+
+..., does not finish instantly instead this callback function will be called at some point in the future <-------------- **
+when this App component function, most likely finished its execution already. <-------------- **
+
+...
+navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude }}) => {
+  const sortedPlaces = ...
+})
