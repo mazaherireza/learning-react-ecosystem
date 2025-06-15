@@ -1,0 +1,17 @@
+Using useEffect For Syncing With Browser APIs <---------------- **
+---------------------------------------------
+How can we use useEffect to make sure depending on the value of this open prop, this dialog is shown or closed?
+We could first try it without useEffect ... add if check ...
+... we'll get an error ... Cannot read properties of undefined (reading "close") at Modal ...
+... the first time this CF executes, this ref won't be set yet. <-------------- **
+... because JSX code hasn't executed yet.
+So connection between ref and dialog element hasn't been established yet. <--------------- **
+... another scenario where you wanna use useEffect ... can help you synchronize prop or state values to DOM APIs <----------- **
+like this dialog showModal method .... 
+... because the effect function you define with useEffect will be executed right after the component function 
+and since it executes after the CF ... this connection between the ref and the dialog will be established ... <------------- **
+
+... to synchronize some value, (the open prop) to a DOM API or to a certain behavior.
+
+... haven't added all the dependencies that are required by this effect function to dependencies array. <--------- **
+What exactly are such effect dependencies?
