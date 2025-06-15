@@ -1,0 +1,21 @@
+useEffect Not Needed Another Example
+------------------------------------
+... fetch these items when the App starts. 
+... you might think that you probably need useEffect, 
+
+... when we add an empty dependencies array, effect function will only run once, after the App CF ran. <---------- **
+... redundant usage of useEffect. <---------------- *
+
+... localStorage ... runs synchronously, which means it basically finishes instantly. <------------- **
+It executes line by line ... this was not the case for getCurrentPosition
+... it was only done once this callback function was executed by the browser and that happened at some point in the future.
+
+But for localStorage, that's not the case, we got no callback function or promise ...
+... this App component function does not finish its execution cycle, before fetching that data is done.
+
+... get rid of useEffect ... move that code in front of the state initilization code ... 
+
+... move that code out of the component function, so that it only runs once in the entire application lifecycle, 
+when this code file is parsed and executed for the first time.
+
+... with side effects that don't need useEffect. 
