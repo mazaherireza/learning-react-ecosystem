@@ -1,0 +1,21 @@
+Not All Side Effects Need useEffect <---------------- **
+-----------------------------------
+... not all side effects require the usage of useEffect ... overusing useEffect ... is considered a bad practice.
+... this is an extra execution cycle that's triggered after the component's execution cycle. <----------- ***
+
+... besides updating that data in state, ... which I do in order to update the UI, ... storing this list of IDs in localStorage.
+
+... localStorage.getItem(...) ... another example for a side effect,
+... store data in the browser's storage, is not directly related to rendering JSX code.
+... it is a side effect.
+
+... unlike with the navigator code, we don't need to wrap this code with useEffect ...
+
+... we can't use useEffect here ... inside of a function 
+... you're not allowed to use React hooks in nested functions, ... root level of ... component function,
+
+... this code does not enter an infinite loop because we're not updating any state here
+and even if we were updating any state we would not create an infinite loop ... only executes when a user clicks on ...
+
+You basically only need the useEffect hook to prevent infinite loops or 
+if you have code that can only run after the component function executed at least once. <---------- ***
