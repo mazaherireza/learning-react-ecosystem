@@ -1,0 +1,33 @@
+The useCallback Hook
+--------------------
+... the fix for this problem is straightforward and simple, because React offers a hook 
+which you can use to make sure that this function (handleRemovePlace) is not re-created all the time ...
+
+... wrap it around a function ...
+... execute useCallback and then pass the function that should be wrapped as the first argument to useCallback 
+... second argument which should be an array of dependencies, ...
+
+... useCallback returns that function which you wrapped 
+but now it's not re-created whenever this surrounding component function is executed again. <------------ **
+
+So with useCallback, React makes sure that this inner function is not re-created, <----------------- **
+instead, it stores it internally in memory and reuses that stored function whenever the component function executes again.
+
+... you should use useCallback when passing functions as dependencies to useEffect.
+
+... useCallback also takes a dependency array, ... works exactly as the dependency array of useEffect
+Here, you should add any prop or state values that are used inside of this wrapped function. <-------------- **
+[Or, just as with useEffect, any other values that in the end depend on state values (e.g., context values, other functions)]
+
+... React will only re-create this function with useCallback if your dependencies changed. <------------ **
+But if you have and empty array of dependencies, there is nothing that could change, ... this function isn't re-created. <------- **
+
+App.jsx
+-------
+...
+const handleRemovePlace = useCallback(() => {
+  setPickedPlaces(prev => ...)
+  ...
+}, []);
+
+... useCallback gives us the extra safety that we won't face ... infinite loop. <-------------- **
