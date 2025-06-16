@@ -1,0 +1,7 @@
+Optimizing State Updates
+------------------------
+... every 10 miliseconds, React has to compare the onConfirm value to figure out whether this effect function should run again.
+... re-evaluate this entire JSX code ...
+
+It would be better to outsource this progress indicator and its related state logic and useEffect hook 
+into a separate component ... just one single component that should be re-executed all the time.
