@@ -1,0 +1,39 @@
+Preparing Another Problem That Can Be Fixed with useEffect
+----------------------------------------------------------
+Besides this dependencies array, useEffect has one another feature ...
+... DeleteConfirmation component file
+... this modal closes automatically after three seconds ...
+
+... when this component is rendered, this timer is set ... we execute onConfirm after three seconds.
+... with this code, we'll face a couple of problems ...
+
+One problem is that this DeleteConfirmation component is always rendered, it is rendered by the App component 
+... technically this deleteConfirmation component is always part of the DOM, 
+and therefore this timer will actually be set and started when the App component renders for the first time
+because during that render cycle, deleteConfirmation is also rendered.
+
+... to work around this issue, we could simply render deleteConfirmation conditionally ... depending on modal is open ...
+
+App.jsx
+-------
+...
+{
+  modalIsOpen && (<DeleteConfirmation ... />)
+...
+
+A more elegant solution ... into the Modal component ...
+
+Modal.jsx
+---------
+...
+<dialog className="modal" ... >
+  { open ? children : null }
+</dialog>
+... so that the App component doesn't have to deal with conditionally rendering this ...
+
+... still this code has a problem.
+... if I remove it myself before ...
+
+... because the timer is never stopped when DeleteConfirmation component is not rendered anymore. <-------------- ***
+instead it was started and it keeps on going behind the scenes, independent from the question whether this component
+is currently visible or not ... can be fixed with useEffect. <-------------- *
