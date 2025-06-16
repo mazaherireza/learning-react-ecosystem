@@ -1,0 +1,16 @@
+Understanding Effect Dependencies
+---------------------------------
+Effect dependencies are prop or state values that are used inside of the effect function. 
+[In addition, other effect dependencies would be functions or context values that depend on or use state or props.] <----------- **
+... any value that causes the component function to execute again, <----------- **
+which is the case in the end for props and states, any such value is a dependency,
+if it's used inside of useEffect. <----------- **
+
+Any other value like refs ... objects and methods that are built into the browser, are not considered dependencies.
+Because useEffect only cares about dependencies that would cause the component function to execute again. <------------ ***
+
+... effect function should run whenever the component function executed if one of its dependencies changed.
+
+... with an empty dependencies array, effect function would never run again. <------------- **
+
+... this effect function will now run again whenever the Modal CF executed and the value of the open prop changed.
