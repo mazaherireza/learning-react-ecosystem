@@ -1,0 +1,29 @@
+Introducing useEffect's Cleanup Function
+----------------------------------------
+DeleteConfirmation.jsx
+----------------------
+...
+setTimeout(() => { onConfirm(); }, 3_000) <---- ... is a side effect ...
+... useEffect can fix this timer problem ... with useEffect we can stop this timer when this component disappears. <------------ *
+... set the timer with help of useEffect by providing this effect function ...
+
+... for setting this timer, we would not need this effect function because setting the timer wasn't the problem.
+... cleaning it up, getting rid of it, when this component function disappears.
+
+... when using useEffect, you cannot just define effect function but also a clean up function 
+that should be executed right before this effect function runs again. <---------- ***
+... define such a cleanup function by returning it from inside the effect function. <-------------- **
+So this effect function can return another function which will then be executed by React 
+right before this effect function runs again or right before this component dismounts (it's removed from the DOM). <---------- **
+
+... I have no dependencies here and therefore this effect function never runs again.
+... onConfirm prop which I'm using in effect function, that should be added as a dependency.
+
+DeleteConfirmation.jsx
+----------------------
+...
+useEffect(() => {
+  const timer = setTimeout(() => { onConfirm(); }, 3_000);
+  return () => {
+    clearTimeout(timer);
+}, []) <---------- **
