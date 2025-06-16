@@ -1,0 +1,34 @@
+The Problem with Object & Function Dependencies
+-----------------------------------------------
+... take a closer look at this onConfirm prop, which we're using in this effect.
+... if you're using prop or state values in your effect function, you should add them as dependencies. <---------- **
+So here we should add the onConfirm prop as a dependency ... not execute it but just point at it, use it as a value.
+... if you had multiple dependencies, ... separate them with a comma.
+
+... there is a problem you should be aware of, when adding functions as dependencies, ...
+there is a danger of creating an infinite loop. <------------- **
+
+When you add a dependency ... you're telling React that this effect function should be re-executed 
+whenever this component function executed and if one of its dependencies changed. <---------- **
+
+... when the dependency is a function, it's a bit trickier.
+... if you take a look at this function, you would probably say that it never changes, the code in the function is always the same, 
+but technically that's not correct because functions in JS are just values, (specifically they're objects).
+... this function object, is re-created every time this App component function executes 
+because the entire function body then runs again and all the values that are defined ... are re-created 
+whenever the component function is executed again.
+
+... a new object is created ... in JS when you create two different objects even if 
+they have the same shape or the same code they're not the same. <------------- ***
+
+[React compares the effect dependency values for (in) quality.]
+
+... this onConfirm dependency ... will be different between render cycles. <----------- **
+
+... this can lead to problems if in that function (dependency function, onConfirm), <-------------- *
+which gets executed inside of this effect function, you're then updating the state again ... can trigger an infinite loop.
+
+... we don't enter the infinite loop because DeleteConfirmation component disappears.
+
+... to avoid this infinite loop, we can of course make sure that we remove the element from the DOM ...
+but a safer way, which will always work, no matter if the element is removed or not, is to use another special React hook.
