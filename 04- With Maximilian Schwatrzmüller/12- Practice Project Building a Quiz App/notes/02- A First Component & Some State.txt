@@ -1,0 +1,24 @@
+A First Component & Some State
+------------------------------
+Header.jsx
+----------
+import logo from "../assets/logo.png";
+...
+<img src={logo} ...
+
+... with that import ... (logo), ... in most React projects, this Vit-based project ..., 
+I can set the source of the image to this imported image ...
+project setup will then figure out and inject the path to the potenially optimized image behind the scenes. <----------- **
+
+... Quiz component ... show the currently active question to the user and when the question was answered by the user
+I wanna switch to a differnt question.
+... responsible for switching between questions and registering user answers.
+
+... I wanna store those answers. therefore ... need to manage some state ... register those answers, ...
+
+Quiz.jsx
+--------
+...
+const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
+const [userAnswers, setUserAnswers] = useState([]);
+... not necessarily the best way.
