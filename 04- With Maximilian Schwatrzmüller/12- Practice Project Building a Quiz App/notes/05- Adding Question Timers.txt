@@ -1,0 +1,55 @@
+Adding Question Timers
+----------------------
+... I wanna add an extra feature to this Quiz ... for every question, you have a limited amount of time to answer it.
+... to implement this, ... use useEffect. ... outsource this timer into a brand new component.
+... display this progress bar, ... managing this progress bar. 
+... set a timer that expires after sometime, ... once the timer expired, I wanna let the parent component know about that.
+
+QuestionTimer.jsx
+-----------------
+... ({ onNext, timeout }) => {
+  setTimeout(() => {
+    onNext()
+  }, timeout);
+
+... we can shorten this code and just set onNext as the function that should be called by the browser once this timeout expired.
+...
+setTimeout(onNext, timeout); <---------------- **
+... I'm not using useEffect here at this point because even though this is a side effect, 
+it's at the moment not an effect that would require the usage of useEffect, ... not facing that danger of an infinite loop,
+... I'm also not trying to interact with an element that wouldn't be available yet. <---------------- **
+
+... I also wanna make sure that I update this progress bar, ... need an interval ... 
+... therefore we of course also need some state in this component so that this progress bar is re-rendered ... 
+
+QuestionTimer.jsx
+----------------
+...
+setInterval(() => {
+  setRemainingTime(prev => prev - 100)
+}, 100);
+
+... this would now of course create an infinite loop, 
+because we're updating the state here, this would re-execute this component function, we would create a new interval, 
+where we would also update the state again and we would quickly have multiple intervals up and running <--------- **
+which all would call this component function ... a use case for useEffect ... <------------ **
+
+... wrap this code with useEffect ...
+... move this setInterval code into useEffect to make sure that this is not re-executed all the time, 
+... only when those dependencies change ... we don't have any denpendencies that would need to be added here, 
+... only need to add props and state values, and we're using neither of those in this effect function.
+
+... wrap timeout code with useEffect, because otherwise when we update the remainingTime, 
+... this component function executes again and this timer would be re-created <----------------- **
+... quickly have mutiple timers up and running ... we should add another useEffect call ...
+... here we now do need to add a dependency, because we actually have two dependencies that are used in this effect function.
+... we're using two props in there, ...
+... to make sure that this effect function gets re-executed if one of those dependencies changes. <----------- **
+
+useEffect(() => {
+  setTimeout(onTimeout, timeout);
+}, [onTimeout, timeout]);
+...
+
+... this timer expiring and as it expires, nothing happens. ... something happens after a while, ...
+... we need to fix a couple of things here.
