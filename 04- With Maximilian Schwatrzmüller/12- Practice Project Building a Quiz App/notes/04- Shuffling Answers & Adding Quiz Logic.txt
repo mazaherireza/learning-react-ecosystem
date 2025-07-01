@@ -1,0 +1,16 @@
+Shuffling Answers & Adding Quiz Logic
+-------------------------------------
+... I wanna start by shuffling those answers. 
+
+Quiz.jsx
+--------
+...
+const copy = [...Questions[activeQuestionIndex].answers];
+copy.sort(() => Math.random() - 0.5);
+
+(a, b) => -1
+... returning a negative number, those elements will be swapped.
+... a positive number, they will stay in the order they are.
+
+... we have to find out whether the quiz is over.
+... a new computed value ...
