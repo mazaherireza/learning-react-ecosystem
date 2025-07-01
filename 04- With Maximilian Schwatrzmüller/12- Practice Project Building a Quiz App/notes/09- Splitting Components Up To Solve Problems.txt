@@ -1,0 +1,74 @@
+Splitting Components Up To Solve Problems
+-----------------------------------------
+Why do these answers jump around, as I select one?
+
+... in this Quiz component, we're shuffling those answers.
+... this code executes whenever this Quiz component function executes. <------------- *
+...
+We only wanna shuffle these answers once ...
+... there are two main ways of achieving this.
+... one way, ... add a new state, a shuffledAnswers state, ...
+
+Quiz.jsx
+--------
+...
+const [shuffledAnswers, setShuffledAnswers] = useState([]);
+...
+... use useEffect hook to make sure that this only gets updated when this component (Quiz) renders for the first time, <---------- **
+or if the activeQuestionIndex changed, by adding activeQuestionIndex as a dependency ... <---------- **
+
+... you should typically try to minimize the usage of useEffect ...
+... avoid the usage of useEffect if it's possible. 
+... you could instead use a ref with the useRef hook
+not to connect some HTML element, but instead to manage some value, 
+... will not change if the component function is executed again. <---------------- **
+... you can use refs for managing values that are stored and managed independently <-------------- **
+from the component function lifecycle to which they belong.
+
+Quiz.jsx
+--------
+...
+const shuffledAnswers = useRef();
+...
+  if (!shuffledAnswers.current) {
+    shuffledAnswers.current = [...QUESTIONS[activeQuestionIndex].answers].sort(
+      () => Math.random() - 0.5
+    );
+
+... shuffledAnswers.current is undefined, ... I know I don't have any shuffled answers yet, 
+because that will be the initial state, that it's undefined.
+But once it has been defined, I will not suffle them again, even if the component function executes again, <----------- **
+because I already did change the order.
+
+... now as I select the answer and move to a new question, the answer actually stays selected, 
+... those answers now don't change anymore as we move to a new question.
+... that's happening now because of our ref usage ... <---------------- **
+... I'm now never changing shuffledAnswers ... just shuffling them once and that's it.
+
+... getting rid od this issue ... create a new component. ... they can help you solve complex problems. 
+... add a new component ...
+
+... my goal with this component here, is to output this list of shuffledAnswers.
+...
+But how does this all help us with shuffling now? <---------------- **
+... the goal in the end is to reshuffle as the question changes, (so as the activeQuestionIndex changes)
+It would be great if the Answers component would simply be recreated, if the old one would be destroyed 
+and the new instance would be created as QUESTION'S index changes. 
+If we could unmount and remount it, ... all that code here would execute again. <------------ *
+
+... that's the advantage of putting this here into a separate component
+because that's easy to achieve with help of that key prop ... <------------- **
+... we can use the key prop to force React to destroy and recreate a component. <-------------- **
+
+... strange bug here, we got two progress indicators.
+Console
+-------
+...
+Warning:
+Encountered two children with the same key ...
+
+... inside the same div, and we're using the same key, ...
+... one thing that we could do, ... create yet another component ...
+
+But how does all that now help us with this key problem?
+... use a single key on Question component in Quiz.jsx, ...
