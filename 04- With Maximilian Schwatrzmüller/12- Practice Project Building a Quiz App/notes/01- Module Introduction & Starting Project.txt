@@ -1,0 +1,13 @@
+Module Introduction & Starting Project
+--------------------------------------
+... we'll dive into a brand new demo project ...
+
+Working With Effects
+--------------------
+Practice & Dive Deeper
+
+... give you an opportunity to practice what you learned ... dive a bit deeper into React and effects.
+
+Apply your knowledge
+Dealing with effect dependencies & cleanup
+Combining effect with other React concepts
