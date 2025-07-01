@@ -1,0 +1,27 @@
+Moving Logic To Components That Actually Need It (Moving State Down)
+--------------------------------------------------------------------
+... we fixed this problem with our key but we also kind of added a new problem, 
+because we have to pass a lot of props that are managed in the Quiz component to the Question component ...
+
+... the answerState, why does this need to happen here in the Quiz component? <------------- **
+... it doesn't. That's a great example for a state that does not need to be lifted up.
+
+Question.jsx
+------------
+...
+const [answer, setAnswer] = useState({
+  selectedAnswer: "",
+  isCorrect: null,
+});
+...
+
+... in our Question component, we can therefore destructure this key prop and also use it ...
+
+... Quiz.jsx ... derive activeQuestionIndex just based on userAnswers.length ...
+
+Console
+-------
+...
+Warning: Question: "key" is not a prop. Trying to access it will result in "undefined" being returned.
+
+... exclusively used by React and must not be used by us. 
