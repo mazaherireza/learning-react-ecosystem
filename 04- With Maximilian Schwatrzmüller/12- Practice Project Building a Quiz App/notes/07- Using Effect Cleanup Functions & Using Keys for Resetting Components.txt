@@ -1,0 +1,39 @@
+Using Effect Cleanup Functions & Using Keys for Resetting Components
+--------------------------------------------------------------------
+... the progress bar is depleting too quickly ...
+... that's happening because ... interval is actually getting triggered twice <----------- **
+and therefore we have two intervals running behind the scenes that keep on updating this state ...
+
+QuestionTimer.jsx
+-----------------
+...
+  setInterval(() => {
+    setRemainingime(... <-----------  ... keep on updating this state ...
+  }, INTERVAL)
+
+... therefore the progress bar is empty in half the time. 
+
+... React's StrictMode turned on in main.jsx ...
+... during development, this StictMode will actually execute every component function twice,
+... your app should work in exactly the same way, 
+no matter if a component function gets executed once (when being rendered to the screen) or 100 times. <-------- **
+
+... when this effect function gets executed twice we have two running intrevals.
+... what's missing here in our code is a cleanup function.
+We have to clean up the existing interval if this effect function runs again. <-------------- **
+... if we always clean up the old intervals, we'll only have one interval up and running at the same time.
+
+... this cleanup function will automatically be executed by React before it runs this effect function again, <----------- **
+or when this component is unmounted from the DOM. <------------- **
+... do the same for the timer because otherwise this timer will keep on going.
+
+Why is that timer and progress bar not reset when we move on to a new question?
+Because this QuestionTimer component doesn't get recreated <-------------------------- **
+
+... Quiz ... this QuestionTimer component is not being recreated because it hasn't changed. <------------- **
+It was part of the DOM before it is still part of the DOM now.
+... it's not unmounted, not remounted, and therefore the timers and intervals in QuestionTimer component are not reset. <----- ***
+... it should reset when the question changed. <--------- *
+... powerful trick you can use in React to achieve this ... add a key to this component,
+... even if that component is not part of a list, whenever it changes React will destroy the old component instance and create a new one.
+So it will unmount and remount it ...
