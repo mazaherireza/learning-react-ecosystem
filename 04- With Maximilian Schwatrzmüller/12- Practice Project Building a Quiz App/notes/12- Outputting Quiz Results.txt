@@ -1,0 +1,6 @@
+Outputting Quiz Results
+-----------------------
+... you wanna avoid using this index of the map method,
+... not tied to the data but instead by the position of the data in the array.
+So if two items in the array would swap position, the data would be changed, but the index would not change 
+because the position one still has the index zero, ...
