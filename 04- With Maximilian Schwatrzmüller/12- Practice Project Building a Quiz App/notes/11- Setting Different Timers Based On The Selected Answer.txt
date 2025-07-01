@@ -1,0 +1,39 @@
+Setting Different Timers Based On The Selected Answer
+-----------------------------------------------------
+... if I pick an answer a little bit too late, ... timer up here might actually expire before I learn whether it's right or wrong.
+We simply might move alogn too quickly ...
+... seem to run into some problems where we got multiple timers going on at the same time. <------------ ?
+
+Because whenever we pick an answer, ... setting a timer ... in the Question component.
+... two nested timers ... once inner timer expired, which happens after we marked an answer as right or wrong,
+we forward the selected answer to the parent component, ... Quiz component ...
+
+But that ... means that if this timer (in QuestionTimer component) expires, 
+before the right or wrong answer is forwarded to the parent component,
+we switch to a different question because the timer expired and then again,
+because now the actually selected answer was forwarded to the parent component.
+
+... in the Quiz component, we got these two different situations 
+where we do switch to a different question because we stored a selected answer.
+
+One way of moving to the next question and storing an answer is
+if an answer was skipped because the timer expired,
+The other way is ... we received an answer from the user ...
+... both things happen if we select an answer too late. <------------ **
+
+... Question component, ... update this timer if the user did select an answer, so that we start a new timer, 
+... that only expires after we showed the user the right or wrong answer. <-------------- **
+... if that timer then expires, I also don't wanna tell the Quiz component that the question was not answered, ...
+
+So to update the timer, once an answer was chosen, we can add a new computed value ... Question component ...
+
+... add key to QuestionTimer ... when we change the timer value,
+we destroy and recreate the QuestionTimer component and force the interval to be recreated, ...
+
+Question.jsx
+------------
+...
+<QuestionTimer
+  ...
+  onSkip={answer.selectedAnswer === "" ? onSkip : null}
+  ...
