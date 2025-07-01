@@ -1,0 +1,75 @@
+Working With Effect Dependencies & useCallback
+----------------------------------------------
+Now to understand what's wrong here ...
+
+QuestionTimer.jsx
+-----------------
+...
+useEffect(() => {
+  console.log("Setting Timeout"); <----------- this effect function keeps on getting executed.
+  ...
+}, ...
+
+useEffect(() => {
+  console.log("Setting Interval");
+  setInterval ...
+  
+}, ...
+
+... we are in StrictMode ... in main.jsx file, the whole App is wrapped in StrictMode, ...
+... calls every component function twice ... help you catch certain issues.
+
+... as this timer expires, nothing happends but then after a while a new timer is set but not a new interval. <------------ *
+
+... that is weird because this QuestionTimer component is rendered once, <-------- ?
+when this Quiz is being rendered but it's not getting recreated thereafter. <-------- ?
+Sure, the Quiz component re-renders whenever an answer is selected, 
+but this component instance of the QuestionTimer does not change. <---------- ?
+It was part of the old JSX code.
+
+So in theory, this effect function shouldn't execute again, ...
+
+So the fact that this effect function keeps on getting executed must be related to its dependencies ... <--------- **
+... timeout should not trigger the effect function to run again ...
+... the effect function is executed again if 
+the surrounding component function executes again <---------- **
+or
+the dependency values changed .... <---------- **
+
+... so it must be () => handleSelectAnswer(null) ... that changed, ... 
+... functions in JS are values, they are objects ... 
+... when a function is created ... it is a new object in memory that's being created.
+... even if it contains the same logic and code as before, it's still technically a new value in memory.
+
+So every time this JSX code ... gets reevaluated a new function gets created ...
+
+... special hook ... which ensures that functions don't get recreated unless they need, because their dependencies changed. <---------- **
+... useCallback hook ... wrap ... function with it ...
+
+... useCallback also needs a dependencies array that lists all dependencies that might be used in here 
+(the function value that you wanna cache) 
+
+Quiz.jsx
+--------
+...
+... useCallback(() => handleSelectAnswer(null), [handleSelectAnswer]);
+
+... because handleSelectAnswer is a value created here (in this CF) which could depend on props and state <--------- **
+so therefore indirectly, this function (() => handleSelectAnswer(null)) depends on props and state, ...
+
+...
+const handleSelectAnswer = useCallback((selectedAnswer) => {
+  setUserAnswers((prev) => [...prev, selectedAnswer);
+}, []) <--------------- **
+
+... here we don't have to add anything to that list, 
+  because in this handleSelectAnswer function we are not using any state or props <--------------- **
+and also not any other values that depend on state or props. <------------- **
+
+... state updating function ... don't have to be added here (dependencies array) 
+because React will guarantee that they never change. <--------- **
+
+... we now have functions that are not recreated just because the surrounding CF was executed again, ...
+
+... the timeout and interval is set initially but not thereafter.
+As we move to a new question the timeout is now not set again ... we're not moving on to the next question instantly.
