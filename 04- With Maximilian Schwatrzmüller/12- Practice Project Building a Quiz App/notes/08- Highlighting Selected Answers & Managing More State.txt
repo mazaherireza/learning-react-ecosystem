@@ -1,0 +1,40 @@
+Highlighting Selected Answers & Managing More State
+---------------------------------------------------
+... instead of instantly switching to a different question as an answer is selected, 
+I'd like to lock the answer in and show the user whether it was right or wrong before moving on.
+
+... in the Quiz component, we'll have to work on handleSelectAnswer ...
+... I first of all wanna change the color of the selectedAnswer ...
+
+Quiz.jsx
+--------
+...
+const [answerState, setAnswerState] = useState("");
+...
+const handleSelectAnswer = useCallback((selectedAnswer) => {
+  setAnswerState("answered");
+  ...
+  setTimeout(() => {
+    if(selectedAnswer == QUESTIONS[activeQuestionIndex].answers[0]) setAnswerState("correct");
+    ... 
+  }, 1_000);
+}, []);
+
+... I'm using the activeQuestionIndex in this handleSelectAnswer function and since this is wrapped with useCallback, 
+we have to add activeQuestionIndex to this dependencies array of useCallback. <------------- **
+Because this function ... wrapped by useCallbakc should be recreated whenever activeQuestionIndex changed. <--------- **
+... we don't wanna use an outdated value ...
+
+... the problem we'll face is that the activeQuestionIndex will change right away once the userAnswer has been selected.
+
+const activeQuestionIndex = answerState === "" ? userAnswers.length : userAnswers.length - 1;
+... implies that we need to reset the answerState to an empty string at some point. <--------------- **
+... nested timer ...
+
+...
+setTimeout(() => {
+  ...
+  setTimeout(() => { <---------- ... only start after the outer timer expired.
+    setAnswerState("");
+  }, 2_000)
+}, 1_000);
