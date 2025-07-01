@@ -1,0 +1,15 @@
+Deriving Values, Outputting Questions & Registering Answers
+-----------------------------------------------------------
+... it's always the first answer that's correct, ... when we display those answers to the user we therefore wanna shuffle them ...
+
+Why is this way of managing the state not optimal? <-------------- **
+... I plan to have two state snapshots here, ... one of the two pieces of state here is redundant ...
+... we'll need to store the answers picked by a user but when it comes to the activeQuestionIndex, 
+that could actually be derived from this userAnswers array ... <---------- **
+Because here we'll store one answer for every question ... take a look at the number of stored answers in this array,
+and we can derive what the currently activeQuestionIndex should be ...
+
+... a computed value ... 
+const activeQuestionIndex = userAnswers.length; <-------------- **
+
+... you typically want to manage as little state as possible and derive as much state as possible instead.
