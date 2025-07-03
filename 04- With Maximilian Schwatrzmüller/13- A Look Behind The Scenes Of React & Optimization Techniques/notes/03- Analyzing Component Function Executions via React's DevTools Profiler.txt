@@ -1,0 +1,14 @@
+Analyzing Component Function Executions via React's DevTools Profiler
+---------------------------------------------------------------------
+... React Developer Tools ...
+
+... Profiler tab, can be used to understand which components are updating and are being rendered under which circumstances ...
+
+... start profiling ... interact with the page ... stop profiling  
+... you'll see a graphical representation of which CFs where executed for which reason.
+
+Setting
+-------
+Record why each component rendered while profiling. <----------- *
+
+Why did this render?

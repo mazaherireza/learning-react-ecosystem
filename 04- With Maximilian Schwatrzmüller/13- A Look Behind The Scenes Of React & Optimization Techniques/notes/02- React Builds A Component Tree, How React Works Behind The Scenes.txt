@@ -1,0 +1,23 @@
+React Builds A Component Tree, How React Works Behind The Scenes
+----------------------------------------------------------------
+How does React update the DOM? <--------------- **
+How are component functions executed? <--------------- **
+
+... rendering a component to the screen ... means that React goes ahead and executes this CF.
+... the App component is the first component ... that's being referenced in the main.jsx file,
+which is the first code file to be executed when the website loads.
+
+... every component function must return something that can be rendered, typically JSX code, 
+sometimes also a portal or something like this, ...
+
+... this JSX code ... translated to JS code and translated to actual elements that can be rendered on the screen, ...
+
+... whenever such custom components are encountered (in JSX code that's being executed),
+React goes ahead and executes those component functions from top to bottom, ...
+
+React builds a component tree
+-----------------------------
+The relation between components is internally modelled as a tree structure. <----------- *
+
+... but since this Header component does not contain any other custom components, 
+this branch of the tree ends here.
