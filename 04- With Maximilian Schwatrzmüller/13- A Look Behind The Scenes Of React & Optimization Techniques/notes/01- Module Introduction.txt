@@ -1,0 +1,14 @@
+Module Introduction
+-------------------
+
+Behind The Scenses
+------------------
+Understanding & Optimizing React
+
+... how React actually works, which will help you write correct and optimal React code.
+... how it executes your component functions, ...
+
+How React updates the DOM
+Avoiding unnecessary updates
+A closer look at keys
+State scheduling & state batching
