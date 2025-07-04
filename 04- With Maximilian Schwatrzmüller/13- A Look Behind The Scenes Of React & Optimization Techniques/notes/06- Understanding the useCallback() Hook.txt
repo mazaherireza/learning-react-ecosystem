@@ -1,0 +1,68 @@
+Understanding the useCallback() Hook
+------------------------------------
+... I wanna take a close look at using memo, ... use it on another component.
+... those button components and the values they output of course technically don't change.
+... re-executing these CFs doesn't make a lot of sense.
+
+... we could wrap IconButton with memo to make sure it's not getting re-executed unnecessarily.
+
+IconButton.jsx
+--------------
+import { memo } from "react";
+...
+const IconButton = memo(({ children, icon, ...props }) => {
+ ...
+});
+
+... you'll notice something strange though.
+.. it still got executed ... looks like memo didn't work here or it did work and some prop value changed <---------- **
+... let's take a look at the props accepted by IconButton.
+
+... the prop value for children shouldn't have changed.
+The icon prop in the end receives a pointer to a component,
+the name of a component, but not the component as JSX code <---------------- **
+and it then translates it to JSX code inside of this CF (IconButton).
+
+IconButton.jsx
+-------------
+...
+const Icon = icon; <-------------- 
+return(
+  ...
+  <Icon className="button-icon" /> <-------------- 
+...
+
+Counter.jsx
+-----------
+...
+<IconButton icon={MinusIcon} onClick={handleDecrement}> <-------------- **
+...
+
+... these pointers here, these names of these components aren't dynamic and also shouldn't change
+when the Counter CF is being executed.
+
+[Because MinusIcon and PlusIcon are not defined inside the Counter CF
+- instead they are imported from other files.] <------------- **
+
+So it must be related to the remaining props ... forwarding to the button. <---------------- **
+... onClick, which I set to a function. 
+... this indeed is the problem here because these functions look as if they maybe don't change ... 
+... they are created inside of the Counter CF ... nested functions ...
+... they will technically be re-created every time this Counter CF executes. <---------- **
+(So every time its state changes and it does not matter that the code in there is the same and does not change, 
+..., as an object in JS is re-created and it will be a different object in memory than before, 
+... it technically is a new prop value.)
+
+... this re-creation can be prevented with help of a special hook ... useCallback <------------- **
+... can be use to avoid the re-creation of a function ...
+... needed if you have a function as a dependency of useEffect.
+... needed in conjunction with memo to avoid unnecessary re-executions. <------------ **
+
+... list all props or state or context values you would be using inside of this function 
+because if one of those values changed, a new function would have be created 
+so that the latest value is used in that function. <---------------- **
+
+... state updating functions are guaranteed to never change by React, and therefore 
+you don't need to add them to this dependencies array.
+
+... useCallback returns a value in the end the same function, but in unchanging way, ...
