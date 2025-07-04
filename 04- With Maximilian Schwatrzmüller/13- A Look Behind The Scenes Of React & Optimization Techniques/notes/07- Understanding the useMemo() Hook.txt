@@ -1,0 +1,26 @@
+Understanding the useMemo() Hook
+--------------------------------
+...
+Re-executing all this code, all the time, even though it will produce the same result as before, is not very efficient.
+... just as you wanna prevent CF exectuions with memo, 
+... prevent the execution of normal functions that are called inside of CFs unless their input changed. 
+... useMemo hook.
+
+... memo is wrapped around CFs, 
+useMemo is wrapped around normal functions that are executed in CFs to prevent their execution <------------ **
+... should only be used if you have a complex calculation that you wanna prevent. 
+
+Counter.jsx
+-----------
+...
+const initialCountIsPrime = useMemo(() => isPrime(initialCount));
+...
+
+... pass an anonymous arrow function which then returns the result of the function that we wanna prevent executing.
+... also wants a dependencies array, ... React will now execute this function (which you pass to useMemo) 
+and it will store the result of this execution,
+and it will only re-execute this function if one of those dependencies changed. <-------------- **
+
+...
+useMemo(() => isPrime(initialCount), [initialCount])
+... isPrime only gets re-executed if initialCount changed.
