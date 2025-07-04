@@ -1,0 +1,28 @@
+Avoiding Component Function Executions with Clever Structuring
+--------------------------------------------------------------
+memo, if used with care can be useful, but it's not the only way of preventing unnecessary renders.
+Another technique that is often even more powerful than memo is a clever component composition ...
+
+App.jsx
+--------
+...
+<input type="number" onChange={handleChange} value={enteredNumber} />
+...
+... we could put this into a separate component, ... state that changes on every keystroke would also live in that separate component
+and would not affect this App component.
+
+ConfigureCounter.jsx
+--------------------
+...
+const ConfigureCounter = ({ onSet }) => {
+  ...
+  const handleSetClick = () => {
+    onSet(enteredNumber);
+    setEnteredNumber(0);
+  }
+  ...
+}
+
+... state changes and re-executions of child components don't trigger parent component exectuions.
+
+... we should actually also remove memo from the Counter because now memo is useless ...
