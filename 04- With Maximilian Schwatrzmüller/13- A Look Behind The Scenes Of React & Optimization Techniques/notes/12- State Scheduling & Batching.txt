@@ -1,0 +1,43 @@
+State Scheduling & Batching
+---------------------------
+... state related concept ... how state updates (are in the end) scheduled and executed by React.
+... when you call a state updating function, 
+the state update will be scheduled by React, it will not be executed instantly. <------------ *
+
+App.jsx
+-------
+...
+const handleSetCount = (newCount) => {
+  setChosenCount(newCount);
+  console.log(chosenCount); <---- you won't get the new state, but instead the old state.
+}                                 because this state update is scheduled by React.
+
+... this will trigger a new CF execution and the new state will be available the next time ... <----------- *
+... because those state updates are scheduled,
+it is considered a best practice to perform state updates that depend on the old state value,
+using this function form  ... where you pass a function to the state updating function 
+
+Counter.jsx
+-----------
+...
+  setCounterChanges((prevCounterChanges) => [
+    { value: -1, id: Math.random() * 1000 },
+    ...prevCounterChanges,
+  ]);
+
+... when using this approach, React guarantees ... you will always get the latest state snapshot available
+and if multiple state updates of the same time should be scheduled, 
+they will be executed in the order in which they were scheduled. <------------ **
+
+function handleSetCount(newCount) {
+  setChosenCount(newCount);
+  setChosenCount(prev => prev + 1)
+}
+
+... you can't use the new state value, right after setting it. <--------- *
+
+... if you have multiple state updates ... triggered simultaneously (in the same function), 
+you will not end up with multiple CF executions ... 
+
+React performs state batching, ... multiple state updates that are triggered from the same function, 
+are batched together and will only lead to one CF execution.	
