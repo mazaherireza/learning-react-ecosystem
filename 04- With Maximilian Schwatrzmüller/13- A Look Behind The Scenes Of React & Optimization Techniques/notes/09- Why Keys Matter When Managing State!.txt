@@ -1,0 +1,88 @@
+Why Keys Matter When Managing State!
+------------------------------------
+... take a closer look at state ...
+... state ... in a CF is scoped to that component and also re-created whenever you reuse that component. <--------- *
+
+App.jsx
+-------
+...
+  <ConfigureCounter onSet={setChosenCount}></ConfigureCounter>
+  <Counter initialCount={chosenCount} />
+  <Counter initialCount={1001} />
+...
+
+Counter.jsx
+-----------
+...
+  const [counter, setCounter] = useState(initialCount);
+...
+
+... both Counters, of course are based on Counter.jsx's code 
+but every Counter receives its own independent counter state. <---------- **
+This state (counter) is not shared ... that's what makes components reusable. <---------- **
+State is scoped to a component. ... every instance has its own isolated state. <---------- **
+
+... state is also tracked by position by React. <----------- ***
+
+Counter.jsx
+-----------
+...
+const currentCounter = counterChanges.reduce((prev, current) => prev + current, 0));
+
+const handleDecrement = useCallback(() => setCounterChanges(prev => [-1, ...prev]));
+
+... Counter.jsx ... track a list of changes ... 
+... state in this component is now an array of counter changes where every change is either 1 or -1.
+... CounterHistory ... output these different button presses, so a list of all the different changes we made to the counter.
+...
+
+CounterHistory.jsx
+------------------
+...
+const HistoryItem = ...
+  const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setSelected(prev => !prev)
+  }
+...
+
+Why did I add that? <--------- *
+Becuase... in HistoryItem component, I'm also manageing some state.
+Some state that simply controls whether a specific item is selected or not.
+... click on this item here and ... click increment or decrement again ... it's still the second item that's highlighted here.
+... how can this be the case if state belongs to a concrete component instance? <------------ *
+How can it then jump across component instances? <------------ *
+... it's also tracked by position. <--------------- **
+... the position of that component instance also matters.
+
+The position of this component in the component tree.
+React tracks state by component type & position (of that component) in the tree. <---------------- **
+
+App.jsx
+-------
+...
+  <ConfigureCounter onSet={setChosenCount}></ConfigureCounter>
+  <Counter initialCount={chosenCount} />
+  <Counter initialCount={1001} />
+...
+For the Counters, this was no problem ... they never ever changed their position. <----------- *
+... but for the CounterHistory, that's not the case. ... the position of the HistoryItem component instances changes.
+... state belongs to the position as well as the component type, the state here jumps ... 
+
+... React gives you a mechanism that allows you to avoid this, ... key. <----------- **
+
+... it can only occur if you have sibling components that are of the same type and the position of those components may change.
+... key is another thing that's taken into account by React to map the state to a concrete component instance. <--------- **
+
+... try to use a key value that is strictly connected to a specific value. <---------- **
+... id that deos belong to a concrete change object ...
+
+... key ... it allows React to clearly identify a component if there is a dynamic list of similar components.
+... this then makes sure that the state moves together with this component instance.
+
+CounterHistory.jsx
+------------------
+...
+  {
+    history.map(count => <HistoryItem key={count.id} count={count.value ...
