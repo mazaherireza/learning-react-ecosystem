@@ -1,0 +1,41 @@
+React Uses A Virtual DOM - Time To Explore It!
+----------------------------------------------
+... what actually happens if a CF is executed and how this JSX code ends up on the screen. <----------- *
+
+... technically this index.html file is being loaded when you visit the website 
+and this is a pretty empty page in the end. <----------- ?
+
+... in this div (<div id="root" ...) where this entire React App. 
+...
+That's why if you view the page source code, you see nothing. <------------ **
+Right Click, View page source       Ctrl + U
+
+... if you instead go to the Elements tab ... full DOM tree ...
+
+... this was all inserted by React <-------------- **
+but if you click a button, this is not all re-created and inserted because that would be super inefficient. 
+So just because a CF is executed again, ... does not mean that all the JSX code that's produced by that CF is re-inserted in the DOM.
+...
+
+... React works with ... virtual DOM for finding out which parts of the actual DOM should be updated. <--------- *
+... it's using this virtual DOM, because working with such a virtual DOM, 
+which lives only in memory is faster than working with real DOM.
+
+React checks for necessary DOM updates via a virtual DOM <-------------- **
+It creates & compares virtual DOM snapshots to find out which parts of the rendered UI need to be updated. <-------------- **
+
+
+How does this virtual DOM work? <----------------- **
+...
+
+Updating The Website UI After A Button Click
+(
+  Affected by update --> Component functions WERE executed
+  Not affected by update --> Component functions weren't executed
+)
+
+How React Updates The Website UI
+Step 1: Creating a component tree
+Step 2: Creating a virtual Snapshot of the target HTML code
+Step 3: Compare new virtual DOM snapshot to previous virtual DOM snapshot <------------- **
+Step 4: Identifying & apply changes to the Real DOM
