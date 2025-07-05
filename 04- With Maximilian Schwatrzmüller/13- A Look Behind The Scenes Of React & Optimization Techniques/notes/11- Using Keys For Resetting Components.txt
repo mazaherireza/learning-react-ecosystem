@@ -1,0 +1,44 @@
+Using Keys For Resetting Components
+-----------------------------------
+App.jsx
+-------
+...
+const [chosenCount, setChosenCount] = useState(0);
+...
+<Counter initialCount={chosenCount} /> <------------ 
+...
+
+Counter.jsx
+-----------
+const Counter = memo(({ initialCount }) => {
+
+})
+
+... this initialCount value is really just used as an initial value for the state when it's being initialized.
+This initial value you pass to useState is never used after the first execution of this CF.
+It's really just used for initialization, nothing else. <----------- **
+That's why future initialCount changes are ignored.
+
+But what if you want to reset counterChanges (state) if this prop (initialCount) changes? <----------- **
+... you could use useEffect ...
+
+Counter++.jsx
+-------------
+...
+useEffect(() => {
+  setCounterChanges([{ value: initialCount, id: Math.random() * 1000 }]) <-------- reset this array
+}, [initialCount]);
+
+... limit the usage of useEffect ... it (also) triggers an extra component execution.
+... you have two CF executions instead of one and that's not optimal.
+
+... a better way of forcing a CF reset (which in the end is what we wanna do, when initialCount changes),
+is to use a key on the component.
+
+App.jsx
+-------
+...
+<Counter key={chosenCount} initialCount={chosenCount} />
+...
+... a pattern which you should use if you have some state that may change in a parent component, 
+that should then lead to some child component, being reset.
