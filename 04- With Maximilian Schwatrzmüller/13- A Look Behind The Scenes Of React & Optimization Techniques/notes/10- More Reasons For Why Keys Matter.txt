@@ -1,0 +1,24 @@
+More Reasons For Why Keys Matter
+--------------------------------
+CounterHistory.jsx
+------------------
+...
+{ 
+  history.map(count => <HistoryItem key={count.id} ...
+
+... adding such a key here also has another benefit besides making sure that the state doesn't jump around.
+
+... every time I click a button, basically all list items change, <----------- **
+they all flash which means they all change, they're all touched by React.
+That happens because at the moment I'm using index as a key ... React creates these DOM snapshots, 
+it sees that in the end it now has a totally different HTML code that should be rendered <----------- **
+... thows away the old list and re-renders the new list because everything changed.
+... because we're using this index key, React doesn't know that.
+
+... if we switch to that better key of count.id ...
+... only parts of the list that are updated and the other elements are not updated, are not flashing.
+It's just the first element that's being updated because React now understand that 
+the other elements were part of the DOM before as well, because it knows that key from the previous virtual DOM snapshot ...
+... instead of recreating them it just inserts a new element in front of them.
+
+... using such a key does not just help with state mangement, ... helps React render such lists in a more optimal way.
