@@ -1,0 +1,17 @@
+Optimizing React with MillionJS
+-------------------------------
+... package ... optimize the performance of your React applications, ... Million.js package.
+
+... automatic mode ...
+
+CMD
+---
+npm install million
+
+... Vite-based project
+
+vite.config.js
+--------------
+... integrate Million.js into different projects 
+
+by replacing React's virtual DOM mechanism with a more efficient mechanism, ...
