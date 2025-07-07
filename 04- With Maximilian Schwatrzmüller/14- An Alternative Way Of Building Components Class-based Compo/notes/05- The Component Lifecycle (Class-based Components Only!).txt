@@ -1,0 +1,22 @@
+The Component Lifecycle (Class-based Components Only!)
+------------------------------------------------------
+... there are specific methods you can add to class-based components to run code at different points in that life cycle.
+
+componentDidMount()
+Like render that's a built-in method, which you can use as soon as you extend the built-in Component ...
+... React will call it for you when the component was just mounted.
+
+componentDidMount()    called once a component mounted 
+                       -> evaluated & rendered by React           useEffect(..., [])
+
+... every effect function is executed when the component first is mounted.
+But if you have no dependencies ... empty dependencies array, the effect function is only executed in that case.
+
+componentDidUpdate()  called once a component updated
+                      -> re-evaluated & re-rendered by React      useEffect(..., [someValue])
+
+... whenever the dependencies change, the effect function re-executes and the dependencies are re-evaluated 
+when the component is re-evaluated and was rendered again.
+
+componentWillUnmount() called right before component is unmounted
+                       -> right before removed from DOM            useEffect(() => { return () { ... } }, [])
