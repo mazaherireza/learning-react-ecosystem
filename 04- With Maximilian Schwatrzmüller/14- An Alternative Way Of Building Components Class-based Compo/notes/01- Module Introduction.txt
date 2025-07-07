@@ -1,0 +1,9 @@
+Module Introduction
+-------------------
+Class-Based Components
+----------------------
+An alternative way of building components
+
+What & why?
+Working with class-based components
+Error boundaries
