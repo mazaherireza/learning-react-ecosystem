@@ -1,0 +1,15 @@
+Adding a First Class-based Component
+------------------------------------
+... the render method does not receive props. <-------------- **
+... not just for props but to make the class-based component work in general ... import Component from React.
+
+
+User.js
+-------
+import { Component } from "react";
+
+class User extends Component {
+...
+
+This Component class adds important functionality to make your class, work as a component
+... it also add a couple of important properties.
