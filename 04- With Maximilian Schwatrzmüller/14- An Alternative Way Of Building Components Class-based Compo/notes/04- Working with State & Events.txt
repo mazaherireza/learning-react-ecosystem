@@ -1,0 +1,44 @@
+Working with State & Events
+---------------------------
+... in class-based components, you don't add a function inside of the render method 
+(that would be technically be possible but it wouldn't behave correctly)	
+... you group together functionality by grouping it all in that class. <------------ *
+
+... managing state worked totally different ...
+... prior to 16.8, class-based components were the only kind of component that could manage state.
+... initialize and define your state, and then update it when needed.
+To define state in class-based components, you would use the constructor. <------------- *
+
+... with class-based components, your state always is an object.
+And it also has to be a property named "state"! this name is not up to you.
+
+class User extends Component {
+  constructor() {
+    this.state = {}
+    ...
+... you have to group all the state that makes up a component into one object.
+No matter if these state pieces are closely related or not. <------------- **
+
+... you call a special method this.setState ... always takes an object.
+... this object contains the new state, you wanna set, ... it won't override the old state <------------ **
+... React merge the object you're passing ... with your existing state. <------------ *
+
+... it's a method of this class (Users class) and therefore
+we need to point at this.toggleUserHandler (to point at this method part of Users Class).
+
+class Users ... {
+  ...
+  toggleUsersHandler() {
+    ...
+    this.setState(...) <-------- ... make sure that this keyword inside of toggleUsersHandler
+   }                             refers to the surrounding class 
+                                 and it wouldn't by default when your method is called upon any event like onClick ...
+
+... to fix this, use bind ... means this keyword inside of toggleUsersHandler is now set to have the same context (value)
+as this keyword (which is passed to bind method) ...
+
+Users.js
+--------
+...
+<button onClick={this.toggleUsersHandler.bind(this)}>
+  ...
