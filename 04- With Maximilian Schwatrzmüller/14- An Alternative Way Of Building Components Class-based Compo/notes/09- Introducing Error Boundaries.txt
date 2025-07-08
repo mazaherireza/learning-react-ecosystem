@@ -1,0 +1,36 @@
+Introducing Error Boundaries
+----------------------------
+... sometimes there are errors which you can't prevent or ... being used to transport information that something went wrong
+from one part of the application to another part. ... HTTP request which is being sent.
+... servers can be offline. ... 
+
+Users.js
+--------
+...
+componentDidUpdate() {
+  if(this.props.users.length === 0)
+    throw new Error("No Users Provided!") <-------- 
+
+... I'm generating an error and I let this error bubble up the call stack.
+... it crashes with the error I specified because it's my error which is not being handled.
+... as a way of transporting the information that something went wrong form place A to place B in your application.
+... I don't want the entire application to crash, so what can we do?
+
+In regular JS, we use try-catch for this ...
+... if an error is generated inside of a component and we can't handle it in that component 
+... we can't use try-catch because that only works in places where we write regular JS statements, <---------- **
+... instead in such a case, you can build and utilize an Error Boundary 
+
+The ErrorBoundary component is a regular class-based component, which implements the componentDidCatch lifecyle method. 
+... componentDidCatch method can be added to any class-based component, and whenever you add it to a class-based component,
+it makes that class-based component an Error Boundary.
+
+... this lifecycle method will be triggered whenever one of the child components throws (or generates) an error.
+... I wanna wrap the ErrorBoundary component around components which should be protected by that component.
+
+UserFinder.js
+-------------
+...
+<ErrorBoundary>
+  <Users ...>
+</ErrorBoundary>
