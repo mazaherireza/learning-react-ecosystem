@@ -1,0 +1,8 @@
+Class-based vs Functional Components A Summary
+----------------------------------------------
+Which component type should you use?
+Strong recommendation: You should prefer functional components
+
+use class-based if ...
+...
+... you're building an Error Boundary
