@@ -1,0 +1,15 @@
+Lifecycle Methods In Action
+---------------------------
+componentDidUpdate 
+... will be called automatically by React, whenever this component is re-evaluated because it's state changed, ...
+
+UseFinder.js
+------------
+...
+componentDidUpdate(prevProps, prevState) {
+  if(prevProps.searchTerm !== this.state.searchTerm) <----- We need to add an if check here                                                                
+    this.setState({ ...                                     to prevent an infinite loop 
+}
+
+... we wanna fetch the users when this component is rendered for the first time, ... componentDidMount.
+... will only run once, when the component initially was rendered for the first time. <----------- **
