@@ -1,0 +1,30 @@
+Module Introduction
+-------------------
+... it's indeed quite common that you need to build projects where the data is centrally managed on some server 
+so that users from all over the world can operate on that data and can maybe also change that data.
+
+If you're trying to build something like Facebook ... you can't manage the data inside of the React project 
+because that React project code, in the end, gets executed inside of the browsers of your visitors.  
+... each have their own copy of the React project running in their browser, but they can't interact with each other. 
+They can't exchange data ...
+
+Some data must be managed centrally <------------ **
+-----------------------------------
+Centrally managed data
+e.g., images, user data, product data, ... 
+Server (Backend) <------- Owned & operated by you
+
+Client (Frontend)
+Clients communicate (e.g., send data, fetch data) via HTTP requests
+React app runs in the browser of your user (website visitor)
+-> Any data changes only happen locally (and are only stored locally)
+
+Data Fetching & HTTP Requests
+-----------------------------
+Sending & Receiving data via HTTP
+... how your React apps can get and send data from and to such central servers
+so that you're not limited to building React apps that work with local dummy data, ...
+
+How to connect a backend / DB
+Fetching Data
+Sending Data
