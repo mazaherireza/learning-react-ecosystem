@@ -1,0 +1,21 @@
+How NOT To Send HTTP Requests (And Why It's Wrong)
+--------------------------------------------------
+... fetch is a function that can be used to send an HTTP request to some other server.
+
+fetch("http://localhost:3000");
+... this URL will target my running backend server.
+
+... fetch returns a promise, which is a JS value that will eventually resolve to another value.
+So it's basically a wrapper object around a value that's not there yet but that will eventually be there.
+... a promise is a standard JS object that will yield different values (depending on the state of that promise)
+and to access those different values you can chain methods on the result of calling fetch.
+...
+
+... in modern JS, you can also use that await keyword ... this is only available if the function in which this code executes
+is decorated with async, ... is not allowed for CFs.
+
+...
+
+... when calling fetch directly in the CF, 
+... executes every time the CF executes and therefore a new request would be sent whenever this CF executes.
+The problem is ... in the second block we then update the state, which causes this CF to execute again. <-------- **
