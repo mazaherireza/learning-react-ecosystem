@@ -1,0 +1,37 @@
+Preparing the App For Data Fetching
+-----------------------------------
+So let's establish a connection between the React app and this dummy backend.
+... you must make sure that the backend server is also up and running
+and therefore when following along locally it's actually not just enough to run "npm run dev"
+instead, in a separate terminal window (... keep the "npm run dev" process up and running) ...
+cd into the backend folder ("cd backend")
+... run "npm install" to install the dependencies of this backend project, 
+becuase it's a separate project, it's a separate server that will start.
+... you must start the backend server because we're dealing with two separate servers now, 
+the frontend Vite development server, which serves the frontend, the React app,
+and the separate backend server, which exposes this backend API.
+... start this backend server by running "node app.js" (in that backend folder), 
+so in that terminal where you navigated into the backend folder.
+
+... need to install Node.js 
+
+... let's start by fetching some available places ... 
+... it's accessible throught that API, through those exposed endpoints ...
+So we need to send an HTTP request from inside our React code to that backend code ...
+
+... we also fetched data from localStorage with the getItem method,
+... you can access it synchronously, that the data you're fetching is there immediately, you don't need to wait for it.
+
+... when talking to a backend, you're sending and HTTP request that needs to travel through the internet 
+to that backend server ... that backend server needs to do some work and send back a response.
+... may take some time. It's not an instant process ...
+
+AvailablePlaces.jsx
+-------------------
+...
+const [availablePlaces, setAvailablePlaces] = useState([]);
+...
+<Places
+  ...
+  places={availablePlaces}
+  ...
