@@ -1,0 +1,73 @@
+How (Not) To Connect To A Database
+-----------------------------------
+... there often are good reasons for having a central server ... or DB to which, multiple instances of the React app connect, 
+in order to share data across users.
+
+...
+How do you connect your React app to a DB? <----------- **
+How can you send data to such a DB and get data out of such a central DB?
+You don't!, at least not directly.
+
+You don't directly connect your React app to a DB because if you were to try that, you'd run into security issues. 
+
+Your React code runs in the browsers of your users.
+They can view that code (via the browser developer tools) if they want to!
+
+... if that code contains the credentials to access a DB, 
+your DB can get compromised because users can retrieve those credentials and access your DB ...
+
+Netwrok Tab
+-----------
+...
+App.jsx <----------- 
+
+Preview
+...
+const fetchedProducts = db.connect({
+  user: "max",
+  password: "supersecret"
+}).sendQuery("SELECT * FROM products");
+...
+
+There also are technical restrictions & constraints
+Not all operations can be performed in the browser
+E.g., you can't access a (centrally managed) file system
+
+... instead of directly accessing a DB or some file system that may hold shared data, ...
+
+Communicate with a backend server instead, (which kind of acts as a middleman) ... <------------ *
+
+         Frontend
+Runs in the user's browser
+Users can theoretically view the entire code 
+
+HTTP requests
+... to connect the frontend and the backend you use HTTP requests
+... you can only send HTTP requests that are allowed and accepted by this backend
+
+         Backend
+Runs on a separate (inaccessible) server 
+Backend code can interact with DB etc.
+
+How to connect a backend / DB
+
+Frontend <------ With React, you build a client-side web application (= it runs in the browser)
+
+HTTP Request <------ You communicate with a backend (API) via HTTP requests
+                     
+                     You should not try to connect to a DB directly (-> credentials would be exposed)
+
+Backend
+(REST) API
+A web server that exposes certain "endpoints" (URLs) to which you can send requests & data (to receive data back)
+
+API stands for "Application Programming Interface".
+A "REST API" is a web server that exposes certain pre-defined routes to which HTTP requests can be sent.
+
+... it's quite common to have separate frontend and backend projects where you also don't have to use same programming language.
+
+Frontend (React app) & backend (API) are often separated (=separate projects)
+Fronted React (JavaScript)
+Backend PHP, C#, ...
+
+You can build a fullstack React app (=blend frontend & backend) via NextJS or Remix
