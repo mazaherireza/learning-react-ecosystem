@@ -1,0 +1,15 @@
+Starting Project & Dummy Backend API
+------------------------------------
+... in this version of this application, all the data will be fetched from a backend.
+... this starting project also comes with a backend folder ... contains a separate backend web API,
+
+... the backend controls which kind of requests are allowed and blocks other requests that are not allowed.
+
+app.js
+------
+...
+app.get("/places", async (req, res) => { <-------- ... allow GET HTTP request to my backend URL and then /places 
+...                                                to fetch available places 
+
+These are the so-called "API endpoints". 
+Routes (URLs) set by the developer, to which, certain HTTP requests can be sent.
