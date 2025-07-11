@@ -1,0 +1,3 @@
+Extracting Code & Improving Code Structure
+------------------------------------------
+... every function you decorate with async will yield a promise ...
