@@ -1,0 +1,33 @@
+Sending Data with POST Requests
+-------------------------------
+http.js
+-------
+export async function updateUserPlaces(places) {
+  const response = await fetch("http://localhost:3000/user-places", {
+    method: "PUT",
+    body: JSON.stringify({ places }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  ...
+
+... that data must actually be in a format that is attachable, and JS arrays are not an attachable format.
+... converted into JSON format ...
+
+... "application/json" ... to inform the backend that data attached to this request will be in JSON format.
+
+App.jsx
+-------
+...
+async function handleSelectPlace(selectedPlace) {
+  ...
+  await updateUserPlaces([selectedPlace, ...userPlaces]);
+}
+
+... the state update will not immediately be available ...
+... it will only be available after the CF executed the next time, ... <---------- **
+
+... await only works on functions that are decorated with async, ...
+
+... our connection refused error, 
