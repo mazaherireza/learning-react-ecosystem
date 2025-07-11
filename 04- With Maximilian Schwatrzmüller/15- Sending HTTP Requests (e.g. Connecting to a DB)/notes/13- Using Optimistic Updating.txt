@@ -1,0 +1,41 @@
+Using Optimistic Updating 
+-------------------------
+App.jsx
+-------
+...
+
+... I'm doing something which is called optimistic updating. <--------------- **
+
+const handleSelectPlace = async (selectedPlace) => {
+  setUserPlaces(...);
+  try {
+    await updateUserPlaces([selectedPlace, ...userPlaces]); <---- I'm updating my local state before I'm sending this request and 
+                                                                  before I'm waiting for the response.
+  } catch (error) ...
+}
+
+... the UI updates instantly and the request is basically send at the same time ...
+... of course sending that request could fail though ... when catching this error ...
+... I want to set my userPlaces again ... reset them to the state they were before.
+
+... catch (error) {
+  setUserPlace(userPlaces) <------ we wanna to inform the user about it ...
+...
+
+... if something goes wrong, we roll back that change and we update the UI again.
+... often optimistic updating can provide a better UX than showing a loading spinner or some loading text.
+
+App.jsx
+-------
+...
+const [errorUpdatingPlaces, setErrorUpdatingPlaces] = useState();
+... which we do update if updating our places goes wrong.
+
+...catch(error) {
+  ...
+  setErrorUpdatingPlaces({ message: error.message || "");
+...
+<Modal open={errorUpdatingPlaces}>
+  { errorUpdatingPlaces && <----------- **
+    <Error title="An error occured!" message={errorUpdatingPlaces.message} onConfirm={handleError} />
+  ...
