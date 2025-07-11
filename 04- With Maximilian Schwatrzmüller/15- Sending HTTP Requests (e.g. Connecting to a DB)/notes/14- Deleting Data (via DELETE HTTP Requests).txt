@@ -1,0 +1,21 @@
+Deleting Data (via DELETE HTTP Requests)
+----------------------------------------
+App.jsx
+-------
+const handleRemovePlace = useCallback(asycn () => {
+  setUserPlaces(...);
+  try {
+    await updateUserPlaces(userPlaces.filter(...)
+}, [])
+
+... we can again perform optimistic updating (by first updating the state and then sending an HTTP request)
+... since I'm using userPlaces state  ... we also should add this as a dependency to the useCallback dependencies array, ...
+to make sure that this function is re-created if the userPlaces state changed.
+
+... if it does fail, I wanna roll back my change and show an error message to the user.
+
+...
+catch(error) {
+  setUserPlaces(userPlaces);
+  setErrorUpdatingPlaces({ message: error.message || "" });
+...
