@@ -1,0 +1,27 @@
+Custom Hook Managing State & Returning State Values
+---------------------------------------------------
+... to make this useFetch hook functional, we also need to manage some state in there,
+because every component that later uses this custom hook should of course also get that state that's managed by this hook.
+... it should not have to register that state on its own, ...
+
+... this custom hook should not just send some requests, ... manage all the related states. <-------- *
+
+[React Hook useEffect has a missing dependency: "fetchFn". ]
+... because that's some external data which is not defined inside of useEffect and theoretically could change ...
+... if it would change, this effect should be executed again ...
+
+useFetch.js
+-----------
+...
+useEffect(() => {
+  async function useFetch(fetchFn) {
+    ...
+    const data = await fetchFn();
+...
+}, [fetchFn]); <------------- 
+
+... if you use a custom hook in a component, any state that is managed by that custom hook 
+will also belong to the component in which you're using your custom hook.
+So if the state gets updated in the custom hook ... 
+the component where your custom hook gets used also gets executed again. <------------- ***
+So that still works as if you would be managing the state directly inside of the component.
