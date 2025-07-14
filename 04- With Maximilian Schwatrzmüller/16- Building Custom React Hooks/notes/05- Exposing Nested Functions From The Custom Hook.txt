@@ -1,0 +1,30 @@
+Exposing Nested Functions From The Custom Hook
+----------------------------------------------
+... in our custom hook, we're not limited to just exposing state values, we can of course also expose state updating functions
+or custom functions that wrap those state updating functions.
+
+useFetch.js
+-----------
+...
+return {
+  ...
+  setFetchedData <---------- return a pointer at setFetchedData
+...
+
+If you wanna restrict the editing capabilities, you could wrap this state updating function in a custom function 
+that maybe adds some extra validation before the update is performed.
+
+... if you use this useFetch hook in other components as well, ... we then update the state from inside this App component,
+will that affect those other components ... ? <--------------- *
+The answer is no <------------- *
+because just as with components, whenever you use components, and it's the same for custom hooks, 
+... a brand new independent copy is created <---------------------- ***
+
+Every component that uses this custom hook gets its own independent state snapshots. 
+So changing the state in one component will not affect the state of other components even if they use the same custom hook.
+
+... state updating functions normally don't need to be added to dependency arrays of useCallback or useEffect
+because React guarantees for all those state updating functions that they will never change. <-------------- **
+
+... the project doesn't understand that setUserPlaces in the end refers to a state updaing function ...
+some property we're pulling out of some object.
