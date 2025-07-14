@@ -1,0 +1,16 @@
+Revisiting the Rules of Hooks & Why To Use Hooks
+------------------------------------------------
+Rules of Hooks - Updated
+1) Only call hooks in component or other hook functions
+2) Only call hooks on the top level
+
+Why would you build custom hooks and what should these custom hooks do?
+... wrap and reuse code that goes into your component functions.
+
+... outsource and make more generic so that we can reuse it, ... have one reusable configurale function ...
+
+... we can't put it into a separate component because this is just a part of a component 
+it does not return JSX code or anything like that 
+
+... custom hooks will also be functions that we can then call from different places, 
+but they will be functions that are guaranteed to be used in valid places, ... (components).
