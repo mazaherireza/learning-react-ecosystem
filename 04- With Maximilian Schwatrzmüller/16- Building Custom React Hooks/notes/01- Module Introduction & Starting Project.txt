@@ -1,0 +1,9 @@
+Module Introduction & Starting Project
+--------------------------------------
+Custom Hooks 
+Creating & using custom React Hooks
+
+Repetition: Rules of hooks
+Why custom hooks?
+Creating custom hooks
+Using custom hooks
