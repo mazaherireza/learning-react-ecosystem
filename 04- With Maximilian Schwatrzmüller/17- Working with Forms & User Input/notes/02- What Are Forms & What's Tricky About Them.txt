@@ -1,0 +1,11 @@
+What Are Forms & What's Tricky About Them
+-----------------------------------------
+What's so difficult about forms?
+... a form ... a collection of input fields, ...
+
+... forms are about two main things you wanna do with them.
+Form Submission                                                  Input Validation
+Handling submission is relatively easy                           providing a good UX is tricky
+Entered values can be managed via state                          ... validate on every keystroke -> errors may be shown too early
+Alternatively, they can be extracted via refs                    ... validate on lost focus -> erros may be shown too long
+Or via FormData and native browser features                      ... validate on form submission -> errors may be shown too late
