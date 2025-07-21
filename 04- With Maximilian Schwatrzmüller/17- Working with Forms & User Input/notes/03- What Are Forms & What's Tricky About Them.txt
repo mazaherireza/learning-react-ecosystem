@@ -1,0 +1,58 @@
+Handling Form Submission
+------------------------
+Login.jsx
+---------
+...
+<label htmlFor="email">Email: </label>
+...
+  <button className="button">Login</button> <-------- 
+
+... htmlFor, this is the React equivalent to the for attribute, which you would set in native HTML.
+... to handle form submission, ... wanna listen to login button being clicked.
+
+  <button className="button" onClick={handleSubmit}>Login</button> 
+
+... the default browser behavior, for buttons in form elements, is that those buttons will submit the from,
+... that means an HTTP request is created and is sent to the server that's serving the website.
+
+By default the browser sends an HTTP request
+--------------------------------------------
+     Server
+Serves the React app
+JS files + index.html (+ any CSS needed) to users visiting the website
+
+            Client
+(React app running in the browser)
+Browser automatically creates & sends an HTTP request with entered form data
+
+Server <-------- During development, that's the development server started via "npm run dev"
+(serving the React app) 
+
+Network Tab
+-----------
+... if I click login ... the whole page is reloaded.
+... request (?email=&pass... ) ... generated and sent automatically by the browser.
+... default behavior ...
+... buttons, ... in form elements will generate requests and send those requests to the server that's serving the site.
+... for this React application, that's a problem because her the server that's serving this React website
+on this address (localhost:...) is actually a pure development server.
+It's not prepared to handle this form submission. We have no code on that server that would deal with that submission.
+And even if you would deploy this React application on some real server ...
+... still wouldn't be a server that is prepared to handle incoming form requests.
+
+How can we prevent the default behavior of this button submitting the form? <----------- **
+1- ... add the type attribute and prop to this button and set this to button ...
+2- ... keep the type to submit ... remove onClick listener ... add the onSubmit event handler prop to the form element.
+
+function handleSubmit(event) {
+  event.preventDefault();
+  ...
+}
+
+... React also offers you another way of handling form submissions,
+... at least React 19 or higher ... you can also handle form submissions with a feature called Form Actions.
+
+Often, data should be sent to a backend
+... it's not uncommon for React apps to also send HTTP requests, ... such requests are sent to standalone backends 
+by writting the code for sending those requests on your own, 
+
