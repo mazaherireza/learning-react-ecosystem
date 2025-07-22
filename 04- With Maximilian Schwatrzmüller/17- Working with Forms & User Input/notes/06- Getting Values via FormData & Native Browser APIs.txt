@@ -1,0 +1,31 @@
+Getting Values via FormData & Native Browser APIs
+-------------------------------------------------
+... another solution for extracting user input values, which can be more convenient to work with,
+when dealing with more complex forms.
+
+... call event.preventDefault to make sure that this automatically generated HTTP request is not being sent. <------- *
+
+... create a special kind of object based on a special kind of constructor function that's built into the browser, 
+the FormData constructor function.
+... makes it easy to get hold of the different values entered into a form 
+
+Signup.jsx
+----------
+const formData = new FormData(event.target);
+formData.get("email"); 
+
+... all those inputs for which you wanna extract values must have that name prop set on them ...
+
+... quickly get hold of all the entered values, and group them together into an object ...
+Object.fromEntries(formData.entries()) 
+
+... calling entries on the FormData object will give us kind of an array of all the input fields and their values 
+... calling Object.fromEntries on that array give us an object where we have key-value pairs for all our input fields.
+
+... is missing ... a group of inputs ... 
+... a group of checkboxes, which all have the same name ... an array of all the checked values, 
+... such multi value input fields are lost when using entries and fromEntries. <------------- **
+... get them back by manually extracting and storing them ...
+
+const acquisitionChannel = formData.getAll("acquisition");
+formData.acquisition = acquisitionChannel;
