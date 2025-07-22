@@ -1,0 +1,8 @@
+Getting User Input via Refs
+---------------------------
+... this approach, requires less code than when using state.
+
+The downside of this approach is that resetting those values in a clean way is a bit harder 
+because you actually discouraged to use refs for manipulating the DOM. <----------------- **
+
+email.current.value = ""; <------- would work but is actually not recommended ... 
