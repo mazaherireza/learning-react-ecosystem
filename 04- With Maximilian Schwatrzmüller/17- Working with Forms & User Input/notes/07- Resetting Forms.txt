@@ -1,0 +1,28 @@
+Resetting Forms
+---------------
+Signup.jsx
+----------
+...
+<button type="reset" className="...>Reset</button>
+...
+
+Another way is to programmatically reset it.
+
+function handleSubmit(event) {
+  ...
+  setEnteredValues({
+    email: "",
+    password: "",
+  });
+...
+... when managing those values via state.
+
+... when getting the entered values with refs, you can reset the inputs by manually setting the value property 
+of the connected input elements to empty strings ...
+
+... when working with refs it's typically better to reset the form 
+as you can also can do it when using that FormData approach for extracting the values.
+
+...
+event.target.reset(); <--------- this is also some imperative code ...
+...
