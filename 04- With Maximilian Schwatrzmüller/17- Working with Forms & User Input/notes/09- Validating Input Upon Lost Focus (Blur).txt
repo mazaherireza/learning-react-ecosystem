@@ -1,0 +1,20 @@
+Validating Input Upon Lost Focus (Blur)
+---------------------------------------
+Login.jsx
+---------
+...
+const [didEdit, setDidEdit] = useState({ <------- ... keep track of whether the user touched this value or not.
+  email: false,
+  password: false,
+});
+...
+function handleInputBlur(identifier) {
+  setDidEdit(prev => ({ ...prev, [identifier]: true})  
+}
+...
+<input onBlur={() => handleInputBlur("email")} ...
+
+... "errors may be shown too long", what do I mean by that? <---------- *
+
+... combining validation on every keystroke with validation on lost focus and resetting that focus state 
+whenever the user starts typing again can be a good pattern for validating user input.
