@@ -1,0 +1,6 @@
+Validating Input on Every Keystroke via State
+---------------------------------------------
+... validate the value on every keystroke, ... need to listen to all changes that are made to an input,
+and that is what we're doing when using state and the handleInputChange function.
+... if we wanna have keystroke validation we need that stateful approach. <----------- **
+
