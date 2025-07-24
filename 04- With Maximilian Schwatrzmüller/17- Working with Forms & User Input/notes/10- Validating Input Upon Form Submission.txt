@@ -1,0 +1,7 @@
+Validating Input Upon Form Submission
+-------------------------------------
+... ref-based login form, we can also explore another way of validating user input.
+... since I'm using refs, I can't really validate on every keystroke.
+... I can basically only validate the input when the user submits the form.
+
+... it's always a good idea to also add validation in handleSubmit function.
