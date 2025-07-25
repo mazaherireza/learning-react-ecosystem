@@ -1,0 +1,6 @@
+Creating a Custom useInput Hook
+-------------------------------
+... we need a custom hook because we're managing some state in that code that should be outsourced,
+and therefore we can't use a regular function.
+
+... build a useInput hook that should be used once per input element we have, in our form.
