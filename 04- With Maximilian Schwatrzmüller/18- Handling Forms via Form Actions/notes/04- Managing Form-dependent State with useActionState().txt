@@ -1,0 +1,58 @@
+Managing Form-dependent State with useActionState()
+---------------------------------------------------
+How can we use this errors array, to show error messages to the user, 
+when they submit an invalid form (when using this React form action's feature)? 
+
+Signup.js
+----------
+...
+const signupAction = formData => { <---- You can return anything in such an action function.
+  ...
+  if(erros.length > 0) 
+    return { errors }; <--------- The shape of this object is also totally up to you.
+  return { errors: null };
+
+How can we use this return value, when using this form action's feature? <------------- **
+Because this action function, is passed as a value to this action prop, 
+how do we now get hold of that value that's returned by that action function? 
+
+... React gives us a special hook ... useActionState ...
+
+... this action function must be passed as the first argument to this hook ...
+... this hook aims to manage some form-related state for you ... <------------ **
+... this useActionState hook actually wants a second value where you provide an initial state value, 
+because this action function may return an updated state, 
+but if the form has never been submitted, of course this action function will have never executed, 
+... no value have been returned ... that's why you also must provide an initial state for this hook
+which will be active if the action has not been executed yet. <--------- *
+
+Signup.jsx
+----------
+import { useActionState } from "react";
+...
+function signupAction(formData) {
+  ...
+}
+
+const [formState, formAction, pending] = useActionState(signupAction, { errors: null }); <---------- ** It does return an array.
+...
+  <form action={formAction}>
+
+... depending on whether the form is currently being submitted or not.
+
+{
+  formState.errors && <ul ...
+}
+
+...
+Previously without using useActionState, our action function was called and the formData was passed
+as the first and only input value to this action function by React.
+But when passing singupAction to the useActionState, this action function will be called differetnly. <--------- **
+... formData will be the second input value, ... the first parameter will be the previous formState,
+because of course it's possible that this action is invoked multiple times.
+
+function signupAction(prevFormState, formData) 
+  ...
+
+... every time you submit a form, (when using this React form action's feature)
+React resets the form for you in the end.
