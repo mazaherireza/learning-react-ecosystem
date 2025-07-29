@@ -1,0 +1,11 @@
+Module Introduction
+-------------------
+
+Using Form Actions <--------- Built into React, ... React 19 or higher.
+------------------
+Letting React Handle Form Submissions
+
+Form actions vs custom submission handling
+Extracting values & mapping form state
+Synchronous & asynchronous actions
+Optimistic UI updating
