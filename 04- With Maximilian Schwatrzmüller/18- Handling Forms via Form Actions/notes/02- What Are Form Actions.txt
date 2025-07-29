@@ -1,0 +1,48 @@
+What Are Form Actions?
+----------------------
+Signup.jsx
+----------
+...
+  function handleSubit(event) {
+    event.preventDefault(); <---------- To prevent that browser default, O.W ... send an HTTP request.
+  }
+
+  <form onSubmit={handleSubmit}>
+    ...
+
+...if you're using React 19+, ... set this function (handleSubmit) as a value for the action prop on the form element, ...
+
+Signup.jsx
+----------
+...
+  <form action={handleSubmit}>
+    ...
+
+... normally, when not using React, this action attribute would be used to define the path or the URL 
+to which the browser sends the FormData when the form is submitted.
+
+... in React, when adding the action prop to a form element, this is not what will happen.
+... overrides this attribute (this prop), 
+... will make sure that this function, (which you pass as a value to action), will be executed when the form is submitted. <----- *
+... React behind the scenes call preventDefault ...so that browser default is suppressed and is not happening, 
+... instead this function (handleSubmit) is executed.
+
+... will no longer get an event object, ... this function when used as a value for the action prop, will get a formData object.
+
+function handleSubmit(formData) { <--------- Contain all the submitted data, 
+  const email = formData.get("email");
+
+... name prop sets the key, ... used in the formData to extract the values.
+...
+  <input id="email" type="email" name="email" />
+
+... the form was reset, ... React does automatically for you.
+
+Signup.jsx
+----------
+...
+const signupAction = formData => {
+  const email = formData.get("email");
+}
+...
+  <from action={signupAction}> <----------- *
