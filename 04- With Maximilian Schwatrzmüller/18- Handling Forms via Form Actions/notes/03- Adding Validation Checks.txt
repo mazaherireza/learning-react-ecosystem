@@ -1,0 +1,21 @@
+Adding Validation Checks
+------------------------
+... collection of inputs ... where all inputs have the same name, "acquisition" ...
+
+Signup.jsx
+----------
+...
+const signupAction = (formData) => {
+  ...
+  const acquisitionChannel = formData.getAll("acquisition"); <--------- **
+... getAll makes sure that if multiple boxes are checked, we get back an array of values ...
+
+... use these values and validate them.
+
+const signupAction = formData => {
+  ...
+  const errors = [];
+
+  if(!isEqualToOtherValue(password, confirmPassword) 
+    errors.push("Password didn't match.")
+...
