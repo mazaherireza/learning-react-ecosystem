@@ -1,0 +1,48 @@
+Using User Input
+----------------
+At the moment all entered values are thrown away if an invalid form is submitted. ... not a good UX.
+... we have to adjust our signupAction a little bit.
+... we should make sure that the state that we return, does not just consist of this errors information,
+but that it actually also contains some information about the entered values.
+(the values that have been entered by the user, ... to pre-populate these input fields again, 
+to make sure that the entered values aren't lost there.)
+
+Signup.jsx
+----------
+...
+if(errors.length > 0)
+  return {
+    errors,
+    enteredValues: {
+      email,
+      password,
+      ...
+    }
+...
+<input id="email" ... defaultValue={formState.enteredValues.email}>
+
+... defaultValue prop, because that in the end, will define the value, 
+to which this input will be set when the form in reset. <------------ **
+... React does reset the form whenever the action is executed.
+
+... it's possible that enteredValues is not defined, ...
+formState.enteredValues?.email <----- JS only tries to access this email property if enteredValues is a defined object.
+
+<select
+  id="role"
+  name="role"
+  defaultValue={formState.enteredValues?.role} <----------- *
+>
+... on every input we should add defaultChecked, ...
+<input
+  type="checkbox"
+  id="google"
+  name="acquisition"
+  value="google"
+  defaultChecked={formState.enteredValues?.acquisitionChannel.includes("google") <--------- **
+>
+... all the entered values are kept and aren't lost just because some invalid value has been entered.
+
+... reset button ... the form isn't reset. 
+... resets all these inputs to their default values, <----------- *
+but now I changed those defaut values.
