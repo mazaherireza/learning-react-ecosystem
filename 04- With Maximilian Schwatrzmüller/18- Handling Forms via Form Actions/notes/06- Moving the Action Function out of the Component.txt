@@ -1,0 +1,11 @@
+Moving the Action Function out of the Component
+-----------------------------------------------
+You don't have to create these action functions inside of a CF.
+... if in this action function, you're not using any component specific data (props, state),
+you can absolutely take this function and move it out of this CF.
+
+... you could also store this action function, in a totally different file ...
+... make sense from a performance perspective because if the action function is inside of the compoent,
+the action function will be re-created every time the CF executes. <----------- **
+
+Of course, if you were using props or state in that action function, you would have to move it back into the CF.
