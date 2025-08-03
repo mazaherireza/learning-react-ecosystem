@@ -1,0 +1,16 @@
+A Demo App Introduction
+-----------------------
+... explore asynchronous action functions ...
+... we'll send HTTP requests to a backend to fetch data from there,
+but also to submit data to the backend, data that's handled with help of form actions. <----------- *
+
+... in the app.js file one the backend, I have various routes, various API endpoints, to which you can send requests 
+in order to load data from that db.json file ... 
+
+TERMINAL
+--------
+cd backend 
+npm i
+npm start
+
+... in a separate command prompt or terminal window ... npm run dev to start that frontend application, ...
