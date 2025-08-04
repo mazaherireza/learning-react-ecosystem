@@ -1,0 +1,20 @@
+Working With Asynchronous Form Actions
+--------------------------------------
+... it's time to submit the data to the backend if valid data has been entered.
+
+NewOpinion.jsx
+--------------
+...
+function shareOpinionAction(prevState, formData) {
+  ...
+  await addOpinion(...
+...
+
+... addOpinion is an async function, ... therefore what we might wanna do in our formAction ... await ...
+so that we only clear the form, after the data has been submitted to the backend. <------------ **
+This will also become important later once we update the UI based on the current submission status.
+
+... form actions can be both synchronous or asynchronous functions.
+... though if it is an asynchronous function, React will actually wait 
+for the promise that is returned by this action function to resolve
+before it internally marks this form as submitted. <------------ *
