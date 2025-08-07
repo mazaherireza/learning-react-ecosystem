@@ -1,0 +1,28 @@
+Updating the UI with useFormStatus()
+------------------------------------
+... this submit button would be disabled, and maybe the text on it would change whilst the form is being submitted.
+... we have two main ways of adding such a feature ...
+One way would be to use pending value ... will be true if the form is currently being submitted
+
+NewOpinioin.jsx
+---------------
+...
+const [formState, formAction, pending] = useActionState(...
+async funtion shareOpinionAction(prevState, formData) {
+  ...
+  await addOpinion ... <------- pending will be true until this promise is resolved.
+
+... another hook that's offered by React ...
+A new hook that's meant to be used in conjunction with formActions.
+... imported from react-dom ... useFormStatus hook. <----------- **
+... can't be used in the component that contains the form and the formAction ... must be used in some nested component.
+... some component that is used inside of this form ... <-------------- **
+
+Submit.jsx
+----------
+import { useFormStatus } from "react-dom";
+
+const { pending } = useFormStatus() <------- We'll get back an object that contains various pieces of information 
+                                    about the current form status, ... form in which this component is being used.
+...
+{ pending ? "Submitting ..." : "Submit" }
