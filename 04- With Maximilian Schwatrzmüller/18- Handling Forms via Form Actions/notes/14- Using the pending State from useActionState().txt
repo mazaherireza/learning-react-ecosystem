@@ -1,0 +1,21 @@
+Using the pending State from useActionState()
+---------------------------------------------
+How could we improve the UX?
+... disabling these buttons after they have been clicked.
+... I wanna disable both buttons if one of them has been clicked so that we have to wait for the vote to be registered,
+before we can vote again.
+
+We could use useFormStatus hook, ... but in order to do that 
+we have to outsource these buttons into separate components. <-------- **
+
+... another way of handling this, because instead of outsourcing these buttons, we can use the useActionState hook, 
+... this hook also gives us pending information ... whether the form is currently being submitted.
+
+Opinion.jsx
+-----------
+import { useActionState } from "react";
+...
+const [upvoteFormState, upvoteFormAction, upvotePending] = useActionState(upvoteAction);
+...
+<button formAction={upvoteFormAction} disabled={upvotePending || downvotePending}>
+  ...
