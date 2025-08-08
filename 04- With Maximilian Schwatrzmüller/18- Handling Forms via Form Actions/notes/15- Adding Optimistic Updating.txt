@@ -1,0 +1,36 @@
+Adding Optimistic Updating
+--------------------------
+... where optimistic updating might be a good idea.
+... I press this button, we have to wait for a second until this vote number goes up. ... we can do better.
+... another hook that's related to form actions feature.
+... useOptimistic hook ... aims to help us with optimistic updating.
+
+... call it ... in this component where I have the piece of UI that should be updated optimistically.
+... the number of votes ...
+... as the first input value, it needs the value that should eventually be updated optimistically.
+... initial state of this optimistically managed state <--------------- *
+... second parameter is a function ... invoked by React, ... this function has the job of returning a new state, 
+... a new number of votes.
+
+... it's a little bit like useState hook.
+... useOptimistic is meant to be used in conjunction with form actions because the state produced by useOptimistic,
+will be a temporary state, that's only shown on the UI whilst the form that invoked this optimistic function is being submitted.
+
+... the great thing about useOptimistic is that it will understand in which action it's being invoked <--------- **
+(you should invoke this function from inside of form action)
+and useOptimistic then registes that and waits for that action to complete
+and once the action completed, it will get rid of this optimistic state and apply the regular UI state ...
+
+Opinion.jsx
+-----------
+import { useOptimistic } from "react";
+...
+async function upvoteAction() {
+  setVotesOptimistically("up") <-------- Before we send that request and wait for its response
+  await upvoteOpinion(id);
+}
+
+const Opinion = ({ opinion: { id, title, body, userName, votes } }) => {
+  ...
+  const [optimisticVotes, setVotesOptimistically] = useOptimistic(votes, 
+    (prevVotes, mode) => mode === "up" ? prevVotes + 1 : prevVotes - 1);
