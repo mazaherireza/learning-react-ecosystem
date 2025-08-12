@@ -1,0 +1,9 @@
+Planning the App & Adding The First Component
+---------------------------------------------
+... start by building the core components and the core UI ... gradually add more and more features.
+... by sketching it out and planning which components I need.
+
+We need a plan!
+1- Add the Header component
+2- Add the Meals-related components & the logic to fetch meals data from a backend
+3- Add Cart logic (add items to cart, edit cart items) & Checkout page logic
