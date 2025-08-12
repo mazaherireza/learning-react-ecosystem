@@ -1,0 +1,28 @@
+Module Introduction & Starting Project
+--------------------------------------
+Time To Practice: Food Order App
+--------------------------------
+Components, State, Context, Effects, HTTP Requests & More!
+
+Building a complete project from the ground up
+Building & configuring components
+Using state & context
+Managing HTTP requests & side effects
+
+TERMINAL
+--------
+npm install <----------- To install all the dependencies of this project
+
+TERMINAL <-------- New Terminal
+--------
+cd backend
+npm install 
+npm start
+
+... keep this process up and running.
+
+... switch back to the main project folder ...
+
+TERMINAL
+--------
+npm run dev <--------- To start development server of the frontend
