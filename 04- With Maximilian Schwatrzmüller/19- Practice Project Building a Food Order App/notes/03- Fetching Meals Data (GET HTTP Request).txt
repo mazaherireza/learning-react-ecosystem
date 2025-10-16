@@ -1,0 +1,11 @@
+Fetching Meals Data (GET HTTP Request)
+--------------------------------------
+...
+http://localhost:3000 and then /meals because this is the endpoint we have to target.
+
+... for situations like this, where we have a side effect that would cause an infinite loop, 
+we should use the useEffect hook, ...
+... this hook allows us to run side effects after the component rendered, and it also allows us to define a dependencies array
+that controls when exactly the side effect function will run.
+
+... any external props or state or any other values that could change across renders.

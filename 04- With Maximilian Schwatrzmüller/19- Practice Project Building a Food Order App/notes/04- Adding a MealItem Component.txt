@@ -1,0 +1,3 @@
+Adding a MealItem Component
+---------------------------
+... need to prepend this image path ... adding the backend URL.
