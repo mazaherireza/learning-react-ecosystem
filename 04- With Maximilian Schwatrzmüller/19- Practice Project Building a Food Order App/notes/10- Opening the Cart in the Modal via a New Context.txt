@@ -1,0 +1,25 @@
+Opening the Cart in the Modal via a New Context
+------------------------------------------------
+... another context which can be controlled from different parts of the app and which should take care of 
+showing or not showing cart data ... progress context 
+
+... in order to close the dialogue when this runs again, we can use a cleanup function ...
+... will be executed whenever this effect function is about to run again.
+... it's recommended that you store the value of this ref in some temporary constant ...
+... and use this constant inside of this effect function ... 
+... the value stored in this ref could have changed in between.
+... lock in the value this ref has, ...
+
+Modal.jsx
+---------
+...
+  useEffect(() => {
+    const modal = dialogRef.current;
+    if (open) modal.showModal();
+    return () => modal.close();
+  }, [open]);
+
+
+
+
+
