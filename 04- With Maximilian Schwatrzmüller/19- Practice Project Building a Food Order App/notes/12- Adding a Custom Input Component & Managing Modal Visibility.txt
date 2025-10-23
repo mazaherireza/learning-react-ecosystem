@@ -1,0 +1,27 @@
+Adding a Custom Input Component & Managing Modal Visibility
+-----------------------------------------------------------
+... a type of button, beause since it's inside of a form it would otherwise submit the form, 
+... <Button type="button"> ...
+
+App.jsx
+-------
+...
+  <Cart />
+  <Checkout /> <----- We should add it to our component tree, ... you see that modal opens up ...
+</CartContextProvider>
+
+... closing ... by pressing the escape key, but if you do so you can't re-open it anymore 
+... that's happening because when we close the modal by pressing the escape key
+the dialog will be closed by the browser but in our app, the progress won't change.
+
+So to make sure that we update our progres state whenever the dialog is closed by pressing the escape key.
+
+Modal.jsx
+---------
+...
+  return createPortal(
+    <dialog ref={dialogRef} className={`modal ${className}`} onClose={close}> <--- close event will be emitted by the browser ...
+      {children}
+    </dialog>,
+    document.getElementById("modal")
+  );

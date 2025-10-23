@@ -1,0 +1,24 @@
+Migrating To Form Actions
+-------------------------
+useHook.js
+----------
+...
+const sendRequest = useCallback(
+    async (data) => {
+      setIsLoading(true);
+      try {
+        const fetchedData = await sendHTTPRequest(URL, {
+          ...config,
+          body: data,
+        });
+        setData(fetchedData);
+      } catch (error) {
+        setError(error.message || "Something Went Wrong.");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [URL, config]
+  );
+... is an async function, so a function that returns a promise.
+

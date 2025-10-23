@@ -1,0 +1,16 @@
+Handling Form Submission & Validation
+-------------------------------------
+Checkout.jsx
+------------
+...
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const formDate = new FormData(event.target);
+  
+...
+<form onSubmit={handleSubmit}>
+  ...
+... when using a regular button in a regular form, the browser will go ahead and create an HTTP request for you and send it for you,
+... the browser would send the request to this development server that's serving this site.
+
+
