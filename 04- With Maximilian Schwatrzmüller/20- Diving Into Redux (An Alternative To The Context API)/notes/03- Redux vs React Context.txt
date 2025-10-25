@@ -1,0 +1,19 @@
+Redux vs React Context
+----------------------
+Don't we have React context already?
+... it also allows us to avoid prop chains ...
+... and instead we can have a central place, our context and the context provider component which we use for managing state.
+So why do we need Redux?
+
+React context has some potential disadvantages
+Potential problem: deeply nested providers
+Potential problem: high-frequency changes
+
+Complex setup & management
+--------------------------
+In more complex apps, using React context can lead to deeply nested or fat context provider components
+
+Performance
+-----------
+React context is not optimized for high-frequency state changes <---------- *
+... context is great for low-frequency updates like changing a theme, or maybe also authentication, ...

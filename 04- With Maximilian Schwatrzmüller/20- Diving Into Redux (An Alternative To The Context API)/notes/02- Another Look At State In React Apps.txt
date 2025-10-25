@@ -1,0 +1,29 @@
+Another Look At State In React Apps
+-----------------------------------
+Redux is a state mangement system for cross-component or app-wide state <------------ **
+... it helps us manage state, data which, when changed, should affect the UI
+
+... we use React's state management hooks like useState so that we can tell React
+that some data changed and so that it then updates the UI for us.
+
+We can split the definition of state into three main kinds of state.
+What is cross-component & app-wide state? <----------- *
+
+1) Local State   
+State belongs to a single component
+E.g., listening to user input on an input filed 
+or toggling a "Show More Details" field
+
+Should be managed inside the component via useState() / useReducer
+
+2) Cross-component State   
+State affecting multiple components 
+E.g., open / closed state of a modal overlay
+
+Requires "prop drilling"
+
+3) App-wide State
+State affecting the entire app
+E.g., user authentication status or chosen theme
+
+Requires "prop drilling"

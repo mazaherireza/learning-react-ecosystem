@@ -1,0 +1,80 @@
+Exploring The Core Redux Concepts
+---------------------------------
+... we'll execute this file with NodeJS, because NodeJS allows us to run JS, outside of the browser.
+
+TERMINAL
+--------
+npm init -y
+... this give us a package.json file, ...
+... we need to install thrid-party packages.
+
+TERMINAL
+--------
+npm install redux
+
+... now we're ready to use Redux ...
+
+redux-demo.js
+-------------
+const redux = require("redux"); <---------- the default NodeJS import syntax for importing a thrid party package.
+
+... we'll need to create store, a reducer function (which changes that store), 
+an action and a component (or since we're not using a React app yet), 
+any other code that sets up a subscription to the store.
+
+... it makes sense to start with the store, since that is the central piece and concept of Redux.
+
+const store = redux.legacy_createStore(); <----------- ... should manage some data
+and the data which it manages, is in the end, determined by the reducer function, 
+... it's the reducer function which will produce new state snapshots. <------------ *
+The reducer has the goal of spliting out a new state snapshot whenever an action reaches it. <------------ *
+
+... when we run this code for the first time, the reducer will also be executed with a default action,
+that should split out the initial state.
+
+A reducer function is a standard JS function, but it will be called by the Redux library <------------- **
+and it will then always receive two pieces of input, 
+... the old or existing state and the action that was dispatched.
+... this reducer function must return a certain output.
+It must always return a new state object ... 
+... should be a pure function. ... the same inputs always should produce exactly the same output.
+... there should be no side effects inside of that function.
+
+Reducer function <------- Should be a pure function <-- Same input always leads to the same output
+input -------------------------------------> Output
+Old state + Dispatched action             New state object
+
+... we also need someone who subscribes to that store, and then we need an action that can be dispatched.
+... subscriber, ... does not get any parameters, <--------- *
+can reach out the store and call getState ... it will give us the latest state snapshot after it was updated ... <------- **
+
+... this subscription function, will soon be triggered whenever the state changes. <-------- **
+... when it is triggered, we can get to that latest state, after it was changed with the getState method ...
+ 
+... make Redux aware of this subscriber function and tell it that this function should be executed whenever our state changes.
+... store.subscriber(subscriber) ...
+
+TERMINAL
+--------
+node redux-demo.js
+
+redux-demo.js
+-------------
+const redux = require("redux");
+
+const reducer = (state = { counter : 0 } , action) => {
+  return ({
+    counter: state.counter + 1,
+  });
+}
+
+const store = redux.legacy_createStore(reducer);
+
+const subscriber = () => {
+  const latestState = store.getState();
+}
+
+store.subscribe(subscriber); 
+store.dispatch({ type: "INC" });
+
+... both the reducer, as well as the subscriber function will be executed by Redux.

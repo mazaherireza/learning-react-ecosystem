@@ -1,0 +1,17 @@
+How Redux Works
+---------------
+Core Redux Concepts
+
+... Redux is all about having one central data store in your application. <------------ *
+                              
+                               Subscription
+Central Data (State) Store ---------------------> Components
+... you have exactly one store.
+
+... they subscribe to the store, and whenever the data changes, the store notifies components, 
+and then components can get the data they need, ... they get a slice of the Redux store, and they can then use it.
+
+... components never directly manipulate the store data.
+so we have the subscription but we don't have a data flow in the other direction.
+... we have a reducer function.
+... is responsible for mutating the store data.
