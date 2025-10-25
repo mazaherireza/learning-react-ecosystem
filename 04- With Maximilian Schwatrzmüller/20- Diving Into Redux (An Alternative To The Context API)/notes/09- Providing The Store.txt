@@ -1,0 +1,26 @@
+Providing The Store
+-------------------
+To provide our Redux store to the React app, ...
+
+main.jsx  <---------- Where we rendered the entire app, 
+--------              the highest level we can go in our React application, ... top of our component tree.
+...
+import { Provider } from "react-redux"; <----- This is actually a component.
+
+... 
+root.render( <----------- Where we render the root component.
+  <Provider>
+    <App />
+  </Provider>
+);
+
+... just by wrapping Provider around App, we're not telling React-Redux (and React therefore), which store we wanna provide.
+
+import store from "./store/index"; <--------------- We have to import our store 
+...
+<Provider store={store}>
+  <App />
+</Provider>
+
+... now our components in this App, (the App component and any other child components) can tap into that store.
+They can get data out of the store, they can set up a subscription to that data ... dispatch actions ...

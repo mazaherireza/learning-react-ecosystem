@@ -1,0 +1,12 @@
+Preparing a new Project
+-----------------------
+...
+npm install
+npm start
+
+TERMINAL
+--------
+npm install redux react-redux 
+
+... to make working with Redux in React applications easier, there is a second package which we should install 
+... the react-redux package.
