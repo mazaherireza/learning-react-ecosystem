@@ -20,5 +20,5 @@ npm install <------- this command downloads required packages.
 npm run dev <-------- ... to start up a development server ... visit and preview the website you're working on.
 ... watch your code files and update that preview website whenever you save changes to your code.
 
-... whenever you first create such project, you have to run npm install to install all extra packaes that 
-are used by that project, 
+... whenever you first create such project, you have to run npm install to install all extra packages that 
+are used by that project, ...

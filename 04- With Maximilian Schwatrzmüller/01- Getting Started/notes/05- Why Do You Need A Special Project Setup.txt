@@ -1,8 +1,10 @@
 Why Do You Need A Special Project Setup
 ----------------------------------------
-Wy do we need ... a local project, created with extra tools like Vite ... ?
-Why can't we just create an HTML file and a JS file 
+Why do we need ... a local project, created with extra tools like Vite ... ?
+
+Why can't just create an HTML file and a JS file 
 and reference the script file from inside the HTML file and then put our React code into that script file?
+
 ... it isn't really an option, ... you'll use this special HTML in JS ... this syntax is called JSX
 ... doesn't work in the browser so therefore the code you write actually must be transformed
 to code that does run in the browser ... you typically want to optimize this code ...
