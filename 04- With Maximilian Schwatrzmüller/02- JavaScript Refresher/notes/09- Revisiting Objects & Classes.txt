@@ -36,5 +36,7 @@ class User {
 }
 
 ... use constructor for accepting parameters ....
+
 ... store them in properties of the object that will be created based on the class with help of the "this" keyword.
+
 const user = new User("Reza", 36); 

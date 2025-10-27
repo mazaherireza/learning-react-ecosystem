@@ -7,7 +7,7 @@ Reference VS. Prmitive Values
 ... in a variable you don't store the value, but instead the address of that value in memory.
 ... array is stored somewhere in memory, ...
 
-Objects = Reference Values
+Objects <------------- Reference Values
 For objects (and arrays are objects!), the memory address is stored in the variables
 
 The underlying value can be edited without changing that address

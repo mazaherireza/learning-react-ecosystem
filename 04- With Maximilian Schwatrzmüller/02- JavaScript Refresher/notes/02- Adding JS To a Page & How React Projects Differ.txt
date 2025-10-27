@@ -11,10 +11,10 @@ The code then executes inside the browser
 On any computer
 (e.g., server-side code)
 Thanks to Node.js or Deno, JS code can be executed outside of the browser, too.
-The code the executes directly on the machine.
+The code ... executes directly on the machine.
 
 ... React, client-side, front-end browser-based library in its core ...
-... JS is not limited to the browser, you can even build mobile apps with JS
+... JS is not limited to the browser, you can even build mobile apps with JS.
 
 On mobile devices
 (e.g., via embedded websites)
@@ -37,7 +37,7 @@ Maintaining complex JS-powered apps becomes easier
 index.html
 ----------
 ...
-<script src="assets/scripts/app.js"></scripts> <-------- **
+<script src="/scripts/app.js"></scripts> <-------- **
 ... the src attribute to point at the file ... that should be imported.
 ... this file (app.js) would be loaded as part of this webpage, when the webpage is loaded.
 

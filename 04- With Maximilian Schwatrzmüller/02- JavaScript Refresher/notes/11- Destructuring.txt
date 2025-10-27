@@ -1,7 +1,7 @@
 Destructuring
 -------------
 ...
-const [firstName, lastName] = ["Reza", "Mazaheri"]; <----- ... pulled out by position.
+const [firstName, lastName] = ["Reza", "Mazaheri"]; <-------- ... pulled out by position.
 
 ... on the left side, they are used for destructuring.
 

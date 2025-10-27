@@ -1,6 +1,6 @@
 Using Function As Values
 ------------------------
-... you can pass functions as values to other functions.
+... you can pass functions as values, to other functions.
 
 ... arrow functions never accept a name in front of them, 
 they always are created in an anonymous way, ... <--------------- **

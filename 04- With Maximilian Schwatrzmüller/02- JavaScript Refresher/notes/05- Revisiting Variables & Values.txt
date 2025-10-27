@@ -3,9 +3,10 @@ Revisiting Variables & Values
 It's all about data & values!
 
 ... when you're building an app with JS or React, it's in the end all about data ... values you're working with in your code.
+
 ... Twitter or Google Maps, ...
 The tweets you write and read are data, your location is data
-... that must be handled in your code. ... handle a broad variety of values
+... that must be handled in your code. ... handle a broad variety of values ...
 
 There are different types of values
 ___________________________________
@@ -25,7 +26,7 @@ Typically used in conditions
 
 Null & undefined 
 There is no value <---------------- **
-undefined: default if no value was assigned yet 
+undefined: default, if no value was assigned yet.
 null: explicitly assigned by developer (reset value) <------------------ **
 
 Additionally ----> Objects
@@ -64,7 +65,7 @@ _______________________________________________________
 
 4 Should use camelCasing
 
-5 Should describe what the "thing" it identifies contains or does
+5 Should describe what the "thing" it identifies, contains or does
 
 ... const ... read only ...
 ... have a value that never should be reassigned ... use const.

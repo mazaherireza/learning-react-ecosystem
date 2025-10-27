@@ -6,6 +6,7 @@ to keep it maintainable and manageable. <-------------- **
 utils.js
 --------
 export const API_KEY = "Something"; 
+
 ... by adding the export keyword in front of it.
 This makes this variable, available outside of this file as well.
 We can then import it in the file where it should be used ... by using the import keyword.
@@ -17,6 +18,7 @@ import { API_KEY } from "./utils.js"
 
 ... React projects ... build process that adds the extension for us, not add it on our own.
 ... very important for these import and export keywords to work, you must be using this type="module" ...
+
 index.html
 ----------
 ...
@@ -28,7 +30,8 @@ index.html
 ... build process will actually take all your imports and exports  <----------- **
 and basically merge all these separate files that you have during development,
 into one big fil or a bunch of big files, which are then imported with the old school syntax in the right order.
-This is done to also make this code execute in browsers that don't natively support this import export syntax,
+
+This is done to also make this code, execute in browsers that don't natively support this import export syntax,
 and also so that the browsers doesn't have to download dozens of small JS files,
 but instead just a couple of bigger files, which typically is more efficient.
 
@@ -53,10 +56,11 @@ import APIKEY from "./utils.js"
 
 ... instead of listing all the things you want to import ... as a comma seprated list between {},
 you can also import them by grouping them together into a JS object ... by using * ...
+
 app.js
 ------
 ...
 import * as util from "./utils.js"
 util.default <---------- **
 
-... as keyword can also be used to assign aliases.
+... as keyword, can also be used to assign aliases.

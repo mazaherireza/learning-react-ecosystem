@@ -1,12 +1,14 @@
 React Projects Use a Build Process
 ----------------------------------
 ... in the index.html file, you won't find any script tag.
-... noscript tag that shows a fallback messgage if the use has disabled JS in their browser, ...
+
+... noscript tag that shows a fallback messgage if the user has disabled JS in their browser, ...
 ... so why is this working?
+
 ... React projects use a build process, ... the code you write is not the code that gets executed in the browser.
 Your code is transformed before it's handed off to the browser.
 ... this is done with help of a tool that's running in the background.
-... see that tool in the package.json file, this file lists all the dependencies of this project,
+... see that tool in the package.json file, this file lists all the dependencies of this project, ...
 
 ... why does the code need to be transformed?
 ... two main reasons ...
