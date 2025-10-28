@@ -7,7 +7,7 @@ CSS Styling & Dynamic Styling
 ... we could accept a new prop here, which could be named isSelected, 
 ... the name should describe which kind of value this props will hold.
 
-... {} ... which we always use if we need some dynamic or JS-based value. <------------ **
+... {} ... which we always use, if we need some dynamic or JS-based value. <------------ **
 ... we can also set attributes coditionally.
 
 <button className={isSelected ? "active" : undefined} ...

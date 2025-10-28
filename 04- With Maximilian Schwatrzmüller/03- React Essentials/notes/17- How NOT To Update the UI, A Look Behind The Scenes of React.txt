@@ -12,7 +12,7 @@ and if it detects any differences it will update the UI accordingly.
 How React Checks If UI Updates Are Needed
 -----------------------------------------
 React compares the old output (old JSX code) of your component function
-to the new output (new JSX code) and applies any differences to the acutal website UI
+to the new output (new JSX code) and applies any differences to the acutal website UI.
 
 App Component
 1. Execution <---- Because web app got loaded
@@ -21,5 +21,4 @@ App Component
 2. Execution <---- Because of a state update
 
 ... identified difference 
-Necessary updates will be applied to the real DOM,
-ensuring that the visible UI, matches the expected output
+Necessary updates will be applied to the real DOM, ensuring that the visible UI, matches the expected output

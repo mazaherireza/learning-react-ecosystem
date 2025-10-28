@@ -1,6 +1,7 @@
 Managing States & Using Hooks, Core Concept
 -------------------------------------------
 ... we need a way of telling React that we want to update the UI.
+
 ... state ... is all about registering variables, that are handled by React
 and that are updated with help of a function that's provided by React
 that will also tell React that data changed ... cause React to update the UI.

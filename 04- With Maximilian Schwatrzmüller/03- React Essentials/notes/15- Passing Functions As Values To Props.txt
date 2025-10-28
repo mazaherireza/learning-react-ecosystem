@@ -2,18 +2,19 @@ Passing Functions As Values To Props
 ------------------------------------
 ...
 We wanna update it whenever a button is pressed and we wanna show different content down there.
-... below this menu area where I wanna output my dynamic content.
+... below this menu area, where I wanna output my dynamic content.
 ... the content that depends on which button was pressed.
 
 In order to set and update this dynamic content, we first of all need to listen to clicks on our custom button.
 (Because you must handle the event in the component that also manages the data that should be changed)
 
-... all custom components in the end just wrap native JSX elements, 
+... all custom components in the end just wrap native JSX elements, ...
 
 ... in order to make our own TabButtons clickable,
-... set the value for onClick prop on this built-in button from outside of our custom component, 
+... set the value for onClick prop on this built-in button from outside of our custom component, ...
 
 ... it would be nice if we could ...
+
 <TabButton onClick...> ... 
 ... function which we set on this onClick prop should in the end be forwarded to the built-in element,
 which does have this real onClick prop ...
