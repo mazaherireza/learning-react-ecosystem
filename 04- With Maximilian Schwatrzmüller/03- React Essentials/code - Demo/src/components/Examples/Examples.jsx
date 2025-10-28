@@ -7,6 +7,7 @@ import "./Examples.css";
 
 const Examples = () => {
   const [selectedTab, setSelectedTab] = useState(TYPES.COMPONENTS);
+  
   const titles = [TYPES.COMPONENTS, TYPES.JSX, TYPES.PROPS, TYPES.STATE];
 
   const handleClick = (title) => {

@@ -2,10 +2,12 @@ import reactImg from "@/assets/react-core-concepts.png";
 import "./Header.css";
 
 const descriptions = ["Fundemental", "Crucial", "Core"];
+
 const generateRandomInt = (max) => Math.floor(Math.random() * (max + 1));
 
 const Header = () => {
   const description = descriptions[generateRandomInt(descriptions.length - 1)];
+
   return (
     <header>
       <img src={reactImg} alt="Stylized atom" />
