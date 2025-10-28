@@ -1,5 +1,5 @@
-Creating & Using a First Custom Compononet
-------------------------------------------
+Creating & Using a First Custom Component
+-----------------------------------------
 ...
 Use the "Format Document" command / shortcut in VS Code to auto-format your code. <-------- **
 

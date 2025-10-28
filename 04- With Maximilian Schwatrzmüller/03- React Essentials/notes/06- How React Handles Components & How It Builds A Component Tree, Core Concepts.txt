@@ -49,7 +49,7 @@ Component Tree <--- A hierarchy of components, analyzed & rendered by React step
 ... <---- Deeply nested component
 
 ... your custom components are not showing up in the actual rendered DOM,
-there you only find default HTML elements, ...
+there, you only find default HTML elements, ...
 
 So your tree of components in the end, just analyzed by React and React then combines all the JSX code
 from all those components to generate the overall DOM, the elements that are showing up on the screen.

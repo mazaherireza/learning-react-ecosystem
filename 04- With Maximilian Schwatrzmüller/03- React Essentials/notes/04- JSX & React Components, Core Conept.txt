@@ -1,5 +1,5 @@
-JSX & React Components, Core Conept
------------------------------------
+JSX & React Components, Core Concept
+------------------------------------
 ...index.html file, it only contains some basic markup, ... does not contain the HTML code 
 that's responsible for displaying the content we're seeing on the screen,
 ... React is rendering content on the screen, <--------------- **
@@ -20,7 +20,7 @@ You define the target HTML structure & UI, not the steps to get there!
 React projects come with a build process that transforms JSX code to code that does work in browsers.
 (... is transformed by the development server, ...)
 
-... componet is really just a JS function.
+... component is really just a JS function.
 
 Component functions must follow two rules <------------ **
 _________________________________________
@@ -31,4 +31,4 @@ The function name must start ...
 ... pick a name that describes the UI building block ...
 
 Returns "Renderable" content <---------------- **
-The function must return a value that can be rendered (displayed on screen) by React
+The function must return a value that can be rendered (displayed on screen) by React.

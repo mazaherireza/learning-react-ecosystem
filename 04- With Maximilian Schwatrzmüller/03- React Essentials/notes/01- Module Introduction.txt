@@ -6,5 +6,5 @@ Components, JSX & state
 
 Building UIs with components
 Using, sharing & outputing data
-Handling use events
+Handling user events
 Building interactive UIs with states

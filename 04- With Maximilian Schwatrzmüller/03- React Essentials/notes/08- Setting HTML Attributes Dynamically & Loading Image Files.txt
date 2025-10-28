@@ -19,8 +19,7 @@ Deployable Files
 A collection of generated files that include your optimized code and any other extra assets 
 (e.g., CSS code files, optimized images, etc.)
 
-... image files, ... might be ignored by that bundling process 
-and therefore they might get lost during deployment.
+... image files, ... might be ignored by that bundling process and therefore they might get lost during deployment.
 
 ... if we include images differently we can even take advantage of extra optimization steps
 ... you should use an import statement <-------------- **

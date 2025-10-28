@@ -16,4 +16,4 @@ Content/value is derived at runtime
 ... {} ... between element tags, ... as a value for an attribute, ... output a dynamic value.
 
 ... if-statements, for-loops, function definitions and other block statements are not allowed in {}
-Only expressions that directly produce a value. <------------------ **
+only expressions that directly produce a value. <------------------ **

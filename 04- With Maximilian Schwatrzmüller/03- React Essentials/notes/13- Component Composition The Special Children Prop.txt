@@ -41,7 +41,7 @@ The "children" prop
 React automatically passes a special prop named "children" to every custom component
 
 ... you can output that content with props.children 
-or by using object destructuring ... by pulling out the children propety ...
+or by using object destructuring ... by pulling out the children property ...
 
 This way of building components where your components can wrap other components or content
 is called component composition. <---------------- **
