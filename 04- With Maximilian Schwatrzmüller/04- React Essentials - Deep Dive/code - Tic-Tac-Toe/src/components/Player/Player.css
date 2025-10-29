@@ -3,10 +3,6 @@
   padding: 0.5rem;
   border-radius: 4px;
   font-weight: bold;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
 }
 
 .player-name {
@@ -20,10 +16,6 @@
   border-radius: 4px;
   text-overflow: ellipsis;
   text-align: center;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
 }
 
 .player input {
@@ -36,7 +28,6 @@
   background-color: #46432f;
   text-align: center;
   text-transform: uppercase;
-  -webkit-animation: pulse-text 2s infinite;
 }
 
 .player-symbol {
@@ -49,9 +40,11 @@
   0% {
     color: #e1dec7;
   }
+
   50% {
     color: #9f9d83;
   }
+
   100% {
     color: #e1dec7;
   }

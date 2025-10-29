@@ -14,11 +14,14 @@ const BOARD = [
 
 const deriveBoard = (turns) => {
   const board = [...BOARD.map((row) => [...row])];
+
   turns.forEach((turn) => {
     const {
       square: { rowIndex, colIndex },
     } = turn;
+
     const { player: symbol } = turn;
+
     board[rowIndex][colIndex] = symbol;
   });
 
@@ -27,12 +30,17 @@ const deriveBoard = (turns) => {
 
 const deriveActivePlayer = (list) => {
   let activePlayer = "X";
-  if (list.length > 0 && list[0].player == "X") activePlayer = "O";
+
+  if (list.length > 0 && list[0].player === "X") {
+    activePlayer = "O";
+  }
+
   return activePlayer;
 };
 
 const deriveWinner = (board, players) => {
   let winner;
+
   for (const combination of WINNING_COMBINATIONS) {
     const firstSymbol = board[combination[0].row][combination[0].column];
     const secondSymbol = board[combination[1].row][combination[1].column];
@@ -40,27 +48,30 @@ const deriveWinner = (board, players) => {
 
     if (
       firstSymbol &&
-      firstSymbol == secondSymbol &&
-      secondSymbol == thirdSymbol
+      firstSymbol === secondSymbol &&
+      secondSymbol === thirdSymbol
     )
       winner = players[firstSymbol];
   }
+
   return winner;
 };
 
 const App = () => {
   const [players, setPlayers] = useState({ X: "Player 1", O: "Player 2" });
+
   const [turns, setTurns] = useState([]);
 
   const activePlayer = deriveActivePlayer(turns);
   const board = deriveBoard(turns);
   const winner = deriveWinner(board, players);
 
-  const hasDraw = turns.length == 9 && !winner;
+  const hasDraw = turns.length === 9 && !winner;
 
   const handleClick = (rowIndex, colIndex) => {
     setTurns((prev) => {
       const player = deriveActivePlayer(prev);
+
       return [{ square: { rowIndex, colIndex }, player }, ...prev];
     });
   };

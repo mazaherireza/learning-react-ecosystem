@@ -3,11 +3,15 @@ import "./Player.css";
 
 const Player = ({ initialName, symbol, isActive, onChange }) => {
   const [playerName, setPlayerName] = useState(initialName);
+
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleIsEditing = () => {
     setIsEditing((prev) => !prev);
-    if (isEditing) onChange(symbol, playerName);
+
+    if (isEditing) {
+      onChange(symbol, playerName);
+    }
   };
 
   return (
