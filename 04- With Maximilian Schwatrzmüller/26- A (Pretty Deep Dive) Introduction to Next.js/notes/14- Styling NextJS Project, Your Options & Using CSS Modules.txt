@@ -1,0 +1,12 @@
+Styling NextJS Project, Your Options & Using CSS Modules
+--------------------------------------------------------
+... use Tailwind CSS ...
+
+... CSS modules, ... standard CSS code but scoped to specific components by assigning special names to your CSS files.
+
+main-header.jsx
+---------------
+import classes from "./main-header.module.css"
+
+... the styles are scoped to this component and uaffect any other component on the page,
+even if you would use a similar class name ...

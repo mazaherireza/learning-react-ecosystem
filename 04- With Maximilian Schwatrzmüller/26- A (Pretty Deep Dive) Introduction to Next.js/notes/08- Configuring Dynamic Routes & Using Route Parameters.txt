@@ -1,0 +1,34 @@
+Configuring Dynamic Routes & Using Route Parameters
+---------------------------------------------------
+... one other route type ... dynamic route, a route which we only define once, 
+... capable of rendering different pages for different blog posts.
+
+... in NextJS, we can create such a dynamic route by adding a nested folder where we use [].
+
+blog
+  [slug]
+    page.js
+
+page.js
+-------
+export const BlogPage = () => {
+  return <main> ...
+}
+
+[slug]/page.js
+--------------
+export const BlogPostPage = () => {
+
+}
+
+[slug] <---------- ... we wanna have some path segment after blog ..., 
+... NextJS actually passes a props object to all those page components. ... params prop
+
+[slug]/page.js
+--------------
+export const BlogPostPage = ({ params }) => {
+  return (
+    ...
+    <p>{ params.slug } </p>
+  ...
+}

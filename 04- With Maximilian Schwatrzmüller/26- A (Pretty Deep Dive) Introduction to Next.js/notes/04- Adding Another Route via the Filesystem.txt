@@ -1,0 +1,24 @@
+Adding Another Route via the Filesystem
+---------------------------------------
+How could we add a second page to this website?
+
+.. app directory plays an important role ... in this app directory, you can add new paths,
+which you wanna handle as routes by adding new folders. <--------------- **
+
+app/about
+... adding a folder is not enough. 
+You always must add such a page.js file, if you wanna render a page <------------- *
+
+Filenames Matter!
+NextJS relies on reserved, special filenames <----------- **
+But the filenames only matter inside the "app" folder
+
+page.js ----------> Define page content
+layout.js --------> Define wrapper around pages
+not-found.js -----> Define "Not Found" fallback page
+error.js ---------> Define "Error" fallback page
+
+/about/page.js
+----------------
+export const About = () => {
+  ...

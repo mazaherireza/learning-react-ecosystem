@@ -1,0 +1,10 @@
+Exercise Your Task
+------------------
+Create 3 routes
+/meals
+/meals/share
+
+/community
+
+Create a dynamic route
+/meals/[slug]/page.js

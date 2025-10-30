@@ -1,0 +1,11 @@
+Adding a Custom Component To A Layout
+-------------------------------------
+main-header.jsx
+---------------
+import Link from "next/link";
+import Logo from "@/assets/logo.png"; <-------- this imported logo, in NextJS projects 
+                                                will be an object where the path to the image is then stored under src property.
+const MainHeader = () => {
+  ..
+  <Link href="/">
+    <img src={Logo.src} ...

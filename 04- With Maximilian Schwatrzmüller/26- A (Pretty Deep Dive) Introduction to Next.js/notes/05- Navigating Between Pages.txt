@@ -1,0 +1,29 @@
+Navigating Between Pages
+------------------------
+... have a link, to that second page.
+
+NextJS renders pages on the server
+Server-side (backend)
+
+Page / HTML content is rendered on the server & sent to the client <----------------- **
+
+Client-sie (frontend)
+
+When we visit a page for the first time, it's rendered on the server, ... <--------------- **
+but if we're on a page and we navigate around, by clicking links, NextJS allows us to stay in a SPA 
+and updata the UI with help of client-side JS code.
+
+... technically the content of the next page, will still be pre-rendered on the server,
+but it will then be updated on the client side. 
+
+Server- & Client-side Working Together
+--------------------------------------
+The backend executes the server component functions & hence derives the to-be-rendered HTML code
+The client-side, receives & renders the to-be-rendered HTML code
+
+page.js
+-------
+import Link from "next/link"; <------ ... if you have some internal link 
+...
+  <p>
+    <Link href="/about">About US</Link> <--------- *

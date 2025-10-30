@@ -1,0 +1,15 @@
+Working with Pages & Layouts
+----------------------------
+
+Pages & Layouts
+---------------
+... the layout.js file defines the shell around one or more pages.
+Every Next project needs at least one root layout.js file. 
+
+layout.js
+---------
+...
+export const RootLayout = ({ children }) => {
+  return (
+    <html lang="en">
+      <body>{ children } ...

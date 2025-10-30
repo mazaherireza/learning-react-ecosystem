@@ -1,0 +1,19 @@
+Reserved File Names, Custom Components & How To Organize A NextJS Project
+-------------------------------------------------------------------------
+...
+icon.png ... another special file name ... it will be used as a favicon by NextJS.
+
+... add regular React components, which are not treated as pages.
+
+components/header.js
+--------------------
+export const Header = () => {
+
+}
+... a standart React component, ...
+
+page.js
+-------
+import Header from "@/components/header";
+
+... outside of the app folder ...

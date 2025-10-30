@@ -1,0 +1,10 @@
+Revisiting The Concept Of Layouts
+---------------------------------
+... the idea behind layouts in NextJS is that they act as wrappers around pages.
+
+meals/layout.js
+---------------
+const MealsLayout = ({ children }) => { ... }
+
+... in case of layouts and pages, we aren't rendering those components ourselves.
+We're not using them in JSX code ... NextJS is using them for us.

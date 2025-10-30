@@ -1,0 +1,29 @@
+Understanding File-based Routing & React Server Components
+----------------------------------------------------------
+app <------- the most important folder in a modern NextJS project
+... set up your different pages 
+
+Filesystem-based Routing
+NextJS uses files & folders to define routes <--------------- **
+Only files & folders inside the "app" folder are considered!
+
+/app
+  /about -------------> my-page.com/about
+  /blog
+    /post-1 ----------> my-page.com/blog/post-1
+
+page.js & layout.js are reserved filenames 
+... page.js tells NextJS that it should render a page.
+
+... server component, type of component that's not built with just React, ...
+
+NextJS works with React server components
+Components which require a special "environment"
+NextJS provides such an environment
+
+React Server Components <---------- Render only on the server, Never on the client
+
+page.js
+-------
+export const Home = () => { <---- this CF is executed on the server.
+   ...

@@ -1,0 +1,15 @@
+Module Introduction
+-------------------
+... it's actually a fullstack application, so frontend and backend combined into one project.
+
+Fullstack React Apps With NextJS
+--------------------------------
+Building up on React
+
+... a framework that allows us to build fullstack applications with React.
+... frontend is still controlled by React, ... then this frontend seamlessly blends with the backend.
+
+What is NextJS & why would you use it?
+Routing, pages & server components
+Fetching & sending data
+Styling, image upload & managing page metadata

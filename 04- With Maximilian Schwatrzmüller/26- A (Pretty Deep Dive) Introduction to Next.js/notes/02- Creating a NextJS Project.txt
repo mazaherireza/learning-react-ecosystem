@@ -1,0 +1,24 @@
+Creating a NextJS Project
+-------------------------
+... we need a project that comes with NextJS pre-installed & that has a certain structure & setup that's needed by NextJS.
+
+nextjs.org
+
+... command like this: npx create-next-app@latest <--------------- *
+
+TERMINAL
+--------
+npx create-next-app@latest project-name
+...
+Would you like to use App Router? (recommended) Yes
+
+(... you should confirm the App Router, if asked)
+
+... finally the project is being created, the dependencies are being installed ...
+
+... it is enough if you replace you app folder and your public folder ... as well as your eslintrc.json file.
+
+TERMINAL
+--------
+npm i
+npm run dev
