@@ -1,0 +1,22 @@
+Adding A Loading Page
+---------------------
+... NextJS performs some pretty aggressive caching 
+... it caches any page you visited, including the data of that page, 
+and if you go to another page and come back, it loads that existing page from the cache, <--------- **
+...
+
+It caches even more aggressively when running the website in production mode.
+
+... adding another special file to our folder though.
+... go to that page, which is loading data, which might take a bit longer, 
+and next to it, you can add a loading.js file, ...
+
+... it applies to all sibling + nested pages and layouts. <------------- **
+... is a reserved file name.
+
+app/meals/loading.js
+--------------------
+... this file will become active if the page next to it or any nested page or layout is loading data.
+
+const MealsLoadingPage = () => {
+  return <p>Fetching meals ...

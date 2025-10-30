@@ -1,0 +1,10 @@
+Handling Not Found States
+-------------------------
+... there's another kind of error that could occur.
+What happens if a user enters an invalid URL?
+... we got this default 404 page ...
+
+not-found.js
+------------
+... you can add that anywhere in your app folder and it'll automatically cover any sibling and nested pages.
+... root level ... we can simply catch all not-found errors ...
