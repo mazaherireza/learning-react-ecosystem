@@ -1,0 +1,67 @@
+React Server Components vs Client Components - When To Use What
+---------------------------------------------------------------
+... NextJS knows Server Components, React Server Components and Client Components.
+... that's technically not just NextJS, instead, React itself has this differentiation  <---------- *
+... React.js is a pure client side library, 
+
+Vanilla React apps, render on the client
+________________________________________
+Server-side (back-end) 
+Only returns one single HTML file, which contains the client-side JS code <------------- **
+
+Client-side (front-end)
+The visible content is generated & rendered on the client-side (by the client-side React code)
+
+... with NextJS, that changes, because NextJS is a full-stack framework.
+... code also executes on that backend when working with NextJS.
+
+With NextJS, you build fullstack applications
+_____________________________________________
+...
+... by default, all those React components ... no matter if they're pages, layouts or standard components
+are only rendered on the Server. <------------ **
+That's why they're called React Server Components.
+
+Server-& Client-side Working Together
+_____________________________________
+Server-side
+(Backend)
+The backend executes the server component functions & hence derives the to-be-rendered HTML code
+
+Client-side
+(Frontend)
+The client-side receives & renders the to-be-rendered HTML code
+
+Server vs Client Components
+___________________________
+
+React Server Components (RSC)
+Components that are only rendered on the server
+
+By default, all React components (in NextJS apps) are RSCs
+Advantage: Less client-side JS, great for SEO <-------------- **
+
+Client Components
+Components that are pre-rendered on the server but then also potentially on the client
+
+... these hooks are not available on the server side, ... event handlers 
+Opt-in via "use client" directive
+Advantage: client-side interactivity
+
+... even if you're in the SPA mode and you're navigating around, all the components will still be rendered on the Server
+... it's kind of the finished HTML code that's then sent to the client to be rendered there.
+
+... with SRCs you have potentially less client-side JS code that must be downloaded, 
+... greate for search engine optimization, 
+
+... take a look at the source code ... all the content is in there.
+All that text that's visible on the screen is part of the actual page source code, 
+
+... in NextJS projects, you can still also build Client Components, ...
+sill technically pre-rendered on the Server, 
+... must be rendered on the client because they contain some code 
+or use some features that are only available on the client.
+... these hooks are not availabe on the server-side, ...
+event handlers ...
+
+... you have to explicitly tell NextJS if you wanna built a client component by using a special directive ...
