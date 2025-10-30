@@ -1,0 +1,17 @@
+Using Client Components Efficiently
+-----------------------------------
+...
+
+main-header.js
+--------------
+"use client";
+
+import { usePathname } from "next/navigation";
+...
+  const path = usePathname();
+  ...
+  <Link href="/meals" className={path.startsWith("/meals") ? styles.active : undefined } ...
+
+... you typically wanna add "use client" as far down the component tree as possible, 
+so that you really only turn the components that need to be converted to client components into client components 
+... the majority of your components can stay server components and are rendered on the server ...

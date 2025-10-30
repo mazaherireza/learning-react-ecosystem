@@ -1,0 +1,57 @@
+Fetching Data By Leveraging NextJS & Fullstack Capabilities
+-----------------------------------------------------------
+When it comes to loading data in a NextJS application, we get a couple of different options.
+
+... we could fetch the data as we would do it in any Vanilla React application.
+... useEffect hook <------------ **
+
+In a NextJS application we actually already have a backend.
+
+... because we have those Server Components as a default, 
+we don't need useEffect and we don't need to send a fetch request to get data.
+... this component by default runs on the server, and only there, we can directly reach out to the DB from here.
+... reaching out to a DB is safe here.
+
+... add a new folder in my root project folder, which I'll name lib, ...
+
+lib/meals.js <---------- ... write the code that reaches out to a DB and gets data from that DB.
+------------
+import sql from "better-sqlite3"
+
+const db = sql("meals.db"); <------- establish the DB connection
+
+export function getMeals() {
+ return db.prepare("SELECT * FROM meals").all(); **
+}
+
+... run would be used if you were inserting data, ... changing data, ...
+all is used if you were fetching data, ... 
+if you were looking for a single row, you could use get instead.
+
+** doesn't yield a promise or anything like that.
+... event though we're not working with promises ... better SQL Light doesn't use them,
+we could use them in our component with ease becaue SC functions can be converted to async functions. <----------- **
+
+You can use async keyword ...
+
+export default async function MealsPage() {
+  **
+}
+... if you had some code that would use a promsie, you could use await here **
+
+const getMeals = async () => db.prepare("SELECT * FROM meals").all()
+
+export async function getMeals() {
+  await new Promise((resolve) => setTimeout(resolve, 1000)); <--------- ... add extra delay
+  return db.prepare("SELECT * FROM meals").all()
+}
+
+page.js
+-------
+...
+import { getMeals } from "@/lib/meals";
+
+const MealsPage = async () => {
+  const meals = await getMeals();
+
+... without useEffect, without any unnecessary fetch request being sent.  

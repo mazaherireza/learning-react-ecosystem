@@ -1,0 +1,47 @@
+Outputting Meals Data & Images With Unknown Dimensions
+------------------------------------------------------
+...
+
+meal-item.js
+------------
+import Image from "next/image";
+...
+  <MealItem {...meal} /> <-------- *
+
+... what's interesting about this component ... the path is constructed dynamically 
+with a dynamically injected segment that will be different for every meal 
+because we have that dynamic meal details page.
+
+<Link href={`/meals/${slug}`} ... 
+
+... this page with expects a dynamic value ... [mealSlug]
+
+The other interesting thing is this Image component.
+<Image src={image} alt={title} fill /> <---------- *
+... not be imported manually from the assets folder.
+Instead, we'll be working with meals that are stored in a DB
+and their images are stored in the public folder.
+
+... this Image component needs to know the underlying width and height of the image that's being output.
+So not the width and height you wanna have on the screen <------------ **
+but the width and height of the image you're trying to render. <---------- **
+...
+
+... we'll load them dynamically from a DB.
+... and NextJS won't be able to resolve the width and height of such an image, ...
+that's why I added this special fill prop ...
+
+You can use the "fill" prop instead of setting a "width" and "height" 
+whenever your have an image when you don't know the dimensions in advance.
+
+An alternative would've been to explicitly set the width and height of the images ...
+but the problem is that I don't know in advance ...
+
+... it should simply fill the available space with that image ...
+
+meals-grid.js
+-------------
+...
+  <li key={meal.id}>
+    <MealItem {...meal} />
+    ...

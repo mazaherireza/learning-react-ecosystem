@@ -1,0 +1,24 @@
+Setting Up A SQLite Database
+----------------------------
+... I wanna set up a basic DB
+... I'll stop my developent server with Ctrl + C, ... install a new dependency ...
+
+TERMINAL
+--------
+npm install better-sqlite3
+
+... this is a package that will allow us to work with a SQL light DB.
+... can be used locally, without setting up any extra DB server or any other complex setup needed.
+
+... in order to create a DB and populate it with some dummy data, 
+... initdb.js file, ... you should store that file... in your root project directory, ...
+
+... I'll execute this initdb.js file with node
+
+TERMINAL
+--------
+node initdb.js 
+
+meals.db <----------- SQL Light DB 
+
+... start loading meals from this DB ... how we do that?
