@@ -1,0 +1,9 @@
+Using More Custom Components
+----------------------------
+... outsource header background into a separate component, ...
+
+main-header-background.module.css
+---------------------------------
+import styles from "main-header-backgound.module.css";
+...
+  <div className={styles["header-background"]}>
