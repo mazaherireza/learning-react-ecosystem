@@ -1,0 +1,13 @@
+Throwing Not Found Errors For Individual Meals
+----------------------------------------------
+... it's possible that a user tries to look for a meal that doesn't exist, 
+... it's good that we get some fallback page,
+but it's not actually that "An Error Occured" ...
+
+page.js
+-------
+import { notFound } from "next/navigation";
+...
+  if(!meal) {
+    notFound(); <---- calling this function, will stop this component from executing
+  }                   and will show the closest not-found or error page.
