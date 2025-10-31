@@ -1,0 +1,24 @@
+Getting Started with a Custom Image Picker Input Component
+----------------------------------------------------------
+... the job for this component function, is to output some markup and then also handle the picking process.
+
+image-picker.js
+---------------
+...
+  const imageInputRef = useRef();
+
+  const handlePickClick = () => {
+    imageInputRef.current.click();
+  };
+...
+  <input type="file" id="image" accept="image/png, image/jpeg" name={name} ref={imageInputRef} /> <---------- *
+
+<input name="image" ... be important for extracting that uploaded image.
+
+...
+  <button className={styles.button} type="button">
+    Pick an Image
+  </button>
+... what I want the button to do is click this input, which is not visible anymore ...
+It's still part of the DOM, it's just not visible 
+... need to handle clicks on this button and them forward them, to this input.
