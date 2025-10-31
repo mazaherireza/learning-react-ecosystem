@@ -1,0 +1,31 @@
+Building For Production & Understanding NextJS Caching
+------------------------------------------------------
+... everything works fine during development ... but things will change once we move to production.
+
+TERMINAL
+--------
+npm run build
+
+... build and prepare our NextJS application for production.
+It'll give us a project that we could then deploy onto a server.
+
+... you can run that production server and that optimized code, by running npm start. <---------- *
+This will start a server, but now not some development server, ... the production server,
+... it's serving that optimized code ...
+
+... the meal is missing here. 
+
+Why is this (delay) missing here in production?
+Why is this meal we added missing?
+
+NextJS performs some pretty aggressive caching <------------- **
+... generates, pre-renders all the pages of your app that can be pre-generated, all non-dynamic pages. <--------- **
+
+... by pre-rendering all these pages, it of course has those pages available,
+right from the start, after being deployed.
+... NextJS caches those pre-rendered pages so that it's able to serve them to all visitors.
+
+... the downside of this approach, ... it never re-fetches the meals 
+... uses those pre-generated pages.
+
+... a problem if the data that's visible on that page, changes ...

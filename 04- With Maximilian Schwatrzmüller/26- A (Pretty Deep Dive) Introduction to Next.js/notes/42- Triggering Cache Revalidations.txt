@@ -1,0 +1,28 @@
+Triggering Cache Revalidations
+------------------------------
+How can we fix this problem of NextJS caching too aggressively?
+
+We need to tell NextJS to throw away its cache or parts of its cache whenever we add a new meal. <---------- **
+... there's a built-in method for that, a built-in function provided by NextJS.
+A function which I wanna execute in SA, right after saving a meal (before I redirect) ... revalidatePath.
+
+This function tells NextJS to revalidate the cache that belongs to a certain route path.<---------- **
+
+... by default, only that path will be revalidated, no nested paths.
+
+... which means that simply this page for this path will be ravalidated.
+
+actions.js
+----------
+...
+await saveMeal(meal);
+revalidatePath("/meals", "layout"); <-------- ... all nested pages would be revalidated as well
+redirect("/meals");
+
+... you can pass a second argument ...  and set this to "layout", the default is "page", 
+... it's the layout that will be revalidated, ...
+
+... revalidate simply means that NextJS throws away the cache that is associated with those pages.
+
+If you would wanna revalidate all the pages of your entire website, 
+revalidatePath("/", "layout"); <-------------- **

@@ -1,0 +1,25 @@
+Adding Dynamic Metadata
+-----------------------
+For dynamic pages, you can add metadata by not exporting a constant or variable named metadata, 
+... exporting an async function called generateMeatadata.
+... return such a metaata object in this function.
+
+... recieves the same data our page component receives as props. <-------------- **
+
+meals/[mealSlug]/page.js
+------------------------
+...
+const generateMetadata = async ({ params }) => {
+  const meal = getMeal(params.mealSlug);
+
+  if(!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    ...
+  }
+}
+
+... the metadata is actually generated first ...

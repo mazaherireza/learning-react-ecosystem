@@ -1,0 +1,12 @@
+Adding Static Metadata
+----------------------
+... the page metadata that you can add to your pages.
+
+... root layout ...
+... NextJS is looking for exported variables or constants called metadata in all your page or layout files. <-------- **
+
+... expose to Search Engine crawlers ... 
+
+... I wanna add a title and description to every page.
+... if you add metadata to a layout, it will automatically be added to all the pages that are wrapped by that layout
+unless a page specifies its own metadata.

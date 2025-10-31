@@ -1,0 +1,11 @@
+Don't Store Files Locally On The Filesystem!
+--------------------------------------------
+Why was that image missing when we added a new meal whilst running this production server?
+
+... public/images ... this folder is available during development, 
+but for production, it's actually copied into .next folder ...
+
+... when you deploy your Next project, you technically don't even have to deploy the public folder.
+
+... you should store any files that are generated at run time, 
+using extra file storage services like AWS S3.
