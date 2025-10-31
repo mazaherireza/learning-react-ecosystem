@@ -1,0 +1,35 @@
+Managing The Form Submission Status With useFormStatus
+------------------------------------------------------
+... it would be nice to get some feedback as a user whilst the data is being submitted 
+to see that everything's fine and a request is on its way.
+
+... use another hook provided by React.
+
+share/page.js
+-------------
+import { useFormStatus } from "react-dom";
+...
+const status = useFormStatus();
+
+status.pending is true if there is an ongoing request and false otherwise.
+
+... this hook requires a client component in order to work, ...
+... but we also might not want to turn this entire page into a client component
+just because we wanna conditionally update this button.
+In addition, this hook will actually give us the status of a form, if it's inside of that form 
+for which it should give us the status.
+... inside of some component that's inside of that form.
+
+... add a new component, ...
+
+meals-form-submit.js
+--------------------
+"use client";
+
+import { useFormStatus } from "react-dom";
+
+const MealsFormSubmit = () => {
+  const { pending } = useFormStatus();
+
+  return <button> { pending ? "Submitting ... " : "Share Meal" } </button>
+}
