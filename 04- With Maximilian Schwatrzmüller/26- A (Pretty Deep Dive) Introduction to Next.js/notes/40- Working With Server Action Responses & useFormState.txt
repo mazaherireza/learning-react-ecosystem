@@ -1,0 +1,45 @@
+Working With Server Action Responses & useFormState
+---------------------------------------------------
+How we can handle validation errors, in a more elegant way? <---------- *
+... in server actions, ... you are not limited to redirecting or throwing errors.
+... you can also return values. ... response objects to be precise ...
+
+... the shape of this object is totally up to you, ... it's a serializable object,
+
+...
+  return {
+    message: "Invalid input."
+  }
+
+How can we use this response ... where we trigger SA? <----------- **
+... with help of another hook,  ... useFormState hook.
+
+share/page.js
+-------------
+...
+import { useFormState } from "react-dom";
+
+... is responsible for managing the state of this component, 
+which uses a form that will be submitted with help of server actions. <------------ **
+
+... useFormState needs two arguments.
+... the first is the actual server action that should be triggered when the form is submitted,
+the second argument ... the initial state of this component, 
+
+const [state, formAction] = useFormState(shareMale, { message: null });
+state <--------- the latest response returned by this SA in the end
+or this nitial state ({ message: null }) if no response has been received yet.
+
+... formAction ... which we should actually set as a value for action property (on the form)
+
+<form ... action={formAction}>
+
+... state depends on the execution of that SA and its response.
+
+... tweak the shareMeal action ... 
+
+actions.js
+----------
+...
+export async function shareMeal(prevState, formData) {
+  ...
