@@ -1,0 +1,16 @@
+Adding Server-Side Input Validation
+-----------------------------------
+... one thing you should typically do, when handling user data and form submissions 
+is validate the values you're getting.
+
+... client-side validation isn't enough.
+... you should also validate on the server side.
+
+!meal.image || meal.image.size === 0
+I wanna check if maybe we don't have an image. ... it's undefined,
+or if that image has a size that's equal to zero, ... some kind of invalid file.
+
+... we should propbably set up a specific error page for sharing a meal.
+
+... throwing error ... also means that we destroy the entire input of the user.
+So, we throw away everything they entered.
