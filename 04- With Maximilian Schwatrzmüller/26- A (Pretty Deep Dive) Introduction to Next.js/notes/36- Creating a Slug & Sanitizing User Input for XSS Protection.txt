@@ -1,0 +1,32 @@
+Creating a Slug & Sanitizing User Input for XSS Protection
+----------------------------------------------------------
+meals.js
+--------
+...
+const saveMeal = (meal) => {
+
+... inside of saveMeal we have to do a couple of things.
+... we'll need to generate a slug ... I wanna generate it based on the title.
+... install and extra package, ...
+
+TERMINAL
+--------
+npm i slugify xxs 
+
+... xxs will help us protect against cross-site scripting attacks.
+... we're storing user-generated content ... outputting those instructions as HTML.
+So we're vulnerable to cross-site scripting attacks. 
+... sanitize the content that's sent by the user, ...
+
+lib/meals.js
+------------
+import slugify from "slugify";
+import xss from "xss";
+
+...
+
+const saveMeal = (meal) => {
+  meal.slug = slugify(meal.title, { lower: true }); <------- ... forces all characters to be lowercase.
+  ... remove any harmful content from those instructions 
+  meal.instructions = xss(meal.instructions);
+}

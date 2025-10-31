@@ -1,0 +1,44 @@
+Introducing & Using Server Actions For Handling Form Submissions
+----------------------------------------------------------------
+... NextJS gives us a more powerful and convenient pattern 
+than manually handling the form submission and collecting the data and sending it to a server.
+
+Instead, we can create a function in the component that holds the form,
+... add a special directive in this function, 
+
+const ShareMealPage = () => {
+  const shareMeal = async () => {
+    "use server"; <---------- ... this creates a so-called Server Action, which is a function that's gurarnteed 
+                              to execute on the server, and only there.
+
+So just as components by default are Server Components, (which only executes on the server)
+this is now a function that only executes on a server.
+... you must explicitly state that it belongs to the server by adding this directive inside of them.
+
+... to really turn this into a server action, ... add the async keyword in front of it.
+
+async function shareMeal() {
+  "use server";
+   ...
+
+What's now the special thing about this Server Action? <----------------- **
+Why does this feature exist? <------------- **
+
+... this feature exists in React by the way ... NextJS to unlock this feature and use it.
+... take such a Server Action and assign this SA function as a value for the action property on a function.
+...
+  <form action={shareMeal} /> <------------ *
+
+... ensure that when this form is submitted, NextJS will behind the scenes, 
+create a request and send it to this NextJS server that's serving the website ... on the server.
+
+... this function will automatically receive that formData that was submitted.
+
+const shareMeal = async (formData) => {
+  "use server";
+  const meal = {  
+    title: formData.get("title");
+    ...
+
+... the next step would be to store this in a DB, 
+... the image should actually be stored on the file system and then a path to that image should be stored in a DB.

@@ -1,0 +1,16 @@
+Storing Server Actions in Separate Files
+----------------------------------------
+... you can add SAs in a component like this,
+but this will only work if the component in which you are adding it, is not a client component. <----------- **
+
+... you are not allowed to have server actions in a client component file. <----------- **
+
+... you can also store SAs in separate files.
+
+... has "use server" directive at the top. <-------------- **
+
+actions.js
+----------
+"use server";
+
+... all the functions you might define in this file, will be treated as SAs.

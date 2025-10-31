@@ -1,0 +1,41 @@
+Storing Uploaded Images & Storing Data in the Database
+------------------------------------------------------
+Now the image should be stored on the file system, not in the DB
+because storing files in DBs is a bad idea. ...
+Instead, I wanna store the uploaded files in public folder because any images stored there will be publicly available, 
+so they can be rendered on the screen without problems.
+
+Using the public folder for user-uploaded image storage also has disadvantages.
+
+lib/meals.js
+------------
+import fs from "node:fs";
+...
+const saveMeal = async (meal) => {
+  ...
+  const extension = meal.image.name.split(".").pop();
+
+  const fileName = `${meal.slug}.${extension}`; <---- ... generate a unique file name
+  ... To make sure that you don't accidentally override other images with the same file name,
+  you could consider adding some random/unique element to each filename.
+
+  ... we need to write that (filename), to a file in ... public folder.
+  ... with help of an API provided by Node.js ... file system API ...
+  createWriteStream ...  will create a stream that allows us to write data to a certain file. <--------------- **
+  ... 'll return a stream object which you can use to write to that path. (that image in that path)
+
+  const stream = fs.createWriteStream(`public/images/${fileName}`); 
+
+... write method wants a chunk.
+... what's that chunk?
+... we should convert the image to a buffer (bufferedImage) <------------- **
+
+  const bufferedImage = await meal.image.arrayBuffer(); <------------ **
+
+  stream.write(Buffer.from(bufferedImage), error => {
+    if(error) throw ...
+  );
+
+  meal.image = `/images/${fileName}` <--------- should remove public segment
+                                                because all requests for images will be sent to the public folder automatically anyways
+  db.prepare(`INSERT INTO meals ...`);
