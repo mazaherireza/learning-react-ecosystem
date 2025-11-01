@@ -1,0 +1,12 @@
+Linking Between Pages
+---------------------
+... refresh icon ... this always signals that the browser sends a new request and gets back a new HTML page.
+
+It's great that we have those pre-rendered pages so that when a user initially visits our site,
+some content is there, right from the start, it's also great for search engines ...
+
+... to stay in that SPA, we need to create a link differently.
+
+news/index.js
+-------------
+import Link from "next/link"
