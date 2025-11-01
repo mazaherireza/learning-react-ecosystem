@@ -1,0 +1,15 @@
+Analyzing the Created Project
+-----------------------------
+... the three important folders for us are pages, public and styles ...
+
+... unlike in a regular React app, you have an index.html file in the public folder 
+... in the NextJS app you don't have that.
+... NextJS has this built-in pre-rendering and whilst it gives you a SPA, 
+that SPA is dynamically pre-rendered when a request reaches the server so that 
+you do return an inital page with content.
+
+NextJS allows us to determine when a page should be pre-rendered. <------------ **
+
+... the pages folder will be the most important folder
+because that is where we will set up that file based routing, 
+... define the different pages that should make up our application ...

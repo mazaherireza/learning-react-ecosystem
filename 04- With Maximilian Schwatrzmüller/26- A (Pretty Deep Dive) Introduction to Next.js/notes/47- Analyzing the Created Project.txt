@@ -1,0 +1,11 @@
+Adding First Pages
+------------------
+... index.js file, in this file ... have a standard React component ...
+
+The index.js file will be our route page. <----------- **
+So if a request reaches our "domain/", just index.js will be loaded.
+... news.js for requests that reach our "domain/news".
+... the file name will be used as a path name. <--------------- ***
+
+... by looking at the page source, in addition to file based routing, 
+we also already use that built-in server-side rendering feature wihtout any extra setup ...
