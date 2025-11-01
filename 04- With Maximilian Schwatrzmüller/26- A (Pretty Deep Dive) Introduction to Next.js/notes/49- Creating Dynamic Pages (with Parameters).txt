@@ -1,0 +1,9 @@
+Creating Dynamic Pages (with Parameters)
+----------------------------------------
+... the path segment to concrete value in the path can be dynamic,
+
+... we use [] in the file name in front of the extension.
+... this tells NextJS that this will be a dynamic page 
+so that it should be loaded for different values in your path.
+
+pages/news/[newsId].js

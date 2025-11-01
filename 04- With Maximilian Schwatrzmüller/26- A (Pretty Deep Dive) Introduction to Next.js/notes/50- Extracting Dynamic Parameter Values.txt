@@ -1,0 +1,11 @@
+Extracting Dynamic Parameter Values
+-----------------------------------
+To extract the concrete value entered in the URL 
+(when this page is loaded) NextJS gives us a special hook which we can use.
+
+[newsId].js
+----------
+import { useRouter } from "next/router";
+...
+  const router = useRouter();
+  rotuer.query.newsId <--------------- **
