@@ -1,0 +1,11 @@
+Adding Nested Paths & Pages (Nested Routes)
+-------------------------------------------
+... file-based routing system ...
+
+pages/news/index.js
+... this page (index.js) would still be loaded by visiting "our-domain.com/news" 
+... folders, which you create in your pages folder also act as path segments.
+... it does matter though as soon as you start creating nested paths, 
+
+... if we just create files directly in the pages folder, 
+we're limited to one segment, the file name. 
