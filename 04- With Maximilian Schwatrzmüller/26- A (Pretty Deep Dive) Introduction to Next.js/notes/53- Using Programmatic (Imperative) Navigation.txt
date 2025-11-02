@@ -1,0 +1,11 @@
+Using Programmatic (Imperative) Navigation
+------------------------------------------
+...
+MeetupItem.js
+------------
+import { useRouter } from "next/router";
+
+...
+  const { push } = useRouter();
+  ...
+  push(`/${props.id}`);
