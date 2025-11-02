@@ -1,0 +1,9 @@
+.links {
+  display: grid;
+  gap: 1rem;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
