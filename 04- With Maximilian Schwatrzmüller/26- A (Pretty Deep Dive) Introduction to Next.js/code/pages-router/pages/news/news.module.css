@@ -1,0 +1,11 @@
+.links {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.25rem;
+
+  li {
+    a {
+      font-size: small;
+    }
+  }
+}
