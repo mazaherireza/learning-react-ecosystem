@@ -1,16 +1,29 @@
 The _app.js File & Layout Wrapper
 ---------------------------------
-... if we have an application with dozens or maybe hundreds of pages wrapping our general layout
-around all the page contents, ... that becomes cumbersome,
+... if we have an application with dozens or maybe hundreds of pages wrapping our general layout around all the page contents, 
+... that becomes cumbersome, ...
 ... that's where _app.js file becomes important. 
-... this is kind of your route component. <----------- *
+... this is kind of your root component. <----------- *
 
 pages/_app.js
 -------------
 ...
 ... App({ Component, pageProps }) {
 ... Component is a prop that holds the actual page contents that should be rendered.
-... pageProps are specific props our pages might be getting.
+... pageProps are specific props, our pages might be getting.
 
 Whenever you have some component or some setting that affects all your pages 
 you can utilize _app.js file to easily add that without diving into dozens of files individually.
+
+pages/_app.js
+-------------
+import Layout from "@/components/layout/Layout";
+import "@/styles/globals.css";
+
+export default function App({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+}
