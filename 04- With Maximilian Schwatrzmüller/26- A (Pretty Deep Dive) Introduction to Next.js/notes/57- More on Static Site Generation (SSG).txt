@@ -1,0 +1,24 @@
+More on Static Site Generation (SSG)
+------------------------------------
+... quit the dev server and run npm run build. 
+
+SSG ... Static Site Generation, ... automatically generated as HTML and JSON,
+... used for pre-fetching data once the page turned into a SPA.
+
+... Static Generation that's almost the same.
+The only difference is that here we got no initial props ...
+
+... big problem, ... data here could be outdated.
+This page, is generated during the build process.
+So thereafter, we deploy it. If we then add more meetups to our DB, 
+this pre-generated page would not know about them.
+... if we don't add any client-side data fetching, we would always just see the outdated meetups ...
+
+... if data does change more ferquently, there is an extra property, 
+... revalidate ... when we add this property to the object returned by getStaticProps, 
+we unlock a feature called incremental static generation. <---------------- **
+... wants a number ... this number is the number of seconds NextJS will wait until it generates this page for an incoming request.
+
+... 
+  revalidate: 10
+... would be regenerated on the server at least every 10 seconds if there are requests comming in for this page.

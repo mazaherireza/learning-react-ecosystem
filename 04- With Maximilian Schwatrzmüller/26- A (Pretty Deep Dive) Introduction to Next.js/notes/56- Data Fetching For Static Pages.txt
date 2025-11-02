@@ -1,0 +1,42 @@
+Data Fetching For Static Pages
+------------------------------
+Page Pre-Rendering
+
+Request --------> /some-route
+Good for SEO! <-------- Return pre-rendered page -----------> Hydrate with React code once loaded ----> Page / App is interactive
+
+... if we wanna pre-render a page with data, so that this initially returned HTML code already contains the data,
+we need to fine tune this built-in pre-rendering process. ... configure it.
+
+... NextJS gives us to forms of pre-rendering, which we can use for controlling how the pages should be rendered.
+
+Two forms of pre-rendering
+Static Generation
+Server-side Rendering
+
+... code runs at different points of time.
+
+... when using static generation, a page component is pre-rendered when you build your application, <---------- **
+... with static generation, by default, your page is not pre-rendered on the fly on the server,
+when a request reaches the server but instead, it's pre-rendered when you as a developer, b
+build your site for production.
+
+... if you need to wait for data, ... add data fetching to a page component,
+... exporting a special function from your page component file. <------------- **
+... only in component files inside of the pages folder.
+
+... NextJS executes this function during pre-rendering process. <-------------- **
+So it won't directly call your component function and use the returned JSX snapshot as HTML content
+but it first of all, call getStaticProps before it calls the CF.
+
+... its job is to prepate props for this page. <-------------- **
+...
+export async function getStaticProps() { <-------- ... will never execute on the client-side  
+     <------- You always need to return an object here.
+
+  return {
+    props: <----------- has to be named props                                              
+}
+
+... in getStaticProps, you can also execute any code that would normally only run on a server.
+You could access a file system here ... connect to a DB ...

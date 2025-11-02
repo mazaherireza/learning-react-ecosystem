@@ -1,0 +1,8 @@
+Adding Custom Components & CSS Modules
+--------------------------------------
+... CSS modules.
+It's a feature ... allows you to scope CSS class styles to a React component  ...
+... the CSS styles defined in the CSS file will be scoped to this component.
+
+... any CSS classes you define ... will be available as properties on this object. (styles)
+... are guaranteed to be unique.
