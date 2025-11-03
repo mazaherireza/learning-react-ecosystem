@@ -1,0 +1,26 @@
+Preparing Paths with getStaticPaths & Working With Fallback Pages
+-----------------------------------------------------------------
+Server Error
+Error: getStaticPaths is required for dynamic SSG pages and is missing for "/[meetupId]".
+
+... getStatciPaths is a function you need to export in a page component file 
+if it's a dynamic page and you're using getStaticProps.
+
+... with getStaticProps a page is pre-generated during the build process.
+This means that of course NextJS needs to pre-generate all versions of this dynamic page in advance
+for all the supported IDs.
+
+... here we need to pre-generate it for all the URLs, 
+for all the meetupId values, users might be entering at runtime.
+
+export async function getStaticPaths() {
+  return { <-------- Where we describe all the dynamic segment values
+    fallback: 
+    paths: [
+      {  
+        params: { meetupId: "m1" } <--------- ... fetch your supported IDs from a DB ... generate this array dynamically.
+}
+
+... fallback 
+This key tells NextJS whether your paths array contains all supported parameter values or just some of them.
+... false ... paths contains all supported meetup ID values.

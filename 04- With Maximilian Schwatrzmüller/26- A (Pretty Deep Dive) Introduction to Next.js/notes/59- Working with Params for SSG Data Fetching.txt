@@ -1,0 +1,13 @@
+Working with Params for SSG Data Fetching
+-----------------------------------------
+... useRouter hook can only be used in the CF, not in getStaticProps.
+
+... on getStaticProps, context won't hold request and response, ... have a params key.
+
+export async function getStaticProps(context) { 
+  context.params 
+ ...
+}
+
+... that will be an object where our identifiers between the [] will be properties 
+and the values will be the actual values encoded in the URL.
