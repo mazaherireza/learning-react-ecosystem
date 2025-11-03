@@ -1,0 +1,26 @@
+Exploring Server-Side Rendering (SSR) with getServerSideProps
+-------------------------------------------------------------
+... sometimes even a regular update is not enough.
+
+Sometimes you wanna regenerate this page for every incoming request.
+So you wanna pre-generate the page dynamically on the fly after development on the server.
+
+... if that's your goal, there is an alternative to getStaticProps.
+
+... getServerSideProps ...
+The difference to getStaticProps is that this function won't run during the build process,
+... always on the server after deployment.
+
+export async function getServerSideProps(context) { 
+                                                         
+  <------- Any code you write here will always run on the server, never in the client.
+  const { req, res } = context
+}
+
+... you can't set revalidate ... runs for every incoming requests anyways, ...
+
+... you need to wait for your page to be generated on every incoming request.
+
+Which one of two should you use?
+getServerSideProps ... guaranteed to run for every request.
+... you need to wait for your page to be generated on every incoming request.
