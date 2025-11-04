@@ -1,0 +1,80 @@
+Working With MongoDB
+--------------------
+... cloud offering, MongoDB Atlas, ... a fully managed cloud-based MongoDB DB
+
+https://www.mongodb.com/
+products > Atlas > Get Started
+
+Create Cluster <------------- *
+Deploy your cluster
+
+... the MongoDB DB cluster, which we'll use to connect to, then create our DB in there (store our data in there).
+In order to be able to connect to this cluster, there are two things you also have to do (in this MongoDB Atlas console)
+
+Network Access
+you have to add your local IP ... so that you local computer is able to send requests to MongoDB 
+
+[NextJS allows us to determine when a page should be pre-rendered.]
+
+Username: rezamazaheri_db_user
+Password: 2giXLv2CCUNveUVt
+
+Database Access
+you need to create at least one user with any username of your choice 
+who has to have read and write access to the DB
+... this is a user with which we can connect to this cluster later.
+
+Get connection string <---------- *
+
+Connect to cluster
+
+Connecting with MongoDB Driver
+1. Select your driver and version
+Driver: Node.js
+Version: 6.7 or later
+
+... use the Node.js MongoDB driver to write code in our api route that does send queries to this MongoDB Atlas cluster.
+
+... official MongoDB driver, which makes sending queries to MongoDB easy.
+
+2. Install your driver
+Run the following in the command line
+npm install mongodb
+
+3. Add your connection string into your application code
+Use this connection string in your application
+
+mongodb+srv://rezamazaheri_db_user:<db_password>@cluster0.jzqqra2.mongodb.net/?appName=Cluster0
+
+Replace <db_password> with the password for the rezamazaheri_db_user database user. 
+Ensure any option params are URL encoded.
+
+TERMINAL
+--------
+npm install mongodb
+
+api/new-meetup.js
+-----------------
+import { MongoClient } from "mongodb";
+
+const handler = async (req, res) => {
+  ...
+  const client = await MongoClient.connect(
+    "mongodb+srv://rezamazaheri_db_user:2giXLv2CCUNveUVt@cluster0.jzqqra2.mongodb.net/?appName=meetsup"
+  );
+
+  const db = client.db();
+  const meetupsCollection = db.collection("meetups");
+  const result = await meetupsCollection.insertOne(body);
+  console.log(result);
+
+  client.close();
+
+  res.status(201).json({ message: "Meetup Inserted!" });
+}
+
+... MongoDB is a NoSQL DB that works with collections full of documents.
+Collections would be kind of your tables in a SQL DB and document would be your entries in those tables.
+
+... a single meetup would be a single doucment, 
+the overall collection then holds multiple meetup documents.
