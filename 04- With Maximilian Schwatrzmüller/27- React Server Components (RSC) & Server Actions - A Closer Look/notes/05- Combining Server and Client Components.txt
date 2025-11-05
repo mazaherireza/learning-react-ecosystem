@@ -1,0 +1,14 @@
+Combining Server and Client Components
+--------------------------------------
+React server components can directly include client-components in their JSX code
+Client-components can't directly include React server components in their code - only as children
+
+...
+... let's try including the SC ... in the client component.
+... you might expect an error by this also works ... why is this working?
+Because by default NextJS ... converts a component that's used inside of a client component to a client component as well.
+... but now RSCDemo isn't a SC anymore. <------------- *
+
+... we could force RSCDemo to be a server component 
+by adding the async keyword in front of the function keyword ... <------------- **
+because SCs can be async functions, ...
