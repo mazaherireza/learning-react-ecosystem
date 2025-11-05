@@ -1,0 +1,33 @@
+Changing Server to Client Components
+------------------------------------
+...
+... by adding a special directive at the top of the file,
+"use client"; <-------- ... will tell the project setup, ... this component should be treated differently, ...
+... this will still be executed on the server, but not just there, 
+... it is rendered on the server an on the client side.
+
+Why would you not leave it as a server component? <----------- *
+What's the advantage of having a client component?
+... first let's take a look at the advantage of having a SC.
+... less code has to be sent to the client because it's rendered on the server, <-------------- *
+hence the client doesn't need to download all the code that's required to render this component.
+We can even fetch data on the server ..., which allows us to send finished pages that even include data 
+(that has to be fetched) to the client on the initial request instead of performing data fetching in the browser,
+
+... why would you then convert a component to a client component?
+Because you might need to use some client component feature ...
+
+React Server Components
+-----------------------
+React components that are never executed on the client!
+Can fetch data & can use async / await
+The component is rendered on the server and the result (HTML code) is sent to the client
+Special project setup required!
+Bundler / build workflow must be configured to support RSC
+
+Client Components
+-----------------
+Rendered on the server and clinet! <---------------- **
+Code does execute on the client-side -> client-side features can be used
+Most React projects (e.g., created via Vite) only support client components
+In projects that support RSCs, client-components must be marked via "use client" directive
