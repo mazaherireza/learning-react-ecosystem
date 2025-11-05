@@ -1,0 +1,29 @@
+Why We Need A Special Project Setup
+-----------------------------------
+... React has some features that are part of React, but that you can't use in evey React project, ...
+
+React features you might not be able to use
+-------------------------------------------
+React Server Components (RSC)
+Server Actions
+use() with Promises
+
+Special project setup required!
+Not supported by "standard" React projects (e.g created via Vite)
+
+Why is a special setup needed?
+
+Some features require a server-side environment ... not just in the browser.
+Code therefore must be split (by the build process / code bundler process)
+
+Client-side code
+----------------
+Executed on the client-side
+Like in most React projects (e.g., created via Vite)
+
+Non Client-side code
+---------------------
+Executed on the server-side (or during build process) <---------- *
+Special project setup required
+
+... one project setup that does support these features would be a NextJS project, ...
