@@ -1,0 +1,16 @@
+Submitting Data with Server Actions
+-----------------------------------
+... you can also use SCs for submitting data to the server.
+
+... "use server" can be added to a form action function, to turn it into a server action. <----------- **
+... it then must be an async function too, ...
+
+Making Sense of server actions
+Like form actions
+But the action code, executes on the server not on the client-side <----------- *
+
+Created as form actions with "use server" directive
+...
+
+... you can use server actions in client components ... grab that server action ... add a new actions folder ...
+...
