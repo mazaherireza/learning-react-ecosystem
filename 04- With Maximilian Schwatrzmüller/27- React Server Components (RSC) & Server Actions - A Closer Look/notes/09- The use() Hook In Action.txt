@@ -1,0 +1,9 @@
+The use() Hook In Action
+------------------------
+... pass promise as a prop to the client componet.
+
+"use client";
+import { use } from "react";
+
+export default async function UsePromiseDemo({ usersPromise }) {
+  const users = use(usersPromise); <------- wait for this promsie to resolve on the client side.

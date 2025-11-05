@@ -1,0 +1,13 @@
+Using the use() Hook for Promises & Data Fetching
+-------------------------------------------------
+The use() hook can be used for getting access to Context
+But it can also be used to await promises - in client-components <------------ *
+... without using async / await.
+
+Works together with Suspense to handle data fetching & loading fallbacks
+
+use() for promises requires "specail promises" 
+Created via libraries that integrate with React's Suspense feature
+Your promises, created in your components, can't be used!
+  
+... promises that are built with React's Suspense feature ... <---------- *
