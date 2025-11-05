@@ -1,0 +1,6 @@
+Fetching Data with RSCs
+-----------------------
+... when using SCs, you have some new options when it comes to fetching data in your components.
+
+RSCs vastly simplify the process of fetching data in components because instead of using useEffect ...
+the code for loading the data is included right in the component.
