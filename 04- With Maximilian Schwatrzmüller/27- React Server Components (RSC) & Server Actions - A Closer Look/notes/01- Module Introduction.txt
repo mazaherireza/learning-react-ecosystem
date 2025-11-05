@@ -1,0 +1,11 @@
+Module Introduction
+-------------------
+RSC, Server Actions & Suspense
+------------------------------
+Making sense of fullstack React concepts
+
+React features you might not be able to use
+Understanding server components & client components
+Making sense of & using server actions
+Supspense & the use hook
+... to get access to data that's resolved by promises, ...
