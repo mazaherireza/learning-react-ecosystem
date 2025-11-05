@@ -1,0 +1,21 @@
+Understanding React Server Components
+-------------------------------------
+... by default in NextJS projects, ... (in all projects that support server components),
+components are server components ... if you wanna change them to client components, you have to tell React ...
+
+RSC
+---
+React components that are never executed on the client!
+
+... these component functions are executed on a server or actually during the build process if they are pre-rendered ...
+
+Client Components
+-----------------
+Rendered on the server and client! <------------ **
+... also render on the server, they are pre-rendered there when a request hits the server, <------------- *
+so that the finished HTML page is sent back as part of the response,  <--------------- **
+but then, they run again on the client side and you get a SPA thereafter, ...
+
+... what turns this component into a React Server Component?
+... the special project setup that is provided by NextJS. <------------- *
+NextJS projects are set up such that all React components by default are treated as server components, ...
