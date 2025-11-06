@@ -12,7 +12,7 @@ default prop values
 ... we could therefore build a separate Section component that always enforces this structure ...
 
 ... the styling doesn't look correct anymore, ...
-... when you're setting props, so attributes, on a custom component 
+... when you're setting props, so attributes on a custom component,
 those props are not automatically forwarded to the JSX code used inside of that component.
 ... there is no magic connection like this.
 React is only setting the props on the elements where the developer are setting them. <------------ **
@@ -34,4 +34,4 @@ Props must be used & set explicitly <---------------- ***
 ...
 
 ... this is not really scalable and not really convenient.
-... pattern that would be called forwarded props or proxy props.
+... pattern that would be called forwarded props or proxy props. <------------ **
