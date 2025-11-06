@@ -1,8 +1,8 @@
 You Don't Have To Use JSX!
 --------------------------
 ... JSX code, HTML in JavaScript code ...
-... a non-standard feature, it's not supported by the browser ... we got a build process, 
-... you could also build React apps without using JSX, 
+... a non-standard feature, it's not supported by the browser ... we got a build process, ...
+... you could also build React apps without using JSX, ... 
 
 You Don't Need JSX (But It's Convenient)
 ----------------------------------------
@@ -12,7 +12,7 @@ You Don't Need JSX (But It's Convenient)
   <p>Hello World!</p>
 </div>
 
-which you might return in a component, with this code which does not use JSX at all, 
+which you might return in a component, with this code which does not use JSX at all, ...
 
 React.createElement(
   "div", <---------- Component Type, Identifies the to-be-rendered component
