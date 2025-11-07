@@ -1,12 +1,11 @@
 Working With Multiple JSX Slots
 -------------------------------
 ... special Tabs component ...
-... in bigger apps, it would not be unreasonable to assume that we might have different places
-in the app where tabs like this might be used ...
+... in bigger apps, it would not be unreasonable to assume that we might have different places in the app 
+where tabs like this might be used ...
 
 ... wrapper component that just enforces a certian JSX ...
-... the idea behind this component is that we could use it for all kinds of tabs
-with all kinds of content in different places of the app.
+... the idea behind this component is that we could use it for all kinds of tabs with all kinds of content in different places of the app.
 
 ... this should be a relatively dump wrapper component which doesn't know anything about the content it's managing.
 
