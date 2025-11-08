@@ -32,5 +32,5 @@ But how can we now use this buttonsContainer that contains this component identi
 ... <buttonsContainer> ... look for a built-in element called buttonsContainer 
 ... instead, we wanna use the value that's received on this buttonsContainer prop as an identifier.
 
-... we're creating a constant ... which can be used as a custom component 
+... we're creating a constant ... which can be used as a custom component ...
 ... remapping this prop to some constant, we could simply accept a prop that starts with an uppercase character ...
