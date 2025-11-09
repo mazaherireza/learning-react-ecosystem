@@ -7,6 +7,7 @@ const Types = {
 
 const reducer = (state = { counter: 0 }, action) => {
   const { type } = action;
+  
   switch (type) {
     case Types.increase: {
       return {
