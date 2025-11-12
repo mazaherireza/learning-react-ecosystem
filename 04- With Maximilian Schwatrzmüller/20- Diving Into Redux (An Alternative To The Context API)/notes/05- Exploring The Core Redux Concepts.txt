@@ -4,8 +4,8 @@ Exploring The Core Redux Concepts
 
 TERMINAL
 --------
-npm init -y
-... this give us a package.json file, ...
+npm init -y <------------- *
+... this gives us a package.json file, ...
 ... we need to install thrid-party packages.
 
 TERMINAL
@@ -22,15 +22,15 @@ const redux = require("redux"); <---------- the default NodeJS import syntax for
 an action and a component (or since we're not using a React app yet), 
 any other code that sets up a subscription to the store.
 
-... it makes sense to start with the store, since that is the central piece and concept of Redux.
+... it makes sense to start with the store, since, that is the central piece and concept of Redux.
 
 const store = redux.legacy_createStore(); <----------- ... should manage some data
 and the data which it manages, is in the end, determined by the reducer function, 
 ... it's the reducer function which will produce new state snapshots. <------------ *
 The reducer has the goal of spliting out a new state snapshot whenever an action reaches it. <------------ *
 
-... when we run this code for the first time, the reducer will also be executed with a default action,
-that should split out the initial state.
+... when we run this code for the first time, 
+the reducer will also be executed with a default action, that should split out the initial state.
 
 A reducer function is a standard JS function, but it will be called by the Redux library <------------- **
 and it will then always receive two pieces of input, 

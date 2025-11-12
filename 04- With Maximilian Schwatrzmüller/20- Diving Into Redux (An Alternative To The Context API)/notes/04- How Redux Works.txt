@@ -14,4 +14,4 @@ and then components can get the data they need, ... they get a slice of the Redu
 ... components never directly manipulate the store data.
 so we have the subscription but we don't have a data flow in the other direction.
 ... we have a reducer function.
-... is responsible for mutating the store data.
+... is responsible for mutating the store data. <--------------- *

@@ -11,8 +11,7 @@ What is cross-component & app-wide state? <----------- *
 
 1) Local State   
 State belongs to a single component
-E.g., listening to user input on an input filed 
-or toggling a "Show More Details" field
+E.g., listening to user input on an input filed or toggling a "Show More Details" field
 
 Should be managed inside the component via useState() / useReducer
 

@@ -6,8 +6,8 @@ Don't we have React context already?
 So why do we need Redux?
 
 React context has some potential disadvantages
-Potential problem: deeply nested providers
-Potential problem: high-frequency changes
+Potential problem: deeply nested providers <--------------- *
+Potential problem: high-frequency changes <--------------- *
 
 Complex setup & management
 --------------------------
