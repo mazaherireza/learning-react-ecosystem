@@ -1,0 +1,33 @@
+Working With Multiple State Properties
+--------------------------------------
+... we need to add a new state (a new piece of data) to our Redux store.
+How do we now do that?
+... go to our reducer ...
+
+store/reducer.js
+----------------
+...
+const initialState = { counter: 0, showCounter: true };
+
+const reducer = (state = initialState, action) => {
+  const { type, payload = 1 } = action;
+
+  switch (type) {
+    case Types.inc: {
+      return {
+        counter: state.counter + payload,
+        showCounter: state.showCounter,
+      };
+    }
+
+... Redux won't merge your changes with the existing state.
+It instead takes what you return and replaces the existing state with it. <----------- **
+
+... in Counter, we again call useSelector.
+We can use this, multiple times, to retrieve different pieces of data from the state.
+
+Counter.jsx
+-----------
+...
+const showCounter = useSelector(state => state.showCounter);
+...

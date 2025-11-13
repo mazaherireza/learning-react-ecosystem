@@ -1,0 +1,38 @@
+Adding State Slices
+-------------------
+TERMINAL
+--------
+npm install @reduxjs/toolkit
+
+... uninstall redux (the Redux library itself) because that is already included in Redux Toolkit.
+
+store/index.js
+--------------
+import { createSlice } from "@reduxjs/toolkit";
+...
+createSlice({ <-------- We're preparing a slice of our global state
+  name: "Counter",
+  initialState,
+  reducers: { <--------------- A map ... of all the reducers this slice needs, 
+    increment(state) { <-------- Will automatically receive the latest state
+      state.counter++ <--------------- we are allowed to mutate state
+    },
+    decrement() {},
+    increase(state, action) {
+      state.counter = state.counter + action.amount
+    },
+    toggleCounter() {} <-------- These methods will automatically be called for you, depending on which action was triggered. 
+  }                             
+})
+
+... when we have different pieces of state which are not directly related,
+we could create different slices (potentially also in different files) to make our code maintainable.
+
+We still must not manipulate the existing state but the good thing is, when using Redux Toolkit and its functions like createSlice, 
+we can't accidentally manipulate the existing state.
+... Redux Toolkit internally uses another package, ... which will automatically clone the existing state, 
+create a new state object, ... in an immutable way. 
+
+... can still have reducers that listen to actions that have an extra payload, ...
+
+How do we now make our store aware of this slice? <------------- **

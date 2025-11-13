@@ -1,0 +1,52 @@
+Redux with Class-based Components
+---------------------------------
+... how this Counter component would look like if we would build it as a class-based component.
+
+... how do we get access to Redux here?
+
+... React-Redux also exports a connect function, which is a function that helps you connect class-based components to Redux.
+... you could also use it on functional components, ...
+When we export our Counter ... instead call connect and now connect when executed,
+will actually return a new function as a value, ... connect is a higher order component. <---------- **
+
+Counter.js
+----------
+import { Component } from "react";
+...
+class Counter extends Component {
+  ...
+  incHandler() {
+    this.props.increment();
+  }
+
+  render() {
+    return ...
+  }
+}
+
+...
+export default connect()(Counter); <----------------- * 
+
+... connect also wants some arguments. ... two arguments and both arguments are functions.
+The first function is a function that maps Redux state to props, which will be received in this component (Counter component).
+
+const mapStateToProps = state => { <------- return an object where the keys will be available 
+  return {                                  as props in the receiving component (Counter component).
+    counter: state.counter <---- Bind state.counter to the counter prop.
+  };
+}
+
+The second argument ... the idea is to store dispatch functions in props.
+... in the Counter component, we have certain props ... dispatch an action to the Redux store.
+
+const mapDispatchToProps = dispatch => { <---- Will be executed for you by Redux
+  return {
+    increment: () => dispatch({ type: "INC" }); <------- Keys are prop names which we can then use in the component
+  }
+}
+... this ensures that in the Counter component, we'll have an increment prop which we can use. <------------ ***
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter); 
+
+... when using connect, React-Redux will still set up a subscription and manage the subsription for you. <----------- **
+... in the Counter component, we'll have an increment prop ...

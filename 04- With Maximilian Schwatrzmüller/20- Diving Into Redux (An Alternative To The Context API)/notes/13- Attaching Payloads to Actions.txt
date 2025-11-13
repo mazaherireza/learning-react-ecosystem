@@ -1,0 +1,4 @@
+Attaching Payloads to Actions
+-----------------------------
+... you often wanna dispatch actions, that also carry an extra value.
+... reducer ... extracts an action payload.

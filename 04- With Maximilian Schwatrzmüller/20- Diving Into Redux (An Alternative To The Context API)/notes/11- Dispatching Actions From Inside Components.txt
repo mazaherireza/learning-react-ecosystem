@@ -1,0 +1,10 @@
+Dispatching Actions From Inside Components
+------------------------------------------
+Counter.jsx
+-----------
+import { useDispatch } from "react-redux";
+...
+const dispatch = useDispatch(); <----- ... we don't pass any argument to it, ...
+... dispatch is a function, ... dispatch an action against our Redux store.
+....  
+  dispatch({ type: "INC" });

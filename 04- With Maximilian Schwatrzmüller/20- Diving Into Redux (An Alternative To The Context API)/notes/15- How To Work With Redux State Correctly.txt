@@ -1,0 +1,14 @@
+How To Work With Redux State Correctly
+--------------------------------------
+... the objects which we're returning in our reducer, ...
+... we always return a brand new snapshot ... which, Redux, will use to replace its existing state with.
+... will not be merged with the existing state. <------------ **
+They will override the existing state.
+
+We must always set all the other states when we update a piece of state because we override the old state.
+
+Why do we need to return a new piece of data? <---------------- **
+... you should never mutate the existing state.
+... always override it by returning a brand new state object.
+
+... objects and arrays are reference values in JS, it's easy to accidentally override and change the existing state.

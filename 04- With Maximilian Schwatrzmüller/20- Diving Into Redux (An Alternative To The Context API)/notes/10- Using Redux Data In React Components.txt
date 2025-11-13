@@ -1,0 +1,27 @@
+Using Redux Data In React Components
+------------------------------------
+Let's say we wanna utilize this provided store ... in the Counter component ...
+... we need to get access to our Redux store and to the data in there.
+
+... there also is useStore hook, ... gives us direct access to the store ... useSelector is a bit more convenient to use ...
+... useSelector, allows us to automatically select a part of our state managed by the store.
+If we would be using a class-based component ... there also is a connect function which you could use instead.
+... can be used as a wrapper around our class component to connect that class component to the store. <--------- *
+
+Counter.jsx
+-----------
+import { useSelector } from "react-redux";
+
+const counter = useSelector(state => state.counter) <------------ ... a function which will be executed by React-Redux 
+...
+  <span>{counter}</span>
+
+... when we use useSelector, React-Redux will automatically, set up a subscription to the Redux store for this component.
+So your component will be updated and will receive the latest counter automaticlaly whenever that data changes in the Redux store.
+... changes to the Redux store will cause this component function to be re-executed. <-------------- **
+So you always have the latest counter. 
+
+If you ever unmount this component ... (removed from the DOM) React-Redux would also automatically clear the subscription for you.
+It manages that subscription for you behind the scenes.
+
+... how we can change that data? <---------- *

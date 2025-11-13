@@ -1,0 +1,15 @@
+Redux Challenges & Introducing Redux Toolkit
+--------------------------------------------
+... identify a couple of potential problems we could be facing here if our application would continue to grow.
+One potential issue can be our action types. <---------- *
+... mistype the identifier ...
+... clashing identifier names.
+... having some way of defining those identifiers once and then reusing them would be nice.
+
+Another potential problem is the amount of data which we manage ...
+The more data we have, the more different pieces of state we have, ...
+... that means we need to copy a lot of state when we update the counter ... reducer function gets longer and longer ...
+
+Another potential problem ... is the state immutablility which we have to respect. <------------------- **
+
+Redux Toolkit <--------- *
