@@ -1,0 +1,30 @@
+Handling HTTP States & Feedback with Redux
+------------------------------------------
+... handle the response and potential errors, ... the Notification component ...
+
+App.jsx
+-------
+...
+  useEffect(() => {
+    const sendCartData = async () => {
+      const response = await fetch(`${URL}/cart.json`,
+      {
+        method: "PUT",
+        body: JSON.stringify(cart),
+      }
+
+    if(!response.ok) {
+      throw new Error("Sending cart data failed!");
+    }
+
+    const responseData = await response.json();
+  }
+}, [cart];
+
+... show Notification ... since we already have a UI slice (in Redux), why not use that?
+
+... now we have the notification right from the start when I reload.
+... initially sends a ... request ... there's a cart request being sent to Firebase
+... of course we don't wanna send the cart ... right at the beginning ... always override out existing cart 
+on the backend with an empty cart when the app loads.
+... in App.jsx ... we don't send ... when this runs for the first time.

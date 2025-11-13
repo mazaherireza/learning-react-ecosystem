@@ -1,0 +1,17 @@
+Redux & Side Effects (and Asynchronous Code)
+--------------------------------------------
+Side effects, async tasks & Redux
+
+Reducers must be pure, side-effect free, synchronous functions. <----------- *
+
+Input ----------------------------------------> Output
+Old state + Action                              New State
+
+Where should side-effects & async tasks be executed? <--------------- **
+... the reducer functions is clearly the wrong place ...
+... two possible places where we can put our side effects.
+1) Inside the components 
+(e.g., via useEffect())
+
+2) Inside the action creators
+... we write our own action creator functions, so we don't use the automatically generated ones, Redux Toolkit gives us ...

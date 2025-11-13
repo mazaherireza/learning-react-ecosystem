@@ -1,0 +1,30 @@
+Frontend Code vs Backend Code
+-----------------------------
+... running the async code, (the side effect) inside of our components.
+
+ProductItem.jsx
+---------------
+...
+  const handleAddToCart = () => {
+    dispatch(cartActions.addItem({ ...product }));
+  };
+
+... not just dispatch an action to our Redux store but we could also send that data to Firebase (to the backend).
+... we would just store that product data in Firebase, ... does not have any logic on its own on the backend.
+... on the Firebase backend we don't run any extra code.
+So if we send some product data there, that product data would simply be added to the DB but all the logic we have in the reducer ...
+... does not run on Firebase, ...
+
+... the code we need to write on the frontend and where we write that code will depend on our backend code.
+... backend API, (backend server) talking to our frontend application with help of the HTTP requests & the responses which we send around.
+
+Frontend React App ---------------> Send data & receive + use response
+                                    (i.e. less code on the frontend, ahead of the reducer)
+Backend API ----------------------> Does a lot of work            
+                                    (i.e, transforms data + stores data)
+
+Backend API ---------> Does not a lot of work
+Firebase               (i.e. just stores incoming data)
+
+Frontend React App ---> Transform data & send data
+                        (i.e. more code on the frontend, ahead of the reducer)

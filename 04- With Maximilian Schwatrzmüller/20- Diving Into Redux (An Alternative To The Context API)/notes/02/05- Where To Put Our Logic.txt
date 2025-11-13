@@ -1,0 +1,39 @@
+Where To Put Our Logic
+----------------------
+... we can also use useSelector from react-redux, ... do all that transformation (which we do in the reducer)
+inside of ProductItem component without mutating the state <---------- ** 
+and then we send the request.
+
+ProductItem.js
+--------------
+...
+  const handleAddToCart = () => {
+   ...
+  };
+
+... without making Redux aware of it because I would be changing it outside of a reducer function ...
+... you must never mutate Redux state and especially don't do it outside of a reducer <------------ **
+
+What's the problem with this approach though?
+... if we would use this in all the parts of our application, where we need to update the cart ... copy all that logic ...
+... outsource it into an extra file which exports a function ... still we have another problem,
+We do the data transformation in some helper function ... we don't do the transformation in our reducers
+... that means our Redux reducers wouldn't do a lot of work, they'd just get some data and store it.
+... it's not the main idea behind using Redux ...
+
+... when it comes to the question of where to put our code, we often have the choice among: 
+Fat Reducers vs fat components vs fat actions
+Where should your logic (code) go?
+
+... we have to, differentiate between synchronous ...
+
+[Synchronous, side-effect free code 
+(i.e., data transformations)]
+
+Prefer reducers
+Avoid action creators or components
+
+[Async code or code with side-effects]
+
+Prefer action creators or components
+Never use reducers!

@@ -1,0 +1,9 @@
+Module Introduction
+-------------------
+Redux Deep Dive
+---------------
+Taking a closer look
+
+Handling async tasks with Redux <--------- **
+Where to put your code
+The Redux DevTools
