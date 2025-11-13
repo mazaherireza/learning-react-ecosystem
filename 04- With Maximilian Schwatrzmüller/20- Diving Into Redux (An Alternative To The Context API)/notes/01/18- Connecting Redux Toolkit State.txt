@@ -1,0 +1,30 @@
+Connecting Redux Toolkit State
+------------------------------
+store/index.js
+--------------
+import { createSlice, legacy_createStore } from "@reduxjs/toolkit";
+
+...
+const store = legacy_createStore(counterSlice.reducer); <-------------- **
+
+... to create our store, we could pass our counterSlice.reducer ... we get access to the reducers, set up in the slice ...
+... we couldn't dispatch actions right now, ...
+
+If we have bigger applications with multiple state slices, we would face a problem if we try to do it like this,
+... there can only be one reducer passed to createStore, when we have multiple slices, ...
+... with standard Redux, there is a combineReducers function ... 
+... import another function from Redux Toolkit which will make that a bit easier ... configureStore 
+... makes merging multiple reducers into one reducer easier thereafter.
+
+configureStore({
+  reducer <------------- Redux wants one main reducer function which is responsible for the golbal state.
+
+reducer: { counter: counterSlice.reducer <---- A map of reducers 
+
+... if we had multiple state slices ... as the value for this reducer key, 
+we could also set an object and in that object, we can set up any keys of our choice, 
+and the values of those properties would then be different reducer functions.
+...
+reducer: { counter: counterSlice.reducer, ... }
+
+How do we dispatch actions? <----------- **

@@ -1,0 +1,9 @@
+Working With Multiple Slices
+----------------------------
+... in our store ... we can add a brand new piece of data.
+... where we should add our authentication data? 
+We do have this slice, which we created ... (counterSlice) ... add a new property to our state ...
+...
+The authentication state has nothing to do with the counter ... separate our concerns.
+
+When you work with multiple slices, you still have one Redux store, ... and this store only has one root reducer ... <-------- **
