@@ -8,6 +8,6 @@ To follow along, you can simply create a new Firebase project and use the "Realt
 ... such code must not go into our reducer functions so we can't send our HTTP request inside of the reducers ...
 ... don't perform a side effect inside of your reducer, no matter if it's synchronous or asynchronous, ... <--------------- **
 
-Where should side-effects & aysnc tasks be executed?
+Where should side-effects & async tasks be executed?
 Inside the components 
 Inside the action creators

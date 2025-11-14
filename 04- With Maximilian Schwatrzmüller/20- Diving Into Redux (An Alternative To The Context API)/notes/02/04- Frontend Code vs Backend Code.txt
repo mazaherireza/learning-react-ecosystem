@@ -16,7 +16,7 @@ So if we send some product data there, that product data would simply be added t
 ... does not run on Firebase, ...
 
 ... the code we need to write on the frontend and where we write that code will depend on our backend code.
-... backend API, (backend server) talking to our frontend application with help of the HTTP requests & the responses which we send around.
+... backend API, (backend server) talking to our frontend application with help of the HTTP requests ...
 
 Frontend React App ---------------> Send data & receive + use response
                                     (i.e. less code on the frontend, ahead of the reducer)
