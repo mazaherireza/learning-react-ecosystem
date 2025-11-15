@@ -1,0 +1,3 @@
+Finalizing the Fetching Logic
+-----------------------------
+... changed property is now all the part of Firebase, ...

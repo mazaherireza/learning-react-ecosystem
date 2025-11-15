@@ -1,0 +1,54 @@
+Using An Action Creator, Thunk
+------------------------------
+... we can also write our own action creators ...
+
+What is a Thunk?
+A thunk is simply a function, that delays an action until later, (until something else finished). <------------ **
+... does not immediately return the action object, 
+... instead, returns another function which eventually returns the action. <------------ **
+
+An action creator function, that does not return the action itself but instead another function which eventually returns the action.
+
+... so that we can run some other code, before we then dispatch the actual action object, that we did wanna create.
+
+cart-slice.js
+-------------
+import { uiActions } from "./ui-slice";
+...
+<------- outside of this slice
+export const cartThunk = (cart) => {
+  <--------- ... we could write this (cartThunk) as an action creator, by returning an action object in here.
+  return { type: "TYPE", payload: "PAYLOAD" }
+}
+
+... we never did this ourselves, because Redux Toolkit, creates these action creators automatically for us, <----------- **
+for all reducer methods.
+
+Every method in the reducer object, receives such an action creator, which is called by using that reducer function name.
+
+... returns another function.
+
+const cartThunk = (cart) => {
+  return (dispatch) => {
+    dispatch(); <------- dispatch the actual action we wanna perform
+  }
+}
+... before we call dispatch, we can of course do other things, ... we can perform any asynchronous code,
+any side effects ... it's a separate standalone JS function ...
+
+I wanna use cartThunk as an action creator ...
+
+App.jsx
+-------
+import { cartThunk } from "./store/cart-slice";
+...
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+    dispatch(cartThunk(cart));
+  }, [cart]);
+...
+
+... it's an alternative to having that logic in your component.
