@@ -1,0 +1,77 @@
+How Authentication Works
+------------------------
+... what exactly authentication means.
+Authentication is needed if content should be protected
+... certain resources / back-end routes, should not be accessible by everyone.
+... must authenticate before this access, is granted ... get permission.
+
+How does our client-side React application get permission from that back-end application running on the server?
+... it will all start with sending a request with user credentials (with an e-mail and a password ...) to that back-end server.
+... back-end able to validate those credentials or create a new user ...
+... if the credentials are valid ... 
+... the server will send us back a response that basically gives us permission to access certain protected resources.
+
+Getting Permission
+                   Request (with user credentials)
+Client (Browser) ---------------------------------------> Server (Back-end)
+                 <---------------------------------------
+                   Response (access granted: yes/no)
+
+Is that enough?
+A "yes" alone is not enough to access protected resources / API endpoints.
+
+... something that can be validated on the server and that proves that we really got permission from the server in the past.
+... we can't just attach a yes to future requests that wanna access protected resources because we could fake that.
+
+How does authentication work?
+Client and server can't just exchange a "Yes"
+Any client could simply send a request to our back-end that "tells" the back-end that we prevoiusly were granted access
+
+... there are two main solutions for that.
+We could use server-side sessions or authentication tokens.
+
+Server-side Sessions <--------- popular solution especially for full-stack applicationss
+                                where you don't have a decoupled front-end and back-end ...
+
+Store unique identifier on server, send same identifier to client
+Client sends identifier along with requests to protected resources
+Server can then check if the identifier is valid (=previously issued by server to client)
+
+Working with decoupled back-ends
+--------------------------------
+Client (Browser) <--------- No persistent connection ----------> Server (Backend) 
+Since the back-end "doesn't care about the client", it also doesn't store any client-related data (--> sessions)
+
+Most React apps are SPAs that are served by a server that's decoupled from the back-end
+The SPA handles routing (on the client side) and only "talks" to the back-end if it needs data (or needs to change data)
+
+A decoupled back-end is served by different server than the React front-end app
+The back-end provides various resources routes with which the client-side app may communicate 
+The back-end does not register client-side routing actions or user interactions 
+It may theoretically serve multiple, different client-side apps (React apps, mobile apps, etc.)
+
+How does authentication work?
+...
+
+Server-side sessions
+...
+
+Authentication tokens
+Create (but not store) "permission" token on server & send it to the client
+(which is basically a string that is created according to some algorithm ...)
+Client attaches token to the future requests for protected resources
+Server can then verify the attached token
+
+auth.js
+-------
+...
+const token createJSONToken(email); <-------- ... it's called JSON Web Token
+res.json({ token });
+...
+
+Getting Permission
+                   Request (with user credentials)
+Client (Browser) ---------------------------------------> Server (Back-end)
+                 <---------------------------------------
+                   Response --> Auth Token <--
+... on the client-side, ... we have to store that token, attach it to future outgoing requests, ...

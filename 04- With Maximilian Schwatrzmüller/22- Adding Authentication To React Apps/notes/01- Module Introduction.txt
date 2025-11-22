@@ -1,0 +1,13 @@
+Module Introduction
+-------------------
+Authentication
+--------------
+User Signup & Login
+
+... how we can authenticate users ... how we can add authentication to our React apps to begin with.
+
+How authentication works in React apps
+Implementing user authentication
+... how our front-end React app communicates with a back-end that enforces authentication.
+Adding authentication persistence & auto-layout
+... how we can automatically log out users after a certain time span.

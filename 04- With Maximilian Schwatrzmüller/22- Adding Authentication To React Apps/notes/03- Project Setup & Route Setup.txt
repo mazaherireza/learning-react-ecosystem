@@ -1,0 +1,14 @@
+Project Setup & Route Setup
+---------------------------
+... I wanna make sure that we have a way of going to that authentication page ... "/auth" route.
+
+... the auth route should still be part of RootLayout.
+I still wanna have that navigation on top of it ...
+
+App.jsx
+-------
+...
+{
+  path: "auth", <------------ Relative path
+  element: <AuthenticationPage /> 
+...
