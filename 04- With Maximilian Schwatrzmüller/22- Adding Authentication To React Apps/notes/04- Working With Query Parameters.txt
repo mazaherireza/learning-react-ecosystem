@@ -1,0 +1,30 @@
+Working With Query Parameters
+-----------------------------
+... we try to login the user, we send a login request to the back-end.
+On the other hand, if we're in "Create A New User" mode, we send a request to the back-end that wants to creat a new user.
+... we're sending different requests based on which kind of form, we loaded ...
+
+... we could leverage query (search) parameters ...
+... is a parameter that's appended in the URL after a question mark. <------------ **
+... wanna support a mode query parameter, which is either set to login or to signup
+and depending on what it's set to we wanna load a different version of that form.
+So it's the same route, the path is always "/auth" 
+but we get this extra parameter which defines how extactly this component should be rendered.
+
+... an advantage of using query parameters, ... we can directly link to this page in Signup or Login mode. <----- **
+... we can link a user directly to the Signup page, even though it's ... the same page just with a different UI being rendered.
+
+... manage mode with query parameters ...
+ 
+AuthForm.jsx
+------------
+...
+import { Form, Link, useSearchParams } from "react-router-dom";
+... query parameters are officially called search parameters. <--------- **
+
+const AuthForm = () => {
+  const [searcParams] = useSearchParams();
+  const isLogin = searchParams.get("mode") === "login";
+  ...
+  <Link to={`?mode=${isLogin ? "signup" : "login"}`>
+    { isLogin ? "Create New User" : "Login" }
