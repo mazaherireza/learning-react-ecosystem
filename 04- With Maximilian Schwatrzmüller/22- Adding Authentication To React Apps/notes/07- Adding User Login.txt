@@ -1,0 +1,14 @@
+Adding User Login
+-----------------
+... if we use an invalid password, then we get an error here.
+... but I can login with valid credentials, and therefore we already got that login feature implemented.
+... we can finally focus on that token ... we must attach to requests to protected resources.
+
+... it crashes because we're not authorized to delete an event yet, ...
+
+Console
+-------
+...
+Failed to load resource: the server response with a status of 401 (Unauthorized) <---------- **
+
+... we do show an Error page if things go wrong.
