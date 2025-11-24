@@ -1,0 +1,16 @@
+Validating User Input & Outputting Validation Errors
+----------------------------------------------------
+Let's make sure that we're showing any authentication related errors we might be getting ... above authForm.
+... useActionData ... we only get that data of our action returns something, ... else than a redirect.
+
+
+components/AuthForm.jsx
+-----------------------
+import { ..., useActionData } from "react-router-dom";
+...
+const data = useActionData();
+...
+  {
+     data && data.errors && (
+       <ul>
+         { Object.values(data.error).map...
