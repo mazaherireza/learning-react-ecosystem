@@ -1,0 +1,39 @@
+Implementing The Auth Action
+----------------------------
+... enabling user creation.
+
+... allows us to create users.
+backend/routes/auth.js
+----------------------
+...
+  router.post("/signup", async (request, response, next) => {
+    ...
+  }
+
+... on the front-end ... authForm is submitted, we wanna send such a request.
+
+pages/Authentication.jsx
+------------------------
+import { ..., redirect } from "react-router-dom";
+...
+export const action = async ({ request }) => { <--------- this action will be triggered whenever authForm is submitted ...
+  const searchParams = new URL(request.url).searchParams;
+
+  const mode = searchParams.get("mode") || "login";
+  if(mode !== "login" || mode !== "signup") {
+   throw json({ message: "Unsupported mode." });
+  }
+
+  const data = await request.formData(); <------------- *  
+  const authData = {
+    email: data.get("email"),
+    password: data.get("password"),
+  }
+  
+  const reponse = await fetch(`${BASE_URL}/${mode}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(authData) 
+...
