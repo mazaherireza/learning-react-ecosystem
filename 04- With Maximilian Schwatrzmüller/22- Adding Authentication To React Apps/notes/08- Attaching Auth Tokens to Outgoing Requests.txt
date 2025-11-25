@@ -1,0 +1,33 @@
+Attaching Auth Tokens to Outgoing Requests
+------------------------------------------
+... we have to store that token when we get it back from the back-end after signing up or logging in.
+
+Authentication.jsx
+------------------
+...
+export const action = async ({ request }) => {
+  ...
+  const { token } = await response.json();
+  localStorage.setItem("token", token);
+
+  return redirect("/");
+}
+
+util/auth.js
+-----------
+const getAuthToken = () => {
+  const token = localStorage.getItem("token");
+  return token
+}
+
+EventDetail.jsx
+---------------
+...
+export const action = async ({ params, request }) => {
+  ...
+  const token = getAuthToken();
+  const response = await fetch(...
+    {
+      method,
+      headers: {
+        "Authorization": `Bearer ${token}`
