@@ -1,0 +1,40 @@
+Adding User Logout
+------------------
+... we might wanna update the UI based on the current authentication status.
+... we wanna add a log out route, ...
+
+MainNavigation.jsx
+------------------
+...
+<li>
+  <button>Logiut</button>
+</li>
+... this button should then trigger an action or whatever that deletes the token.
+
+... we won't contain any component becuase there is no logout page.
+pages/Logout.jsx
+----------------
+import { redirect } from "react-router-dom";
+
+export const action = () => {
+  localStorage.removeItem("token");
+  return redirect("/");
+}
+
+App.jsx
+-------
+...
+{
+  path: "logout",
+  action: logoutAction,
+}
+
+Now we can send a request to this route, ... submit a Form that targets this route ... MainNavigation.
+
+MainNavigation.jsx
+------------------
+...
+  <li>
+    <Form action="/action" method="POST">
+      <button>Logout</button>
+...
