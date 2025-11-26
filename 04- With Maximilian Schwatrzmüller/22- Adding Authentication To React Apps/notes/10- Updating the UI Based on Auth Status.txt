@@ -1,0 +1,52 @@
+Updating the UI Based on Auth Status
+------------------------------------
+... to update the UI based on the existence of the token, 
+I wanna make that token, easily available in my entire application (on all routes) ...
+I also wanna make sure that the information whether the token exists or not, 
+is automatically updated so that if the token would be removed (because we log out), the UI automatically updates.
+
+... I don't just wanna call getToken ... in MainNavigation, ... because this function is only called when this component is re-evaluated, 
+but it won't lead to the component being re-evaluated if the token is deleted in the future. <--------- **
+... I wanna a more reactive solution. ... React Context ... 
+
+... go to our root route, ... wraps all other routes ...
+App.jsx
+-------
+...
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    id: "root",
+    loader:  <-------- ... that token would be available through the loaderData of the root route, in all other routes.
+    children: ...
+
+The best thing about this, is:
+React Router will automatically re-evaluate that, if we ... submit that logout Form. <----------- **
+So it will then re-fetch that token and determine that the token doesn't exist ... 
+then update all the pages that use that loaderData ...
+
+utils/auth.js
+-------------
+export const getToken = () => localStorage.getItem("token");
+
+export const loader = () => getToken();
+
+App.jsx
+-------
+...
+  {
+    path: "/",
+    ...
+    id: "root" <----- In order to use data from tokenLoader and easily get access to it, 
+    loader: tokenLoader, <-------- ... this will be called whenever a new navigation action occurs ...
+    ...
+...
+... now we can use that loaderData from this root route, in all our other routes.
+
+MainNavigation.jsx
+------------------
+import { useRouteLoaderData } from "react-router-dom";
+...
+  const token = useRouteLoaderData("root");
