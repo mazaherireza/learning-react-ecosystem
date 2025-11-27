@@ -1,0 +1,27 @@
+Adding Route Protection
+-----------------------
+... we can manually go to "events/new" so we can still reach that form even though we're not supposed to.
+... it were be better if we wouldn't be able to reach that from at all, if we're not logged in.
+So what we need is some route protection. <----------- **
+...
+We could utilize a loader.
+A loader that simply checks if we have a token and if we don't have a token, redirects us away. <--------- **
+
+/utils/auth.js
+--------------
+...
+export const checkAuthLoader = () => { <----------- Can be used to protect a route.
+  const token = getAuthToken();
+  if(!token) return redirect("/auth"); <------- ... so that the user is able to log in.
+}
+We can add this loader to all the routes that need protection
+
+App.jsx
+-------
+...
+{
+  path: "edit",
+  element: <EditEventPage />,
+  action: ...
+  loader: checkAuthLoader
+}

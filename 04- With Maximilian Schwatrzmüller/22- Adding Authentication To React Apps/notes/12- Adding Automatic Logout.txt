@@ -1,0 +1,26 @@
+Adding Automatic Logout
+-----------------------
+... we always stay logged in if we got that token once.
+It's nice but unrealistic.
+... the back-end creates a token that will acutally expire after one hour.
+...
+I wanna remove it from local storage so after that one hour, the token should be removed from local storage 
+and the UI should update ...
+
+... set a timer whenever the RootLayout is rendered which happens when the application starts
+
+RootLayotu.jsx
+--------------
+...
+const token = useLoaderData();
+const submit = useSubmit();
+
+useEffect(() => {
+  if(!token) {
+    return
+  }
+
+  setTimeout(() => { submit(null, { action"/logout", method: "POST"}, TIME_OUT)
+  }, [token, submit]
+
+... this solution sitll isn't perfect ...
