@@ -1,0 +1,34 @@
+Managing the Token Expiration
+-----------------------------
+... we need to manage and register the actual token expiration.
+
+... action that's triggered when we authenticate where we do store that token.
+
+pages/Authentication.jsx
+------------------------
+...
+export const action = async ({ request }) => {
+  ...
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1);
+  localStorage.setItem("expiration", expiration.toISOString());
+  
+  return redirect("/");
+}
+
+utils/auth.js
+-------------
+export const getTokenDuration = () => {
+  const expiration = localStorage.getItem("expiration");
+  const expirationDate = new Date(expiration);
+  const now = new Date();
+  const duration = expirationDate.getTime() - now.getTime()
+  return duration;
+}
+
+export const getToken = () => {
+  ...
+  if(!token) return <------------- X
+
+[Actually, you should return "null" instead!
+Returning "undefined" won't work as intended (the loader won't return that value to the components)
