@@ -2,4 +2,4 @@ Welcome To The Course!
 ----------------------
 academind.com
 
-What exactly is React and why might you want to use it?
+What exactly is React and why might you wanna use it?
