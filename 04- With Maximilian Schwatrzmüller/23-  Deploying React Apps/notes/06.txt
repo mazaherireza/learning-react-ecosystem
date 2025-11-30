@@ -1,0 +1,26 @@
+Deployment Example
+------------------
+Deployment Steps
+----------------
+Test code
+Optimize code
+Build app
+Upload app
+
+... we built the app for production, let's upload it to a server. ... deploy it.
+... a React SPA is a static website.
+It consists of only HTML, CSS and JS files and maybe a couple of images, ... all the code will be parsed by the browser ...
+therefore, we only need a static site host, we don't need any hosting provider that executes code on the server.
+
+Key Search <-------- Deploy static site
+
+Firebase hosting .... it is a provider that makes hosting static sites pretty easy ...
+
+... install a tool that helps us with uploading our code to the Firebase servers.
+TERMINAL
+--------
+npm install -g firebase-tools
+firebase login
+firebase init <-------- to turn your local project into a project connected to a Firebase project ...
+...
+firebase deploy

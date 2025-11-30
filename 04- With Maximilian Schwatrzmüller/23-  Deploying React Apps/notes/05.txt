@@ -1,0 +1,18 @@
+Building the Code For Production
+--------------------------------
+Deployment Steps
+----------------
+Test code
+Optimize code
+Build app
+
+TERMINAL
+--------
+npm run build
+... under the hood, this will produce a code bundle with highly optimized and transformed code, 
+which is ready to be uploaded.
+
+... it's the content of ... build folder that should be deployed to a server.
+... static folder, optimized JS file with those different dynamically loaded chunks
+(145.6ced...chunck.js) for lazy loading ... main chunk that's downloaded initially. <------ contains all the code
+you wrote + all the third party package codes you're using 
