@@ -1,0 +1,52 @@
+Adding Lazy Loading
+-------------------
+... let's say we wanna load BlogPage lazily, ... only when we need it.
+The code for BlogPage and all the code referenced by this page ... should only be loaded when we need it.
+
+... first of all ... remove this import (import BlogPage, { loader as postsLoader } from ...) ...
+... as a next step we have to re-add it, but in a way that it's only loaded when it's needed.
+
+App.jsx
+-------
+...
+  {
+    index: true,
+    element: <BlogPage />,
+    loader: () => import() <--------- ... it will import something dynamically, only when it's needed.
+
+... import gives you a promise ... this is an asynchronous process, ... the loaded file ...
+loader: () => import("./pages/Blog").then(module => module.loader())  
+
+... the next step ... load the BlogPage component lazily.
+
+const BlogPage = () => import("./pages/Blog"); <-------- ... this alone won't do the trick 
+                                                         ... because this here is not a valid functional component
+                                                         A function is only a valid component if it returns JSX code ...
+... import actually yields a promise.
+To solve this problem, React gives us a special function which we have to wrap around this function ... lazy function 
+
+import { lazy, Suspense } from "react";
+...
+const BlogPage = lazy(() => import ("./pages/Blog")); <---------- ... lazy takes this function with the dynamic import as an argument.
+... now BlogPage can be used as a component. 
+
+{
+  index: true,
+  element: <BlogPost />, <-------- ... it will still take some time to load the code for this component 
+...                                ... you must wrap this with another component ... 
+
+...
+  {
+    index: true,
+    element: <Suspense fallback={<p>Loading ...</p>}><BlogPage /></Suspense>,
+    ...
+
+... Suspense ... can be used by other components to wait for content to be loaded before actually rendering the content.
+
+Network
+-------
+...
+... this JS file was downloaded dynamically because we added lazy loading.
+... includes the code for the loader and for the BlogPage component.
+
+... we can also implement lazy loading for the individual blog posts ...

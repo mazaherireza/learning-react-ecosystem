@@ -1,0 +1,13 @@
+Module Introduction
+-------------------
+... up to this point, we only built and tested our React website locally on our local machine ...
+... when you build a React app, you wanna push it onto some real server to expose it to users ...
+
+Deploying React Apps
+--------------------
+From development to production
+
+... publish and expose your React app to users ...
+
+Deployment steps & pitfalls
+Server-side routing vs client-side routing

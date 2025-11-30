@@ -1,0 +1,15 @@
+Understanding Lazy Loading
+--------------------------
+... means that we wanna load certain pieces of code only when it's needed. <------------ *
+... to understand lazy loading it's important to understand how this project will be built and served to end users without lazy loading.
+... in our various files where we import code from other files ...
+... when this component file is evaluated by the browser, code for this hook (useLoaderData) will be imported
+in order to handle this component, ...
+
+... when this application is served to end users, all these imports must be resolved before anything's shown on the screen.
+... when we later build this application all these imported files will actually be merged together into one big file.
+
+... now the theoretical problem with that is, ... all code files must be loaded before anything's shown on the screen.
+...
+Having to load all the code initially will slow down that initial page load.
+... the idea behind lazy loading is that we load certain components in the end only when they're needed ...
