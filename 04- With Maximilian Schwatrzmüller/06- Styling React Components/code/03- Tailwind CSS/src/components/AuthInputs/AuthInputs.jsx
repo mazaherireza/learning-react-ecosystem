@@ -19,7 +19,7 @@ const AuthInputs = () => {
   const passwordNotValid = submitted && inputs.password?.trim().length < 6;
 
   return (
-    <div className="w-full max-w-sm p-8 mx-auto my-0 rounded shadow-md bg-gradient-to-b from-stone-300 to-stone-800">
+    <div className="w-full max-w-sm p-8 mx-auto my-0 rounded shadow-md bg-linear-to-b from-stone-300 to-stone-800">
       <div className="flex flex-col gap-2 mb-6">
         <p>
           <CustomInput
