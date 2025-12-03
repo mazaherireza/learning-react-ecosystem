@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Player = () => {
   const [playerName, setPlayerName] = useState("");
+
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = ({ target }) => {
